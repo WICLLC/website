@@ -4,8 +4,8 @@ Description: >
   Archival Policy, Article 7). S3 bucket with Object Lock in compliance mode,
   5-year retention, website-snapshots/ and substack-captures/ prefixes; a
   GitHub Actions upload role that cannot delete, overwrite retained objects or
-  change Object Lock; success/failure/missed-run emails; a reviewer policy for
-  day-to-day users and an MFA-only admin role. Deploy in US East (Ohio).
+  change Object Lock; success/failure/missed-run emails; a read-only reviewer
+  policy for an IAM Identity Center permission set. Deploy in US East (Ohio).
 
 Parameters:
   BucketName:
@@ -261,13 +261,15 @@ Resources:
       SourceArn: !GetAtt DailyCheckRule.Arn
 
   # ── People (Article 7.II.C) ───────────────────────────────────────────────
-  # Day-to-day users get only this policy: view and verify the Archive, and
-  # step up to the admin role (MFA required) when a change is needed.
+  # People sign in through IAM Identity Center, not IAM users. This policy is
+  # the read-and-verify access for day-to-day use and the weekly review. To
+  # use it, create a custom permission set in IAM Identity Center that
+  # references the customer managed policy WIC-Archive-Reviewer by name.
   ReviewerPolicy:
     Type: AWS::IAM::ManagedPolicy
     Properties:
       ManagedPolicyName: WIC-Archive-Reviewer
-      Description: Verify the WIC Documentation Archive; switch to WIC-Archive-Admin with MFA for changes.
+      Description: View and verify the WIC Documentation Archive. No changes, no deletes.
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -301,37 +303,6 @@ Resources:
               - logs:GetLogEvents
               - logs:FilterLogEvents
             Resource: '*'
-          - Sid: OwnMfaAndPassword
-            Effect: Allow
-            Action:
-              - iam:GetUser
-              - iam:ChangePassword
-              - iam:ListMFADevices
-              - iam:CreateVirtualMFADevice
-              - iam:EnableMFADevice
-              - iam:ResyncMFADevice
-            Resource:
-              - !Sub 'arn:aws:iam::${AWS::AccountId}:user/${!aws:username}'
-              - !Sub 'arn:aws:iam::${AWS::AccountId}:mfa/*'
-          - Sid: StepUpToAdmin
-            Effect: Allow
-            Action: sts:AssumeRole
-            Resource: !GetAtt AdminRole.Arn
-
-  AdminRole:
-    Type: AWS::IAM::Role
-    Properties:
-      RoleName: WIC-Archive-Admin
-      Description: Full administration, only after signing in with MFA. Use for stack updates and access changes.
-      MaxSessionDuration: 3600
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Effect: Allow
-            Principal: {AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'}
-            Action: sts:AssumeRole
-            Condition: {Bool: {'aws:MultiFactorAuthPresent': 'true'}}
-      ManagedPolicyArns: [arn:aws:iam::aws:policy/AdministratorAccess]
 
 Outputs:
   BucketName:
@@ -340,6 +311,3 @@ Outputs:
   UploadRoleArn:
     Description: GitHub repo secret AWS_ARCHIVE_ROLE_ARN
     Value: !GetAtt GitHubUploadRole.Arn
-  AdminRoleSwitchUrl:
-    Description: Console link to step up to WIC-Archive-Admin
-    Value: !Sub 'https://signin.aws.amazon.com/switchrole?roleName=WIC-Archive-Admin&account=${AWS::AccountId}&displayName=WIC-Admin'
