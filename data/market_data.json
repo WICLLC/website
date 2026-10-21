@@ -1,0 +1,3977 @@
+{
+ "calendar": {
+  "data": {
+   "checked": "2026-10-15T14:09",
+   "reports": [
+    {
+     "agency": "USDA World Agricultural Outlook Board",
+     "id": "wasde",
+     "name": "WASDE",
+     "tab": "WASDE Supply & Demand",
+     "upcoming": [
+      "2026-11-10T11:00",
+      "2026-12-10T11:00",
+      "2027-01-12T11:00"
+     ]
+    },
+    {
+     "agency": "USDA NASS",
+     "id": "GraiStoc",
+     "name": "Grain Stocks",
+     "tab": "Grain Stocks & Acreage",
+     "upcoming": []
+    },
+    {
+     "agency": "USDA NASS",
+     "id": "ProsPlan",
+     "name": "Prospective Plantings",
+     "tab": "Grain Stocks & Acreage",
+     "upcoming": []
+    },
+    {
+     "agency": "USDA NASS",
+     "id": "Acre",
+     "name": "Acreage",
+     "tab": "Grain Stocks & Acreage",
+     "upcoming": []
+    },
+    {
+     "agency": "USDA NASS",
+     "id": "FatsOils",
+     "name": "Fats and Oils: Oilseed Crushings",
+     "tab": "Soybean Crush",
+     "upcoming": [
+      "2026-11-02T14:00",
+      "2026-12-01T14:00"
+     ]
+    },
+    {
+     "agency": "USDA NASS",
+     "id": "CattOnFe",
+     "name": "Cattle on Feed",
+     "tab": "Livestock & Beef",
+     "upcoming": [
+      "2026-10-23T14:00",
+      "2026-11-20T14:00",
+      "2026-12-18T14:00"
+     ]
+    },
+    {
+     "agency": "USDA NASS",
+     "id": "HogsPigs",
+     "name": "Quarterly Hogs and Pigs",
+     "tab": "Livestock & Beef",
+     "upcoming": [
+      "2026-12-23T14:00"
+     ]
+    }
+   ]
+  },
+  "updated": "2026-10-15"
+ },
+ "cot": {
+  "data": {
+   "contracts": [
+    {
+     "flag": "EXTREME LONG",
+     "group": "Grains & Oilseeds",
+     "mm_long": 393249,
+     "mm_net": 329839,
+     "mm_short": 63410,
+     "name": "Corn",
+     "percentile": 91.2,
+     "report_date": "2026-10-06",
+     "slug": "corn",
+     "symbol": "ZC",
+     "weeks": 521
+    },
+    {
+     "flag": "EXTREME LONG",
+     "group": "Grains & Oilseeds",
+     "mm_long": 289942,
+     "mm_net": 258066,
+     "mm_short": 31876,
+     "name": "Soybean",
+     "percentile": 99.8,
+     "report_date": "2026-10-06",
+     "slug": "soybeans",
+     "symbol": "ZS",
+     "weeks": 521
+    },
+    {
+     "flag": "EXTREME LONG",
+     "group": "Grains & Oilseeds",
+     "mm_long": 213268,
+     "mm_net": 205301,
+     "mm_short": 7967,
+     "name": "Soybean Meal",
+     "percentile": 99.8,
+     "report_date": "2026-10-06",
+     "slug": "soymeal",
+     "symbol": "ZM",
+     "weeks": 521
+    },
+    {
+     "flag": "Normal range",
+     "group": "Grains & Oilseeds",
+     "mm_long": 116042,
+     "mm_net": 93518,
+     "mm_short": 22524,
+     "name": "Soybean Oil",
+     "percentile": 86.9,
+     "report_date": "2026-10-06",
+     "slug": "soyoil",
+     "symbol": "ZL",
+     "weeks": 521
+    },
+    {
+     "flag": "Normal range",
+     "group": "Grains & Oilseeds",
+     "mm_long": 86954,
+     "mm_net": -28830,
+     "mm_short": 115784,
+     "name": "Chicago Wheat",
+     "percentile": 53.4,
+     "report_date": "2026-10-06",
+     "slug": "chicago_wheat",
+     "symbol": "ZW",
+     "weeks": 521
+    },
+    {
+     "flag": "Normal range",
+     "group": "Livestock",
+     "mm_long": 80017,
+     "mm_net": 50695,
+     "mm_short": 29322,
+     "name": "Live Cattle",
+     "percentile": 31.1,
+     "report_date": "2026-10-06",
+     "slug": "live_cattle",
+     "symbol": "LE",
+     "weeks": 521
+    },
+    {
+     "flag": "Normal range",
+     "group": "Livestock",
+     "mm_long": 18962,
+     "mm_net": 9386,
+     "mm_short": 9576,
+     "name": "Feeder Cattle",
+     "percentile": 67.9,
+     "report_date": "2026-10-06",
+     "slug": "feeder_cattle",
+     "symbol": "GF",
+     "weeks": 521
+    },
+    {
+     "flag": "EXTREME SHORT",
+     "group": "Livestock",
+     "mm_long": 69690,
+     "mm_net": -41504,
+     "mm_short": 111194,
+     "name": "Lean Hog",
+     "percentile": 0.8,
+     "report_date": "2026-10-06",
+     "slug": "lean_hogs",
+     "symbol": "HE",
+     "weeks": 521
+    },
+    {
+     "flag": "Normal range",
+     "group": "Softs & Energy",
+     "mm_long": 74374,
+     "mm_net": 57118,
+     "mm_short": 17256,
+     "name": "Cotton",
+     "percentile": 68.1,
+     "report_date": "2026-10-06",
+     "slug": "cotton",
+     "symbol": "CT",
+     "weeks": 521
+    },
+    {
+     "flag": "EXTREME LONG",
+     "group": "Softs & Energy",
+     "mm_long": 345661,
+     "mm_net": 252514,
+     "mm_short": 93147,
+     "name": "Sugar No. 11",
+     "percentile": 98.3,
+     "report_date": "2026-10-06",
+     "slug": "sugar",
+     "symbol": "SB",
+     "weeks": 521
+    },
+    {
+     "flag": "EXTREME SHORT",
+     "group": "Softs & Energy",
+     "mm_long": 178353,
+     "mm_net": 53598,
+     "mm_short": 124755,
+     "name": "WTI Crude Oil",
+     "percentile": 5.4,
+     "report_date": "2026-10-06",
+     "slug": "crude_oil",
+     "symbol": "CL",
+     "weeks": 521
+    },
+    {
+     "flag": "EXTREME SHORT",
+     "group": "Softs & Energy",
+     "mm_long": 218758,
+     "mm_net": -144537,
+     "mm_short": 363295,
+     "name": "Natural Gas",
+     "percentile": 6.7,
+     "report_date": "2026-10-06",
+     "slug": "natural_gas",
+     "symbol": "NG",
+     "weeks": 521
+    }
+   ]
+  },
+  "updated": "2026-10-14"
+ },
+ "crush": {
+  "data": {
+   "crush_tons": 6289327.0,
+   "crush_tons_prior_month": 6657663.0,
+   "crush_tons_prior_year": 5941050.0,
+   "history": [
+    {
+     "crush_tons": 5941050.0,
+     "month": "2025-08"
+    },
+    {
+     "crush_tons": 6148544.0,
+     "month": "2025-09"
+    },
+    {
+     "crush_tons": 7090382.0,
+     "month": "2025-10"
+    },
+    {
+     "crush_tons": 6615176.0,
+     "month": "2025-11"
+    },
+    {
+     "crush_tons": 6895963.0,
+     "month": "2025-12"
+    },
+    {
+     "crush_tons": 6839394.0,
+     "month": "2026-01"
+    },
+    {
+     "crush_tons": 6426352.0,
+     "month": "2026-02"
+    },
+    {
+     "crush_tons": 6954012.0,
+     "month": "2026-03"
+    },
+    {
+     "crush_tons": 6525326.0,
+     "month": "2026-04"
+    },
+    {
+     "crush_tons": 6393408.0,
+     "month": "2026-05"
+    },
+    {
+     "crush_tons": 6534388.0,
+     "month": "2026-06"
+    },
+    {
+     "crush_tons": 6657663.0,
+     "month": "2026-07"
+    },
+    {
+     "crush_tons": 6289327.0,
+     "month": "2026-08"
+    }
+   ],
+   "loaded": "2026-10-01",
+   "month": "2026-08",
+   "oil_production_lb": null,
+   "oil_stocks_lb": null,
+   "series_labels": {
+    "crush_tons": "SOYBEANS - CRUSHED, MEASURED IN TONS",
+    "oil_production_lb": null,
+    "oil_stocks_lb": null
+   }
+  },
+  "updated": "2026-10-13"
+ },
+ "grain": {
+  "data": {
+   "acreage": {
+    "CORN": {
+     "june": 95343000.0,
+     "latest": 96777000.0,
+     "latest_loaded": "2026-10-09",
+     "latest_period": "YEAR",
+     "prior_final": 98713000.0,
+     "prospective": 95338000.0,
+     "year": 2026
+    },
+    "SOYBEANS": {
+     "june": 85365000.0,
+     "latest": 86865000.0,
+     "latest_loaded": "2026-10-09",
+     "latest_period": "YEAR",
+     "prior_final": 81215000.0,
+     "prospective": 84700000.0,
+     "year": 2026
+    },
+    "WHEAT": {
+     "june": 42740000.0,
+     "latest": 42521000.0,
+     "latest_loaded": "2026-09-30",
+     "latest_period": "YEAR",
+     "prior_final": 45488000.0,
+     "prospective": 43775000.0,
+     "year": 2026
+    }
+   },
+   "stocks": {
+    "CORN": {
+     "history": [
+      {
+       "ref": "2024-09-01",
+       "total": 1763400000.0
+      },
+      {
+       "ref": "2024-12-01",
+       "total": 12075407000.0
+      },
+      {
+       "ref": "2025-03-01",
+       "total": 8147437000.0
+      },
+      {
+       "ref": "2025-06-01",
+       "total": 4642894000.0
+      },
+      {
+       "ref": "2025-09-01",
+       "total": 1551286000.0
+      },
+      {
+       "ref": "2025-12-01",
+       "total": 13305825000.0
+      },
+      {
+       "ref": "2026-03-01",
+       "total": 9030190000.0
+      },
+      {
+       "ref": "2026-06-01",
+       "total": 5291284000.0
+      },
+      {
+       "ref": "2026-09-01",
+       "total": 2095057000.0
+      }
+     ],
+     "loaded": "2026-09-30",
+     "off_farm": 1307757000.0,
+     "on_farm": 787300000.0,
+     "prior_off_farm": 908086000.0,
+     "prior_on_farm": 643200000.0,
+     "prior_total": 1551286000.0,
+     "ref": "2026-09-01",
+     "total": 2095057000.0
+    },
+    "SOYBEANS": {
+     "history": [
+      {
+       "ref": "2024-09-01",
+       "total": 342433000.0
+      },
+      {
+       "ref": "2024-12-01",
+       "total": 3100285000.0
+      },
+      {
+       "ref": "2025-03-01",
+       "total": 1910924000.0
+      },
+      {
+       "ref": "2025-06-01",
+       "total": 1007639000.0
+      },
+      {
+       "ref": "2025-09-01",
+       "total": 324806000.0
+      },
+      {
+       "ref": "2025-12-01",
+       "total": 3287070000.0
+      },
+      {
+       "ref": "2026-03-01",
+       "total": 2123249000.0
+      },
+      {
+       "ref": "2026-06-01",
+       "total": 1059442000.0
+      },
+      {
+       "ref": "2026-09-01",
+       "total": 315133000.0
+      }
+     ],
+     "loaded": "2026-09-30",
+     "off_farm": 224733000.0,
+     "on_farm": 90400000.0,
+     "prior_off_farm": 233306000.0,
+     "prior_on_farm": 91500000.0,
+     "prior_total": 324806000.0,
+     "ref": "2026-09-01",
+     "total": 315133000.0
+    },
+    "WHEAT": {
+     "history": [
+      {
+       "ref": "2024-09-01",
+       "total": 1992157000.0
+      },
+      {
+       "ref": "2024-12-01",
+       "total": 1572421000.0
+      },
+      {
+       "ref": "2025-03-01",
+       "total": 1236587000.0
+      },
+      {
+       "ref": "2025-06-01",
+       "total": 854734000.0
+      },
+      {
+       "ref": "2025-09-01",
+       "total": 2134018000.0
+      },
+      {
+       "ref": "2025-12-01",
+       "total": 1677103000.0
+      },
+      {
+       "ref": "2026-03-01",
+       "total": 1302973000.0
+      },
+      {
+       "ref": "2026-06-01",
+       "total": 920108000.0
+      },
+      {
+       "ref": "2026-09-01",
+       "total": 1845743000.0
+      }
+     ],
+     "loaded": "2026-09-30",
+     "off_farm": 1299243000.0,
+     "on_farm": 546500000.0,
+     "prior_off_farm": 1441778000.0,
+     "prior_on_farm": 692240000.0,
+     "prior_total": 2134018000.0,
+     "ref": "2026-09-01",
+     "total": 1845743000.0
+    }
+   }
+  },
+  "updated": "2026-10-13"
+ },
+ "livestock": {
+  "data": {
+   "cattle": {
+    "flow_month": "2026-08",
+    "history": [
+     {
+      "on_feed": 11080000.0,
+      "ref": "2025-09-01"
+     },
+     {
+      "on_feed": 11418000.0,
+      "ref": "2025-10-01"
+     },
+     {
+      "on_feed": 11706000.0,
+      "ref": "2025-11-01"
+     },
+     {
+      "on_feed": 11727000.0,
+      "ref": "2025-12-01"
+     },
+     {
+      "on_feed": 11450000.0,
+      "ref": "2026-01-01"
+     },
+     {
+      "on_feed": 11510000.0,
+      "ref": "2026-02-01"
+     },
+     {
+      "on_feed": 11549000.0,
+      "ref": "2026-03-01"
+     },
+     {
+      "on_feed": 11576000.0,
+      "ref": "2026-04-01"
+     },
+     {
+      "on_feed": 11584000.0,
+      "ref": "2026-05-01"
+     },
+     {
+      "on_feed": 11682000.0,
+      "ref": "2026-06-01"
+     },
+     {
+      "on_feed": 11370000.0,
+      "ref": "2026-07-01"
+     },
+     {
+      "on_feed": 11117000.0,
+      "ref": "2026-08-01"
+     },
+     {
+      "on_feed": 11163000.0,
+      "ref": "2026-09-01"
+     }
+    ],
+    "loaded": "2026-09-18",
+    "marketings": 1519000.0,
+    "marketings_prior_year": 1571000.0,
+    "on_feed": 11163000.0,
+    "on_feed_prior_year": 11080000.0,
+    "placements": 1617000.0,
+    "placements_prior_year": 1780000.0,
+    "ref": "2026-09-01"
+   },
+   "cutout": {
+    "choice": 376.5,
+    "fields": [
+     "choice_600_900_current",
+     "select_600_900_current"
+    ],
+    "history": [
+     {
+      "choice": 181.86,
+      "date": "2016-10-14",
+      "select": 172.04
+     },
+     {
+      "choice": 179.78,
+      "date": "2016-10-21",
+      "select": 166.73
+     },
+     {
+      "choice": 183.11,
+      "date": "2016-10-28",
+      "select": 170.16
+     },
+     {
+      "choice": 188.7,
+      "date": "2016-11-04",
+      "select": 173.03
+     },
+     {
+      "choice": 184.62,
+      "date": "2016-11-11",
+      "select": 167.71
+     },
+     {
+      "choice": 182.95,
+      "date": "2016-11-18",
+      "select": 167.01
+     },
+     {
+      "choice": 187.64,
+      "date": "2016-11-25",
+      "select": 171.3
+     },
+     {
+      "choice": 189.72,
+      "date": "2016-12-02",
+      "select": 172.7
+     },
+     {
+      "choice": 188.94,
+      "date": "2016-12-09",
+      "select": 171.68
+     },
+     {
+      "choice": 194.63,
+      "date": "2016-12-16",
+      "select": 181.09
+     },
+     {
+      "choice": 198.27,
+      "date": "2016-12-23",
+      "select": 187.44
+     },
+     {
+      "choice": 203.33,
+      "date": "2016-12-30",
+      "select": 192.84
+     },
+     {
+      "choice": 198.81,
+      "date": "2017-01-06",
+      "select": 193.22
+     },
+     {
+      "choice": 190.8,
+      "date": "2017-01-13",
+      "select": 186.54
+     },
+     {
+      "choice": 190.42,
+      "date": "2017-01-20",
+      "select": 186.64
+     },
+     {
+      "choice": 192.7,
+      "date": "2017-01-27",
+      "select": 188.94
+     },
+     {
+      "choice": 191.4,
+      "date": "2017-02-03",
+      "select": 189.93
+     },
+     {
+      "choice": 187.63,
+      "date": "2017-02-10",
+      "select": 185.65
+     },
+     {
+      "choice": 190.49,
+      "date": "2017-02-17",
+      "select": 189.24
+     },
+     {
+      "choice": 198.96,
+      "date": "2017-02-24",
+      "select": 195.48
+     },
+     {
+      "choice": 208.07,
+      "date": "2017-03-03",
+      "select": 204.05
+     },
+     {
+      "choice": 219.83,
+      "date": "2017-03-10",
+      "select": 210.99
+     },
+     {
+      "choice": 223.43,
+      "date": "2017-03-17",
+      "select": 214.48
+     },
+     {
+      "choice": 221.62,
+      "date": "2017-03-24",
+      "select": 215.55
+     },
+     {
+      "choice": 214.12,
+      "date": "2017-03-31",
+      "select": 204.0
+     },
+     {
+      "choice": 207.22,
+      "date": "2017-04-07",
+      "select": 197.49
+     },
+     {
+      "choice": 212.08,
+      "date": "2017-04-14",
+      "select": 199.48
+     },
+     {
+      "choice": 217.16,
+      "date": "2017-04-21",
+      "select": 203.89
+     },
+     {
+      "choice": 221.78,
+      "date": "2017-04-28",
+      "select": 207.68
+     },
+     {
+      "choice": 238.87,
+      "date": "2017-05-05",
+      "select": 219.57
+     },
+     {
+      "choice": 247.69,
+      "date": "2017-05-12",
+      "select": 225.51
+     },
+     {
+      "choice": 247.14,
+      "date": "2017-05-19",
+      "select": 221.42
+     },
+     {
+      "choice": 245.6,
+      "date": "2017-05-26",
+      "select": 218.45
+     },
+     {
+      "choice": 245.24,
+      "date": "2017-06-02",
+      "select": 218.06
+     },
+     {
+      "choice": 251.21,
+      "date": "2017-06-09",
+      "select": 220.29
+     },
+     {
+      "choice": 249.84,
+      "date": "2017-06-16",
+      "select": 219.8
+     },
+     {
+      "choice": 239.75,
+      "date": "2017-06-23",
+      "select": 216.72
+     },
+     {
+      "choice": 224.73,
+      "date": "2017-06-30",
+      "select": 208.42
+     },
+     {
+      "choice": 218.84,
+      "date": "2017-07-07",
+      "select": 202.51
+     },
+     {
+      "choice": 209.35,
+      "date": "2017-07-14",
+      "select": 195.42
+     },
+     {
+      "choice": 206.91,
+      "date": "2017-07-21",
+      "select": 194.8
+     },
+     {
+      "choice": 206.22,
+      "date": "2017-07-28",
+      "select": 196.82
+     },
+     {
+      "choice": 203.61,
+      "date": "2017-08-04",
+      "select": 197.31
+     },
+     {
+      "choice": 199.6,
+      "date": "2017-08-11",
+      "select": 196.12
+     },
+     {
+      "choice": 194.29,
+      "date": "2017-08-18",
+      "select": 192.5
+     },
+     {
+      "choice": 191.32,
+      "date": "2017-08-25",
+      "select": 188.3
+     },
+     {
+      "choice": 191.35,
+      "date": "2017-09-01",
+      "select": 190.65
+     },
+     {
+      "choice": 191.88,
+      "date": "2017-09-08",
+      "select": 189.97
+     },
+     {
+      "choice": 191.42,
+      "date": "2017-09-15",
+      "select": 185.85
+     },
+     {
+      "choice": 191.6,
+      "date": "2017-09-22",
+      "select": 188.73
+     },
+     {
+      "choice": 196.62,
+      "date": "2017-09-29",
+      "select": 188.5
+     },
+     {
+      "choice": 197.22,
+      "date": "2017-10-06",
+      "select": 187.23
+     },
+     {
+      "choice": 198.22,
+      "date": "2017-10-13",
+      "select": 190.05
+     },
+     {
+      "choice": 199.86,
+      "date": "2017-10-20",
+      "select": 191.14
+     },
+     {
+      "choice": 203.3,
+      "date": "2017-10-27",
+      "select": 192.48
+     },
+     {
+      "choice": 208.74,
+      "date": "2017-11-03",
+      "select": 193.08
+     },
+     {
+      "choice": 213.85,
+      "date": "2017-11-10",
+      "select": 194.51
+     },
+     {
+      "choice": 207.24,
+      "date": "2017-11-17",
+      "select": 187.85
+     },
+     {
+      "choice": 210.99,
+      "date": "2017-11-24",
+      "select": 187.85
+     },
+     {
+      "choice": 205.99,
+      "date": "2017-12-01",
+      "select": 183.61
+     },
+     {
+      "choice": 205.59,
+      "date": "2017-12-08",
+      "select": 185.97
+     },
+     {
+      "choice": 201.87,
+      "date": "2017-12-15",
+      "select": 183.25
+     },
+     {
+      "choice": 199.56,
+      "date": "2017-12-22",
+      "select": 187.88
+     },
+     {
+      "choice": 202.9,
+      "date": "2017-12-29",
+      "select": 192.98
+     },
+     {
+      "choice": 209.51,
+      "date": "2018-01-05",
+      "select": 202.32
+     },
+     {
+      "choice": 208.23,
+      "date": "2018-01-12",
+      "select": 201.64
+     },
+     {
+      "choice": 204.86,
+      "date": "2018-01-19",
+      "select": 200.16
+     },
+     {
+      "choice": 206.83,
+      "date": "2018-01-26",
+      "select": 201.83
+     },
+     {
+      "choice": 209.1,
+      "date": "2018-02-02",
+      "select": 203.45
+     },
+     {
+      "choice": 206.52,
+      "date": "2018-02-09",
+      "select": 202.74
+     },
+     {
+      "choice": 209.88,
+      "date": "2018-02-16",
+      "select": 205.12
+     },
+     {
+      "choice": 218.37,
+      "date": "2018-02-23",
+      "select": 212.82
+     },
+     {
+      "choice": 222.52,
+      "date": "2018-03-02",
+      "select": 214.64
+     },
+     {
+      "choice": 224.14,
+      "date": "2018-03-09",
+      "select": 217.26
+     },
+     {
+      "choice": 225.59,
+      "date": "2018-03-16",
+      "select": 216.86
+     },
+     {
+      "choice": 223.09,
+      "date": "2018-03-23",
+      "select": 216.4
+     },
+     {
+      "choice": 221.04,
+      "date": "2018-03-30",
+      "select": 208.69
+     },
+     {
+      "choice": 214.31,
+      "date": "2018-04-06",
+      "select": 205.6
+     },
+     {
+      "choice": 212.61,
+      "date": "2018-04-13",
+      "select": 199.91
+     },
+     {
+      "choice": 211.98,
+      "date": "2018-04-20",
+      "select": 200.13
+     },
+     {
+      "choice": 221.74,
+      "date": "2018-04-27",
+      "select": 204.32
+     },
+     {
+      "choice": 228.3,
+      "date": "2018-05-04",
+      "select": 209.49
+     },
+     {
+      "choice": 230.97,
+      "date": "2018-05-11",
+      "select": 208.69
+     },
+     {
+      "choice": 232.21,
+      "date": "2018-05-18",
+      "select": 208.46
+     },
+     {
+      "choice": 227.43,
+      "date": "2018-05-25",
+      "select": 204.62
+     },
+     {
+      "choice": 227.53,
+      "date": "2018-06-01",
+      "select": 204.8
+     },
+     {
+      "choice": 226.21,
+      "date": "2018-06-08",
+      "select": 203.18
+     },
+     {
+      "choice": 221.59,
+      "date": "2018-06-15",
+      "select": 202.73
+     },
+     {
+      "choice": 217.16,
+      "date": "2018-06-22",
+      "select": 202.02
+     },
+     {
+      "choice": 211.96,
+      "date": "2018-06-29",
+      "select": 198.57
+     },
+     {
+      "choice": 208.03,
+      "date": "2018-07-06",
+      "select": 198.71
+     },
+     {
+      "choice": 204.14,
+      "date": "2018-07-13",
+      "select": 196.37
+     },
+     {
+      "choice": 204.17,
+      "date": "2018-07-20",
+      "select": 197.0
+     },
+     {
+      "choice": 205.14,
+      "date": "2018-07-27",
+      "select": 198.27
+     },
+     {
+      "choice": 204.75,
+      "date": "2018-08-03",
+      "select": 197.09
+     },
+     {
+      "choice": 206.61,
+      "date": "2018-08-10",
+      "select": 197.77
+     },
+     {
+      "choice": 211.38,
+      "date": "2018-08-17",
+      "select": 200.92
+     },
+     {
+      "choice": 213.32,
+      "date": "2018-08-24",
+      "select": 203.82
+     },
+     {
+      "choice": 209.69,
+      "date": "2018-08-31",
+      "select": 201.27
+     },
+     {
+      "choice": 206.56,
+      "date": "2018-09-07",
+      "select": 197.09
+     },
+     {
+      "choice": 204.27,
+      "date": "2018-09-14",
+      "select": 196.47
+     },
+     {
+      "choice": 204.8,
+      "date": "2018-09-21",
+      "select": 194.71
+     },
+     {
+      "choice": 203.88,
+      "date": "2018-09-28",
+      "select": 193.44
+     },
+     {
+      "choice": 203.25,
+      "date": "2018-10-05",
+      "select": 191.74
+     },
+     {
+      "choice": 202.71,
+      "date": "2018-10-12",
+      "select": 192.28
+     },
+     {
+      "choice": 207.93,
+      "date": "2018-10-19",
+      "select": 194.24
+     },
+     {
+      "choice": 213.47,
+      "date": "2018-10-26",
+      "select": 198.83
+     },
+     {
+      "choice": 218.5,
+      "date": "2018-11-02",
+      "select": 201.47
+     },
+     {
+      "choice": 215.2,
+      "date": "2018-11-09",
+      "select": 198.72
+     },
+     {
+      "choice": 212.91,
+      "date": "2018-11-16",
+      "select": 197.57
+     },
+     {
+      "choice": 213.85,
+      "date": "2018-11-23",
+      "select": 198.51
+     },
+     {
+      "choice": 212.61,
+      "date": "2018-11-30",
+      "select": 198.41
+     },
+     {
+      "choice": 214.29,
+      "date": "2018-12-07",
+      "select": 200.5
+     },
+     {
+      "choice": 210.96,
+      "date": "2018-12-14",
+      "select": 203.14
+     },
+     {
+      "choice": 214.05,
+      "date": "2018-12-21",
+      "select": 207.5
+     },
+     {
+      "choice": 214.41,
+      "date": "2018-12-28",
+      "select": 207.52
+     },
+     {
+      "choice": 214.51,
+      "date": "2019-01-04",
+      "select": 207.66
+     },
+     {
+      "choice": 212.46,
+      "date": "2019-01-11",
+      "select": 206.27
+     },
+     {
+      "choice": 213.15,
+      "date": "2019-01-18",
+      "select": 209.45
+     },
+     {
+      "choice": 217.01,
+      "date": "2019-01-25",
+      "select": 212.03
+     },
+     {
+      "choice": 214.26,
+      "date": "2019-02-01",
+      "select": 213.15
+     },
+     {
+      "choice": 215.35,
+      "date": "2019-02-08",
+      "select": 211.17
+     },
+     {
+      "choice": 216.85,
+      "date": "2019-02-15",
+      "select": 210.99
+     },
+     {
+      "choice": 219.39,
+      "date": "2019-02-22",
+      "select": 212.35
+     },
+     {
+      "choice": 221.29,
+      "date": "2019-03-01",
+      "select": 216.79
+     },
+     {
+      "choice": 226.13,
+      "date": "2019-03-08",
+      "select": 218.78
+     },
+     {
+      "choice": 226.99,
+      "date": "2019-03-15",
+      "select": 217.34
+     },
+     {
+      "choice": 229.09,
+      "date": "2019-03-22",
+      "select": 218.64
+     },
+     {
+      "choice": 226.04,
+      "date": "2019-03-29",
+      "select": 218.89
+     },
+     {
+      "choice": 226.93,
+      "date": "2019-04-05",
+      "select": 220.28
+     },
+     {
+      "choice": 228.75,
+      "date": "2019-04-12",
+      "select": 221.02
+     },
+     {
+      "choice": 233.65,
+      "date": "2019-04-19",
+      "select": 220.49
+     },
+     {
+      "choice": 232.99,
+      "date": "2019-04-26",
+      "select": 219.41
+     },
+     {
+      "choice": 227.36,
+      "date": "2019-05-03",
+      "select": 213.29
+     },
+     {
+      "choice": 221.11,
+      "date": "2019-05-10",
+      "select": 207.46
+     },
+     {
+      "choice": 220.31,
+      "date": "2019-05-17",
+      "select": 208.28
+     },
+     {
+      "choice": 221.64,
+      "date": "2019-05-24",
+      "select": 208.47
+     },
+     {
+      "choice": 223.21,
+      "date": "2019-05-31",
+      "select": 207.69
+     },
+     {
+      "choice": 222.31,
+      "date": "2019-06-07",
+      "select": 206.92
+     },
+     {
+      "choice": 222.23,
+      "date": "2019-06-14",
+      "select": 202.76
+     },
+     {
+      "choice": 219.82,
+      "date": "2019-06-21",
+      "select": 199.55
+     },
+     {
+      "choice": 219.66,
+      "date": "2019-06-28",
+      "select": 195.56
+     },
+     {
+      "choice": 217.67,
+      "date": "2019-07-05",
+      "select": 194.8
+     },
+     {
+      "choice": 212.8,
+      "date": "2019-07-12",
+      "select": 189.6
+     },
+     {
+      "choice": 213.42,
+      "date": "2019-07-19",
+      "select": 189.51
+     },
+     {
+      "choice": 212.17,
+      "date": "2019-07-26",
+      "select": 188.34
+     },
+     {
+      "choice": 214.73,
+      "date": "2019-08-02",
+      "select": 190.63
+     },
+     {
+      "choice": 216.37,
+      "date": "2019-08-09",
+      "select": 193.81
+     },
+     {
+      "choice": 238.69,
+      "date": "2019-08-16",
+      "select": 213.26
+     },
+     {
+      "choice": 237.52,
+      "date": "2019-08-23",
+      "select": 212.71
+     },
+     {
+      "choice": 231.77,
+      "date": "2019-08-30",
+      "select": 212.27
+     },
+     {
+      "choice": 227.31,
+      "date": "2019-09-06",
+      "select": 201.94
+     },
+     {
+      "choice": 220.88,
+      "date": "2019-09-13",
+      "select": 198.6
+     },
+     {
+      "choice": 216.97,
+      "date": "2019-09-20",
+      "select": 191.72
+     },
+     {
+      "choice": 212.58,
+      "date": "2019-09-27",
+      "select": 189.86
+     },
+     {
+      "choice": 211.96,
+      "date": "2019-10-04",
+      "select": 186.92
+     },
+     {
+      "choice": 215.66,
+      "date": "2019-10-11",
+      "select": 188.68
+     },
+     {
+      "choice": 218.04,
+      "date": "2019-10-18",
+      "select": 193.04
+     },
+     {
+      "choice": 225.44,
+      "date": "2019-10-25",
+      "select": 199.84
+     },
+     {
+      "choice": 233.2,
+      "date": "2019-11-01",
+      "select": 207.51
+     },
+     {
+      "choice": 239.12,
+      "date": "2019-11-08",
+      "select": 213.26
+     },
+     {
+      "choice": 240.8,
+      "date": "2019-11-15",
+      "select": 214.33
+     },
+     {
+      "choice": 232.57,
+      "date": "2019-11-22",
+      "select": 211.32
+     },
+     {
+      "choice": 232.12,
+      "date": "2019-11-29",
+      "select": 210.34
+     },
+     {
+      "choice": 224.56,
+      "date": "2019-12-06",
+      "select": 207.3
+     },
+     {
+      "choice": 216.29,
+      "date": "2019-12-13",
+      "select": 204.24
+     },
+     {
+      "choice": 209.7,
+      "date": "2019-12-20",
+      "select": 201.03
+     },
+     {
+      "choice": 208.96,
+      "date": "2019-12-27",
+      "select": 204.57
+     },
+     {
+      "choice": 208.49,
+      "date": "2020-01-03",
+      "select": 205.39
+     },
+     {
+      "choice": 210.04,
+      "date": "2020-01-10",
+      "select": 206.55
+     },
+     {
+      "choice": 214.17,
+      "date": "2020-01-17",
+      "select": 212.75
+     },
+     {
+      "choice": 214.49,
+      "date": "2020-01-24",
+      "select": 210.7
+     },
+     {
+      "choice": 213.0,
+      "date": "2020-01-31",
+      "select": 210.66
+     },
+     {
+      "choice": 210.12,
+      "date": "2020-02-07",
+      "select": 203.89
+     },
+     {
+      "choice": 208.09,
+      "date": "2020-02-14",
+      "select": 205.71
+     },
+     {
+      "choice": 205.09,
+      "date": "2020-02-21",
+      "select": 201.7
+     },
+     {
+      "choice": 205.3,
+      "date": "2020-02-28",
+      "select": 198.91
+     },
+     {
+      "choice": 207.47,
+      "date": "2020-03-06",
+      "select": 202.57
+     },
+     {
+      "choice": 208.14,
+      "date": "2020-03-13",
+      "select": 201.98
+     },
+     {
+      "choice": 253.75,
+      "date": "2020-03-20",
+      "select": 240.17
+     },
+     {
+      "choice": 252.84,
+      "date": "2020-03-27",
+      "select": 242.38
+     },
+     {
+      "choice": 230.44,
+      "date": "2020-04-03",
+      "select": 215.84
+     },
+     {
+      "choice": 223.93,
+      "date": "2020-04-10",
+      "select": 208.33
+     },
+     {
+      "choice": 238.99,
+      "date": "2020-04-17",
+      "select": 227.2
+     },
+     {
+      "choice": 293.37,
+      "date": "2020-04-24",
+      "select": 279.02
+     },
+     {
+      "choice": 377.45,
+      "date": "2020-05-01",
+      "select": 357.13
+     },
+     {
+      "choice": 460.88,
+      "date": "2020-05-08",
+      "select": 448.99
+     },
+     {
+      "choice": 434.32,
+      "date": "2020-05-15",
+      "select": 419.06
+     },
+     {
+      "choice": 396.74,
+      "date": "2020-05-22",
+      "select": 374.18
+     },
+     {
+      "choice": 363.34,
+      "date": "2020-05-29",
+      "select": 340.07
+     },
+     {
+      "choice": 261.48,
+      "date": "2020-06-05",
+      "select": 246.42
+     },
+     {
+      "choice": 230.64,
+      "date": "2020-06-12",
+      "select": 219.27
+     },
+     {
+      "choice": 213.72,
+      "date": "2020-06-19",
+      "select": 203.91
+     },
+     {
+      "choice": 207.17,
+      "date": "2020-06-26",
+      "select": 198.85
+     },
+     {
+      "choice": 205.44,
+      "date": "2020-07-02",
+      "select": 198.76
+     },
+     {
+      "choice": 204.5,
+      "date": "2020-07-10",
+      "select": 194.29
+     },
+     {
+      "choice": 200.47,
+      "date": "2020-07-17",
+      "select": 190.31
+     },
+     {
+      "choice": 201.77,
+      "date": "2020-07-24",
+      "select": 190.63
+     },
+     {
+      "choice": 203.26,
+      "date": "2020-07-31",
+      "select": 189.89
+     },
+     {
+      "choice": 205.47,
+      "date": "2020-08-07",
+      "select": 192.75
+     },
+     {
+      "choice": 214.24,
+      "date": "2020-08-14",
+      "select": 199.29
+     },
+     {
+      "choice": 225.94,
+      "date": "2020-08-21",
+      "select": 208.99
+     },
+     {
+      "choice": 229.4,
+      "date": "2020-08-28",
+      "select": 214.86
+     },
+     {
+      "choice": 225.85,
+      "date": "2020-09-04",
+      "select": 209.3
+     },
+     {
+      "choice": 219.89,
+      "date": "2020-09-11",
+      "select": 207.1
+     },
+     {
+      "choice": 215.64,
+      "date": "2020-09-18",
+      "select": 203.94
+     },
+     {
+      "choice": 219.34,
+      "date": "2020-09-25",
+      "select": 206.98
+     },
+     {
+      "choice": 218.88,
+      "date": "2020-10-02",
+      "select": 207.61
+     },
+     {
+      "choice": 214.06,
+      "date": "2020-10-09",
+      "select": 199.82
+     },
+     {
+      "choice": 210.03,
+      "date": "2020-10-16",
+      "select": 193.52
+     },
+     {
+      "choice": 207.49,
+      "date": "2020-10-23",
+      "select": 191.4
+     },
+     {
+      "choice": 208.1,
+      "date": "2020-10-30",
+      "select": 191.24
+     },
+     {
+      "choice": 214.32,
+      "date": "2020-11-06",
+      "select": 198.49
+     },
+     {
+      "choice": 225.98,
+      "date": "2020-11-13",
+      "select": 209.46
+     },
+     {
+      "choice": 238.35,
+      "date": "2020-11-20",
+      "select": 214.98
+     },
+     {
+      "choice": 242.85,
+      "date": "2020-11-27",
+      "select": 220.68
+     },
+     {
+      "choice": 235.02,
+      "date": "2020-12-04",
+      "select": 217.51
+     },
+     {
+      "choice": 213.88,
+      "date": "2020-12-11",
+      "select": 195.71
+     },
+     {
+      "choice": 208.63,
+      "date": "2020-12-18",
+      "select": 194.27
+     },
+     {
+      "choice": 207.54,
+      "date": "2020-12-23",
+      "select": 197.93
+     },
+     {
+      "choice": 209.95,
+      "date": "2020-12-31",
+      "select": 195.65
+     },
+     {
+      "choice": 206.8,
+      "date": "2021-01-08",
+      "select": 196.69
+     },
+     {
+      "choice": 212.92,
+      "date": "2021-01-15",
+      "select": 203.08
+     },
+     {
+      "choice": 222.82,
+      "date": "2021-01-22",
+      "select": 213.34
+     },
+     {
+      "choice": 233.95,
+      "date": "2021-01-29",
+      "select": 222.7
+     },
+     {
+      "choice": 234.58,
+      "date": "2021-02-05",
+      "select": 220.79
+     },
+     {
+      "choice": 232.37,
+      "date": "2021-02-12",
+      "select": 220.93
+     },
+     {
+      "choice": 239.23,
+      "date": "2021-02-19",
+      "select": 227.9
+     },
+     {
+      "choice": 240.53,
+      "date": "2021-02-26",
+      "select": 229.73
+     },
+     {
+      "choice": 231.33,
+      "date": "2021-03-05",
+      "select": 220.85
+     },
+     {
+      "choice": 225.87,
+      "date": "2021-03-12",
+      "select": 220.27
+     },
+     {
+      "choice": 229.99,
+      "date": "2021-03-19",
+      "select": 219.95
+     },
+     {
+      "choice": 237.66,
+      "date": "2021-03-26",
+      "select": 227.77
+     },
+     {
+      "choice": 252.85,
+      "date": "2021-04-02",
+      "select": 246.97
+     },
+     {
+      "choice": 272.17,
+      "date": "2021-04-09",
+      "select": 264.07
+     },
+     {
+      "choice": 276.05,
+      "date": "2021-04-16",
+      "select": 269.1
+     },
+     {
+      "choice": 283.77,
+      "date": "2021-04-23",
+      "select": 272.13
+     },
+     {
+      "choice": 296.5,
+      "date": "2021-04-30",
+      "select": 283.05
+     },
+     {
+      "choice": 305.88,
+      "date": "2021-05-07",
+      "select": 290.27
+     },
+     {
+      "choice": 316.94,
+      "date": "2021-05-14",
+      "select": 293.19
+     },
+     {
+      "choice": 325.17,
+      "date": "2021-05-21",
+      "select": 302.31
+     },
+     {
+      "choice": 330.97,
+      "date": "2021-05-28",
+      "select": 300.9
+     },
+     {
+      "choice": 338.98,
+      "date": "2021-06-04",
+      "select": 311.73
+     },
+     {
+      "choice": 337.56,
+      "date": "2021-06-11",
+      "select": 305.21
+     },
+     {
+      "choice": 323.28,
+      "date": "2021-06-18",
+      "select": 283.61
+     },
+     {
+      "choice": 304.56,
+      "date": "2021-06-25",
+      "select": 276.18
+     },
+     {
+      "choice": 285.44,
+      "date": "2021-07-02",
+      "select": 264.41
+     },
+     {
+      "choice": 278.59,
+      "date": "2021-07-09",
+      "select": 257.41
+     },
+     {
+      "choice": 267.94,
+      "date": "2021-07-16",
+      "select": 251.79
+     },
+     {
+      "choice": 266.63,
+      "date": "2021-07-23",
+      "select": 249.94
+     },
+     {
+      "choice": 278.46,
+      "date": "2021-07-30",
+      "select": 259.19
+     },
+     {
+      "choice": 296.26,
+      "date": "2021-08-06",
+      "select": 277.09
+     },
+     {
+      "choice": 324.83,
+      "date": "2021-08-13",
+      "select": 298.02
+     },
+     {
+      "choice": 345.06,
+      "date": "2021-08-20",
+      "select": 318.53
+     },
+     {
+      "choice": 345.34,
+      "date": "2021-08-27",
+      "select": 315.52
+     },
+     {
+      "choice": 336.42,
+      "date": "2021-09-03",
+      "select": 304.13
+     },
+     {
+      "choice": 327.22,
+      "date": "2021-09-10",
+      "select": 293.37
+     },
+     {
+      "choice": 314.47,
+      "date": "2021-09-17",
+      "select": 279.75
+     },
+     {
+      "choice": 303.32,
+      "date": "2021-09-24",
+      "select": 274.53
+     },
+     {
+      "choice": 292.36,
+      "date": "2021-10-01",
+      "select": 264.84
+     },
+     {
+      "choice": 283.27,
+      "date": "2021-10-08",
+      "select": 262.74
+     },
+     {
+      "choice": 280.24,
+      "date": "2021-10-15",
+      "select": 260.62
+     },
+     {
+      "choice": 281.82,
+      "date": "2021-10-22",
+      "select": 263.11
+     },
+     {
+      "choice": 285.72,
+      "date": "2021-10-29",
+      "select": 263.37
+     },
+     {
+      "choice": 289.54,
+      "date": "2021-11-05",
+      "select": 267.52
+     },
+     {
+      "choice": 284.3,
+      "date": "2021-11-12",
+      "select": 269.53
+     },
+     {
+      "choice": 278.41,
+      "date": "2021-11-19",
+      "select": 263.83
+     },
+     {
+      "choice": 280.01,
+      "date": "2021-11-26",
+      "select": 262.28
+     },
+     {
+      "choice": 274.36,
+      "date": "2021-12-03",
+      "select": 258.64
+     },
+     {
+      "choice": 264.54,
+      "date": "2021-12-10",
+      "select": 252.24
+     },
+     {
+      "choice": 263.01,
+      "date": "2021-12-17",
+      "select": 248.28
+     },
+     {
+      "choice": 262.94,
+      "date": "2021-12-23",
+      "select": 252.95
+     },
+     {
+      "choice": 265.26,
+      "date": "2021-12-30",
+      "select": 258.23
+     },
+     {
+      "choice": 271.82,
+      "date": "2022-01-07",
+      "select": 261.1
+     },
+     {
+      "choice": 284.31,
+      "date": "2022-01-14",
+      "select": 273.97
+     },
+     {
+      "choice": 292.41,
+      "date": "2022-01-21",
+      "select": 282.33
+     },
+     {
+      "choice": 290.42,
+      "date": "2022-01-28",
+      "select": 283.41
+     },
+     {
+      "choice": 279.81,
+      "date": "2022-02-04",
+      "select": 276.05
+     },
+     {
+      "choice": 274.52,
+      "date": "2022-02-11",
+      "select": 267.83
+     },
+     {
+      "choice": 265.85,
+      "date": "2022-02-18",
+      "select": 262.63
+     },
+     {
+      "choice": 258.27,
+      "date": "2022-02-25",
+      "select": 255.41
+     },
+     {
+      "choice": 254.33,
+      "date": "2022-03-04",
+      "select": 248.41
+     },
+     {
+      "choice": 254.71,
+      "date": "2022-03-11",
+      "select": 249.11
+     },
+     {
+      "choice": 258.16,
+      "date": "2022-03-18",
+      "select": 250.65
+     },
+     {
+      "choice": 262.64,
+      "date": "2022-03-25",
+      "select": 252.14
+     },
+     {
+      "choice": 267.14,
+      "date": "2022-04-01",
+      "select": 262.52
+     },
+     {
+      "choice": 270.47,
+      "date": "2022-04-08",
+      "select": 260.33
+     },
+     {
+      "choice": 272.62,
+      "date": "2022-04-15",
+      "select": 258.9
+     },
+     {
+      "choice": 267.91,
+      "date": "2022-04-22",
+      "select": 254.77
+     },
+     {
+      "choice": 260.78,
+      "date": "2022-04-29",
+      "select": 247.97
+     },
+     {
+      "choice": 254.44,
+      "date": "2022-05-06",
+      "select": 245.06
+     },
+     {
+      "choice": 258.95,
+      "date": "2022-05-13",
+      "select": 243.9
+     },
+     {
+      "choice": 262.17,
+      "date": "2022-05-20",
+      "select": 243.02
+     },
+     {
+      "choice": 265.42,
+      "date": "2022-05-27",
+      "select": 246.5
+     },
+     {
+      "choice": 267.26,
+      "date": "2022-06-03",
+      "select": 250.02
+     },
+     {
+      "choice": 271.32,
+      "date": "2022-06-10",
+      "select": 248.89
+     },
+     {
+      "choice": 266.26,
+      "date": "2022-06-17",
+      "select": 246.53
+     },
+     {
+      "choice": 264.98,
+      "date": "2022-06-24",
+      "select": 245.02
+     },
+     {
+      "choice": 263.82,
+      "date": "2022-07-01",
+      "select": 240.47
+     },
+     {
+      "choice": 267.89,
+      "date": "2022-07-08",
+      "select": 241.85
+     },
+     {
+      "choice": 268.91,
+      "date": "2022-07-15",
+      "select": 241.79
+     },
+     {
+      "choice": 267.12,
+      "date": "2022-07-22",
+      "select": 242.5
+     },
+     {
+      "choice": 269.24,
+      "date": "2022-07-29",
+      "select": 242.25
+     },
+     {
+      "choice": 264.62,
+      "date": "2022-08-05",
+      "select": 238.67
+     },
+     {
+      "choice": 263.37,
+      "date": "2022-08-12",
+      "select": 239.59
+     },
+     {
+      "choice": 264.28,
+      "date": "2022-08-19",
+      "select": 237.94
+     },
+     {
+      "choice": 262.76,
+      "date": "2022-08-26",
+      "select": 238.76
+     },
+     {
+      "choice": 259.42,
+      "date": "2022-09-02",
+      "select": 238.58
+     },
+     {
+      "choice": 257.26,
+      "date": "2022-09-09",
+      "select": 234.73
+     },
+     {
+      "choice": 252.4,
+      "date": "2022-09-16",
+      "select": 226.65
+     },
+     {
+      "choice": 248.63,
+      "date": "2022-09-23",
+      "select": 219.31
+     },
+     {
+      "choice": 243.75,
+      "date": "2022-09-30",
+      "select": 220.13
+     },
+     {
+      "choice": 246.07,
+      "date": "2022-10-07",
+      "select": 216.13
+     },
+     {
+      "choice": 246.98,
+      "date": "2022-10-14",
+      "select": 216.94
+     },
+     {
+      "choice": 253.71,
+      "date": "2022-10-21",
+      "select": 224.36
+     },
+     {
+      "choice": 263.26,
+      "date": "2022-10-28",
+      "select": 234.49
+     },
+     {
+      "choice": 263.75,
+      "date": "2022-11-04",
+      "select": 231.9
+     },
+     {
+      "choice": 258.94,
+      "date": "2022-11-11",
+      "select": 235.27
+     },
+     {
+      "choice": 254.87,
+      "date": "2022-11-18",
+      "select": 232.83
+     },
+     {
+      "choice": 251.83,
+      "date": "2022-11-25",
+      "select": 234.37
+     },
+     {
+      "choice": 249.93,
+      "date": "2022-12-02",
+      "select": 224.56
+     },
+     {
+      "choice": 248.93,
+      "date": "2022-12-09",
+      "select": 221.26
+     },
+     {
+      "choice": 262.83,
+      "date": "2022-12-16",
+      "select": 235.45
+     },
+     {
+      "choice": 271.95,
+      "date": "2022-12-23",
+      "select": 245.47
+     },
+     {
+      "choice": 281.98,
+      "date": "2022-12-30",
+      "select": 250.93
+     },
+     {
+      "choice": 282.99,
+      "date": "2023-01-06",
+      "select": 259.34
+     },
+     {
+      "choice": 276.62,
+      "date": "2023-01-13",
+      "select": 256.89
+     },
+     {
+      "choice": 271.72,
+      "date": "2023-01-20",
+      "select": 256.43
+     },
+     {
+      "choice": 267.76,
+      "date": "2023-01-27",
+      "select": 250.54
+     },
+     {
+      "choice": 264.74,
+      "date": "2023-02-03",
+      "select": 251.61
+     },
+     {
+      "choice": 269.66,
+      "date": "2023-02-10",
+      "select": 254.29
+     },
+     {
+      "choice": 281.04,
+      "date": "2023-02-17",
+      "select": 265.89
+     },
+     {
+      "choice": 287.28,
+      "date": "2023-02-24",
+      "select": 277.08
+     },
+     {
+      "choice": 289.32,
+      "date": "2023-03-03",
+      "select": 276.86
+     },
+     {
+      "choice": 284.91,
+      "date": "2023-03-10",
+      "select": 271.54
+     },
+     {
+      "choice": 283.35,
+      "date": "2023-03-17",
+      "select": 272.44
+     },
+     {
+      "choice": 279.88,
+      "date": "2023-03-24",
+      "select": 268.75
+     },
+     {
+      "choice": 282.07,
+      "date": "2023-03-31",
+      "select": 270.72
+     },
+     {
+      "choice": 290.98,
+      "date": "2023-04-07",
+      "select": 275.78
+     },
+     {
+      "choice": 302.62,
+      "date": "2023-04-14",
+      "select": 283.87
+     },
+     {
+      "choice": 306.6,
+      "date": "2023-04-21",
+      "select": 287.8
+     },
+     {
+      "choice": 311.44,
+      "date": "2023-04-28",
+      "select": 288.34
+     },
+     {
+      "choice": 309.19,
+      "date": "2023-05-05",
+      "select": 288.16
+     },
+     {
+      "choice": 304.61,
+      "date": "2023-05-12",
+      "select": 284.68
+     },
+     {
+      "choice": 301.1,
+      "date": "2023-05-19",
+      "select": 283.94
+     },
+     {
+      "choice": 303.93,
+      "date": "2023-05-26",
+      "select": 284.92
+     },
+     {
+      "choice": 309.93,
+      "date": "2023-06-02",
+      "select": 290.93
+     },
+     {
+      "choice": 332.93,
+      "date": "2023-06-09",
+      "select": 305.71
+     },
+     {
+      "choice": 343.09,
+      "date": "2023-06-16",
+      "select": 310.95
+     },
+     {
+      "choice": 334.01,
+      "date": "2023-06-23",
+      "select": 299.96
+     },
+     {
+      "choice": 327.72,
+      "date": "2023-06-30",
+      "select": 293.63
+     },
+     {
+      "choice": 316.9,
+      "date": "2023-07-07",
+      "select": 285.63
+     },
+     {
+      "choice": 305.94,
+      "date": "2023-07-14",
+      "select": 276.61
+     },
+     {
+      "choice": 302.74,
+      "date": "2023-07-21",
+      "select": 276.73
+     },
+     {
+      "choice": 302.0,
+      "date": "2023-07-28",
+      "select": 277.54
+     },
+     {
+      "choice": 301.79,
+      "date": "2023-08-04",
+      "select": 276.48
+     },
+     {
+      "choice": 302.61,
+      "date": "2023-08-11",
+      "select": 277.23
+     },
+     {
+      "choice": 316.11,
+      "date": "2023-08-18",
+      "select": 288.36
+     },
+     {
+      "choice": 317.9,
+      "date": "2023-08-25",
+      "select": 292.67
+     },
+     {
+      "choice": 314.49,
+      "date": "2023-09-01",
+      "select": 290.29
+     },
+     {
+      "choice": 312.9,
+      "date": "2023-09-08",
+      "select": 286.05
+     },
+     {
+      "choice": 305.71,
+      "date": "2023-09-15",
+      "select": 283.12
+     },
+     {
+      "choice": 303.33,
+      "date": "2023-09-22",
+      "select": 280.43
+     },
+     {
+      "choice": 300.78,
+      "date": "2023-09-29",
+      "select": 276.04
+     },
+     {
+      "choice": 302.01,
+      "date": "2023-10-06",
+      "select": 275.78
+     },
+     {
+      "choice": 300.8,
+      "date": "2023-10-13",
+      "select": 275.49
+     },
+     {
+      "choice": 305.38,
+      "date": "2023-10-20",
+      "select": 278.7
+     },
+     {
+      "choice": 307.57,
+      "date": "2023-10-27",
+      "select": 280.12
+     },
+     {
+      "choice": 302.34,
+      "date": "2023-11-03",
+      "select": 272.01
+     },
+     {
+      "choice": 300.46,
+      "date": "2023-11-10",
+      "select": 267.42
+     },
+     {
+      "choice": 293.87,
+      "date": "2023-11-17",
+      "select": 270.7
+     },
+     {
+      "choice": 298.03,
+      "date": "2023-11-24",
+      "select": 268.76
+     },
+     {
+      "choice": 297.46,
+      "date": "2023-12-01",
+      "select": 265.49
+     },
+     {
+      "choice": 288.01,
+      "date": "2023-12-08",
+      "select": 257.9
+     },
+     {
+      "choice": 291.64,
+      "date": "2023-12-15",
+      "select": 260.82
+     },
+     {
+      "choice": 292.93,
+      "date": "2023-12-22",
+      "select": 261.15
+     },
+     {
+      "choice": 289.71,
+      "date": "2023-12-29",
+      "select": 260.33
+     },
+     {
+      "choice": 277.16,
+      "date": "2024-01-05",
+      "select": 259.53
+     },
+     {
+      "choice": 289.26,
+      "date": "2024-01-12",
+      "select": 271.85
+     },
+     {
+      "choice": 295.5,
+      "date": "2024-01-19",
+      "select": 283.05
+     },
+     {
+      "choice": 300.53,
+      "date": "2024-01-26",
+      "select": 289.13
+     },
+     {
+      "choice": 293.08,
+      "date": "2024-02-02",
+      "select": 283.47
+     },
+     {
+      "choice": 294.04,
+      "date": "2024-02-09",
+      "select": 285.08
+     },
+     {
+      "choice": 296.2,
+      "date": "2024-02-16",
+      "select": 286.66
+     },
+     {
+      "choice": 300.61,
+      "date": "2024-02-23",
+      "select": 286.31
+     },
+     {
+      "choice": 305.28,
+      "date": "2024-03-01",
+      "select": 295.74
+     },
+     {
+      "choice": 307.04,
+      "date": "2024-03-08",
+      "select": 297.43
+     },
+     {
+      "choice": 311.9,
+      "date": "2024-03-15",
+      "select": 302.4
+     },
+     {
+      "choice": 310.72,
+      "date": "2024-03-22",
+      "select": 301.47
+     },
+     {
+      "choice": 306.72,
+      "date": "2024-03-29",
+      "select": 303.43
+     },
+     {
+      "choice": 297.17,
+      "date": "2024-04-05",
+      "select": 294.7
+     },
+     {
+      "choice": 300.57,
+      "date": "2024-04-12",
+      "select": 295.54
+     },
+     {
+      "choice": 295.67,
+      "date": "2024-04-19",
+      "select": 290.83
+     },
+     {
+      "choice": 297.14,
+      "date": "2024-04-26",
+      "select": 288.72
+     },
+     {
+      "choice": 294.2,
+      "date": "2024-05-03",
+      "select": 287.65
+     },
+     {
+      "choice": 294.57,
+      "date": "2024-05-10",
+      "select": 284.17
+     },
+     {
+      "choice": 313.45,
+      "date": "2024-05-17",
+      "select": 297.4
+     },
+     {
+      "choice": 310.45,
+      "date": "2024-05-24",
+      "select": 301.72
+     },
+     {
+      "choice": 313.2,
+      "date": "2024-05-31",
+      "select": 301.71
+     },
+     {
+      "choice": 316.75,
+      "date": "2024-06-07",
+      "select": 301.14
+     },
+     {
+      "choice": 319.89,
+      "date": "2024-06-14",
+      "select": 303.81
+     },
+     {
+      "choice": 322.39,
+      "date": "2024-06-21",
+      "select": 303.11
+     },
+     {
+      "choice": 326.32,
+      "date": "2024-06-28",
+      "select": 304.5
+     },
+     {
+      "choice": 330.43,
+      "date": "2024-07-05",
+      "select": 305.06
+     },
+     {
+      "choice": 322.06,
+      "date": "2024-07-12",
+      "select": 302.31
+     },
+     {
+      "choice": 313.83,
+      "date": "2024-07-19",
+      "select": 298.8
+     },
+     {
+      "choice": 313.77,
+      "date": "2024-07-26",
+      "select": 297.46
+     },
+     {
+      "choice": 313.77,
+      "date": "2024-08-02",
+      "select": 297.17
+     },
+     {
+      "choice": 312.71,
+      "date": "2024-08-09",
+      "select": 298.59
+     },
+     {
+      "choice": 317.45,
+      "date": "2024-08-16",
+      "select": 302.59
+     },
+     {
+      "choice": 317.34,
+      "date": "2024-08-23",
+      "select": 300.46
+     },
+     {
+      "choice": 309.34,
+      "date": "2024-08-30",
+      "select": 295.82
+     },
+     {
+      "choice": 309.41,
+      "date": "2024-09-06",
+      "select": 296.12
+     },
+     {
+      "choice": 304.91,
+      "date": "2024-09-13",
+      "select": 294.17
+     },
+     {
+      "choice": 300.19,
+      "date": "2024-09-20",
+      "select": 288.59
+     },
+     {
+      "choice": 296.69,
+      "date": "2024-09-27",
+      "select": 282.08
+     },
+     {
+      "choice": 302.58,
+      "date": "2024-10-04",
+      "select": 287.61
+     },
+     {
+      "choice": 311.22,
+      "date": "2024-10-11",
+      "select": 288.72
+     },
+     {
+      "choice": 320.65,
+      "date": "2024-10-18",
+      "select": 294.2
+     },
+     {
+      "choice": 322.24,
+      "date": "2024-10-25",
+      "select": 295.08
+     },
+     {
+      "choice": 316.34,
+      "date": "2024-11-01",
+      "select": 285.03
+     },
+     {
+      "choice": 307.93,
+      "date": "2024-11-08",
+      "select": 279.19
+     },
+     {
+      "choice": 303.34,
+      "date": "2024-11-15",
+      "select": 276.14
+     },
+     {
+      "choice": 307.41,
+      "date": "2024-11-22",
+      "select": 272.07
+     },
+     {
+      "choice": 310.52,
+      "date": "2024-11-29",
+      "select": 274.3
+     },
+     {
+      "choice": 312.04,
+      "date": "2024-12-06",
+      "select": 276.73
+     },
+     {
+      "choice": 316.39,
+      "date": "2024-12-13",
+      "select": 283.86
+     },
+     {
+      "choice": 315.85,
+      "date": "2024-12-20",
+      "select": 285.91
+     },
+     {
+      "choice": 322.38,
+      "date": "2024-12-27",
+      "select": 291.13
+     },
+     {
+      "choice": 325.24,
+      "date": "2025-01-03",
+      "select": 296.72
+     },
+     {
+      "choice": 332.84,
+      "date": "2025-01-10",
+      "select": 314.14
+     },
+     {
+      "choice": 333.69,
+      "date": "2025-01-17",
+      "select": 319.83
+     },
+     {
+      "choice": 327.92,
+      "date": "2025-01-24",
+      "select": 316.29
+     },
+     {
+      "choice": 327.68,
+      "date": "2025-01-31",
+      "select": 317.07
+     },
+     {
+      "choice": 321.87,
+      "date": "2025-02-07",
+      "select": 312.9
+     },
+     {
+      "choice": 314.7,
+      "date": "2025-02-14",
+      "select": 307.14
+     },
+     {
+      "choice": 310.77,
+      "date": "2025-02-21",
+      "select": 302.56
+     },
+     {
+      "choice": 311.83,
+      "date": "2025-02-28",
+      "select": 302.05
+     },
+     {
+      "choice": 314.9,
+      "date": "2025-03-07",
+      "select": 305.8
+     },
+     {
+      "choice": 318.27,
+      "date": "2025-03-14",
+      "select": 306.32
+     },
+     {
+      "choice": 325.45,
+      "date": "2025-03-21",
+      "select": 309.62
+     },
+     {
+      "choice": 332.82,
+      "date": "2025-03-28",
+      "select": 318.68
+     },
+     {
+      "choice": 338.45,
+      "date": "2025-04-04",
+      "select": 317.18
+     },
+     {
+      "choice": 334.22,
+      "date": "2025-04-11",
+      "select": 313.96
+     },
+     {
+      "choice": 331.52,
+      "date": "2025-04-18",
+      "select": 315.55
+     },
+     {
+      "choice": 336.48,
+      "date": "2025-04-25",
+      "select": 320.11
+     },
+     {
+      "choice": 342.9,
+      "date": "2025-05-02",
+      "select": 325.35
+     },
+     {
+      "choice": 345.97,
+      "date": "2025-05-09",
+      "select": 331.17
+     },
+     {
+      "choice": 352.49,
+      "date": "2025-05-16",
+      "select": 342.39
+     },
+     {
+      "choice": 361.55,
+      "date": "2025-05-23",
+      "select": 351.32
+     },
+     {
+      "choice": 366.34,
+      "date": "2025-05-30",
+      "select": 356.65
+     },
+     {
+      "choice": 365.08,
+      "date": "2025-06-06",
+      "select": 356.73
+     },
+     {
+      "choice": 377.88,
+      "date": "2025-06-13",
+      "select": 363.5
+     },
+     {
+      "choice": 390.5,
+      "date": "2025-06-20",
+      "select": 376.95
+     },
+     {
+      "choice": 396.49,
+      "date": "2025-06-27",
+      "select": 382.93
+     },
+     {
+      "choice": 389.75,
+      "date": "2025-07-03",
+      "select": 378.44
+     },
+     {
+      "choice": 378.64,
+      "date": "2025-07-11",
+      "select": 366.49
+     },
+     {
+      "choice": 373.55,
+      "date": "2025-07-18",
+      "select": 351.49
+     },
+     {
+      "choice": 366.68,
+      "date": "2025-07-25",
+      "select": 344.87
+     },
+     {
+      "choice": 363.22,
+      "date": "2025-08-01",
+      "select": 340.5
+     },
+     {
+      "choice": 378.84,
+      "date": "2025-08-08",
+      "select": 355.09
+     },
+     {
+      "choice": 400.57,
+      "date": "2025-08-15",
+      "select": 370.76
+     },
+     {
+      "choice": 407.91,
+      "date": "2025-08-22",
+      "select": 383.66
+     },
+     {
+      "choice": 415.41,
+      "date": "2025-08-29",
+      "select": 390.0
+     },
+     {
+      "choice": 410.76,
+      "date": "2025-09-05",
+      "select": 385.19
+     },
+     {
+      "choice": 400.04,
+      "date": "2025-09-12",
+      "select": 378.44
+     },
+     {
+      "choice": 382.05,
+      "date": "2025-09-19",
+      "select": 359.92
+     },
+     {
+      "choice": 371.43,
+      "date": "2025-09-26",
+      "select": 352.44
+     },
+     {
+      "choice": 362.27,
+      "date": "2025-10-03",
+      "select": 345.38
+     },
+     {
+      "choice": 365.57,
+      "date": "2025-10-10",
+      "select": 346.39
+     },
+     {
+      "choice": 366.77,
+      "date": "2025-10-17",
+      "select": 350.27
+     },
+     {
+      "choice": 375.76,
+      "date": "2025-10-24",
+      "select": 357.97
+     },
+     {
+      "choice": 378.13,
+      "date": "2025-10-31",
+      "select": 358.65
+     },
+     {
+      "choice": 376.4,
+      "date": "2025-11-07",
+      "select": 361.09
+     },
+     {
+      "choice": 370.73,
+      "date": "2025-11-14",
+      "select": 354.24
+     },
+     {
+      "choice": 371.48,
+      "date": "2025-11-21",
+      "select": 356.98
+     },
+     {
+      "choice": 366.82,
+      "date": "2025-11-28",
+      "select": 351.05
+     },
+     {
+      "choice": 361.2,
+      "date": "2025-12-05",
+      "select": 347.39
+     },
+     {
+      "choice": 357.44,
+      "date": "2025-12-12",
+      "select": 344.22
+     },
+     {
+      "choice": 361.63,
+      "date": "2025-12-19",
+      "select": 346.02
+     },
+     {
+      "choice": 351.21,
+      "date": "2025-12-26",
+      "select": 343.8
+     },
+     {
+      "choice": 349.97,
+      "date": "2026-01-02",
+      "select": 346.92
+     },
+     {
+      "choice": 355.63,
+      "date": "2026-01-09",
+      "select": 352.17
+     },
+     {
+      "choice": 362.38,
+      "date": "2026-01-16",
+      "select": 360.19
+     },
+     {
+      "choice": 368.92,
+      "date": "2026-01-23",
+      "select": 362.39
+     },
+     {
+      "choice": 365.56,
+      "date": "2026-01-30",
+      "select": 361.94
+     },
+     {
+      "choice": 369.33,
+      "date": "2026-02-06",
+      "select": 364.53
+     },
+     {
+      "choice": 364.47,
+      "date": "2026-02-13",
+      "select": 363.42
+     },
+     {
+      "choice": 366.7,
+      "date": "2026-02-20",
+      "select": 360.74
+     },
+     {
+      "choice": 379.84,
+      "date": "2026-02-27",
+      "select": 374.31
+     },
+     {
+      "choice": 387.22,
+      "date": "2026-03-06",
+      "select": 378.95
+     },
+     {
+      "choice": 397.92,
+      "date": "2026-03-13",
+      "select": 391.54
+     },
+     {
+      "choice": 400.11,
+      "date": "2026-03-20",
+      "select": 392.94
+     },
+     {
+      "choice": 392.97,
+      "date": "2026-03-27",
+      "select": 389.87
+     },
+     {
+      "choice": 387.78,
+      "date": "2026-04-03",
+      "select": 386.19
+     },
+     {
+      "choice": 380.9,
+      "date": "2026-04-10",
+      "select": 381.34
+     },
+     {
+      "choice": 381.06,
+      "date": "2026-04-17",
+      "select": 376.6
+     },
+     {
+      "choice": 387.0,
+      "date": "2026-04-24",
+      "select": 386.07
+     },
+     {
+      "choice": 389.11,
+      "date": "2026-05-01",
+      "select": 387.05
+     },
+     {
+      "choice": 388.39,
+      "date": "2026-05-08",
+      "select": 385.01
+     },
+     {
+      "choice": 389.25,
+      "date": "2026-05-15",
+      "select": 389.25
+     },
+     {
+      "choice": 390.27,
+      "date": "2026-05-22",
+      "select": 385.0
+     },
+     {
+      "choice": 391.47,
+      "date": "2026-05-29",
+      "select": 383.18
+     },
+     {
+      "choice": 392.7,
+      "date": "2026-06-05",
+      "select": 382.69
+     },
+     {
+      "choice": 391.93,
+      "date": "2026-06-12",
+      "select": 372.72
+     },
+     {
+      "choice": 394.37,
+      "date": "2026-06-19",
+      "select": 372.08
+     },
+     {
+      "choice": 391.03,
+      "date": "2026-06-26",
+      "select": 371.58
+     },
+     {
+      "choice": 387.07,
+      "date": "2026-07-02",
+      "select": 367.43
+     },
+     {
+      "choice": 382.68,
+      "date": "2026-07-10",
+      "select": 368.33
+     },
+     {
+      "choice": 366.81,
+      "date": "2026-07-17",
+      "select": 355.29
+     },
+     {
+      "choice": 361.24,
+      "date": "2026-07-24",
+      "select": 346.71
+     },
+     {
+      "choice": 361.38,
+      "date": "2026-07-31",
+      "select": 346.23
+     },
+     {
+      "choice": 364.36,
+      "date": "2026-08-07",
+      "select": 352.37
+     },
+     {
+      "choice": 375.3,
+      "date": "2026-08-14",
+      "select": 351.24
+     },
+     {
+      "choice": 385.69,
+      "date": "2026-08-21",
+      "select": 361.32
+     },
+     {
+      "choice": 376.23,
+      "date": "2026-08-28",
+      "select": 361.08
+     },
+     {
+      "choice": 376.17,
+      "date": "2026-09-04",
+      "select": 355.87
+     },
+     {
+      "choice": 375.94,
+      "date": "2026-09-11",
+      "select": 353.13
+     },
+     {
+      "choice": 371.94,
+      "date": "2026-09-18",
+      "select": 353.26
+     },
+     {
+      "choice": 378.83,
+      "date": "2026-09-25",
+      "select": 355.76
+     },
+     {
+      "choice": 374.19,
+      "date": "2026-10-02",
+      "select": 354.49
+     },
+     {
+      "choice": 373.35,
+      "date": "2026-10-09",
+      "select": 354.3
+     },
+     {
+      "choice": 376.5,
+      "date": "2026-10-14",
+      "select": 358.47
+     }
+    ],
+    "primals": [
+     {
+      "choice": 672.92,
+      "primal": "Rib",
+      "select": 579.06
+     },
+     {
+      "choice": 338.89,
+      "primal": "Chuck",
+      "select": 341.69
+     },
+     {
+      "choice": 297.56,
+      "primal": "Round",
+      "select": 295.59
+     },
+     {
+      "choice": 457.74,
+      "primal": "Loin",
+      "select": 421.55
+     },
+     {
+      "choice": 292.09,
+      "primal": "Brisket",
+      "select": 288.22
+     },
+     {
+      "choice": 224.67,
+      "primal": "Plate",
+      "select": 224.67
+     },
+     {
+      "choice": 157.19,
+      "primal": "Flank",
+      "select": 162.1
+     }
+    ],
+    "report_date": "2026-10-14",
+    "select": 358.47
+   },
+   "hogs": {
+    "all": 74301700.0,
+    "all_prior_year": 75438400.0,
+    "breeding": 5874700.0,
+    "breeding_prior_year": 5936300.0,
+    "loaded": "2026-09-24",
+    "market": 68427000.0,
+    "market_prior_year": 69502100.0,
+    "ref": "2026-09-01"
+   }
+  },
+  "updated": "2026-10-15"
+ },
+ "publications": {
+  "data": {
+   "items": [
+    {
+     "author": "Mitch Clodfelter",
+     "cover": "2026-09-15-what-are-grain-prices-going-to-do.jpg",
+     "date": "2026-09-15",
+     "excerpt": "\u201cIf a man can write a better book, preach a better sermon or make a better mouse trap than his neighbors, though he builds his house in the woods, the world will make a beaten path to his door\u201d - Ralph Waldo Emerson First load of Harvest 2026 This past\u2026",
+     "file": "2026-09-15-what-are-grain-prices-going-to-do.pdf",
+     "pages": 4,
+     "subtitle": "The secret no one tells you about predicting price",
+     "title": "What are grain prices going to do?"
+    },
+    {
+     "author": "Mitch Clodfelter",
+     "cover": "2026-09-10-weekly-note.jpg",
+     "date": "2026-09-10",
+     "excerpt": "This week is a reminder that any and all technical analysis doesn\u2019t matter until the day it does. By almost any account, grains should be backing off here. They\u2019ve been showing overbought for some time, with unproven yield data. And still they remain. Corn\u2026",
+     "file": "2026-09-10-weekly-note.pdf",
+     "pages": 10,
+     "subtitle": "Impressive",
+     "title": "Weekly Note: 9.10.26"
+    },
+    {
+     "author": "Mitch Clodfelter",
+     "cover": "2026-09-04-weekly-note.jpg",
+     "date": "2026-09-04",
+     "excerpt": "\u201cLife is too short so love the one you got cause you might get runover or you might get shot\u201d -Sublime Happy Friday. Once again, it\u2019s been an exciting week to be in the grain trade. Price action has been impressive, with a few days of corn and beans getting\u2026",
+     "file": "2026-09-04-weekly-note.pdf",
+     "pages": 7,
+     "subtitle": "The one you got",
+     "title": "Weekly Note: 9.4.26"
+    },
+    {
+     "author": "Mitch Clodfelter",
+     "cover": "2026-08-27-weekly-note.jpg",
+     "date": "2026-08-27",
+     "excerpt": "To be the bridge between noise and reality for the benefit of our clients I\u2019m tossing around the idea of the above as a mission statement. It seems relevant to what I\u2019m trying to accomplish. I\u2019m always seeking reality and what is truly driving price. Moreso\u2026",
+     "file": "2026-08-27-weekly-note.pdf",
+     "pages": 7,
+     "subtitle": "Monkey Business",
+     "title": "Weekly Note: 8.27.26"
+    }
+   ]
+  },
+  "updated": "2026-10-15"
+ },
+ "wasde": {
+  "data": {
+   "released": "2026-10-09",
+   "report_month": "October 2026",
+   "report_number": "676",
+   "source_url": "https://www.usda.gov/oce/commodity/wasde/wasde1026.txt",
+   "tables": {
+    "Corn": {
+     "columns": [
+      "2024/25",
+      "2025/26 Est.",
+      "2026/27 Proj. Sep",
+      "2026/27 Proj. Oct"
+     ],
+     "rows": [
+      {
+       "label": "Area Planted",
+       "unit": "Million Acres",
+       "values": [
+        90.9,
+        98.7,
+        96.8,
+        96.8
+       ]
+      },
+      {
+       "label": "Area Harvested",
+       "unit": "Million Acres",
+       "values": [
+        83.0,
+        90.9,
+        88.5,
+        88.5
+       ]
+      },
+      {
+       "label": "Yield per Harvested Acre",
+       "unit": "Bushels",
+       "values": [
+        179.3,
+        186.5,
+        178.5,
+        181.2
+       ]
+      },
+      {
+       "label": "Beginning Stocks",
+       "unit": "Million Bushels",
+       "values": [
+        1763.0,
+        1551.0,
+        1922.0,
+        2095.0
+       ]
+      },
+      {
+       "label": "Production",
+       "unit": "Million Bushels",
+       "values": [
+        14892.0,
+        16964.0,
+        15800.0,
+        16034.0
+       ]
+      },
+      {
+       "label": "Imports",
+       "unit": "Million Bushels",
+       "values": [
+        22.0,
+        31.0,
+        25.0,
+        25.0
+       ]
+      },
+      {
+       "label": "Supply, Total",
+       "unit": "Million Bushels",
+       "values": [
+        16677.0,
+        18546.0,
+        17747.0,
+        18154.0
+       ]
+      },
+      {
+       "label": "Feed and Residual",
+       "unit": "Million Bushels",
+       "values": [
+        5437.0,
+        6119.0,
+        5950.0,
+        6000.0
+       ]
+      },
+      {
+       "label": "Food,Seed& Industrial",
+       "unit": "Million Bushels",
+       "values": [
+        6816.0,
+        6903.0,
+        6955.0,
+        7005.0
+       ]
+      },
+      {
+       "label": "Ethanol & by-products",
+       "unit": "Million Bushels",
+       "values": [
+        5437.0,
+        5547.0,
+        5600.0,
+        5650.0
+       ]
+      },
+      {
+       "label": "Domestic, Total",
+       "unit": "Million Bushels",
+       "values": [
+        12253.0,
+        13022.0,
+        12905.0,
+        13005.0
+       ]
+      },
+      {
+       "label": "Exports",
+       "unit": "Million Bushels",
+       "values": [
+        2873.0,
+        3429.0,
+        3275.0,
+        3300.0
+       ]
+      },
+      {
+       "label": "Use, Total",
+       "unit": "Million Bushels",
+       "values": [
+        15126.0,
+        16451.0,
+        16180.0,
+        16305.0
+       ]
+      },
+      {
+       "label": "Ending Stocks",
+       "unit": "Million Bushels",
+       "values": [
+        1551.0,
+        2095.0,
+        1567.0,
+        1849.0
+       ]
+      },
+      {
+       "label": "Avg.FarmPrice ($/bu)",
+       "unit": "Price",
+       "values": [
+        4.24,
+        4.16,
+        4.8,
+        4.7
+       ]
+      }
+     ]
+    },
+    "Soybean Meal": {
+     "columns": [
+      "2024/25",
+      "2025/26 Est.",
+      "2026/27 Proj. Sep",
+      "2026/27 Proj. Oct"
+     ],
+     "rows": [
+      {
+       "label": "Beginning Stocks",
+       "unit": "Thousand Short Tons",
+       "values": [
+        453.0,
+        398.0,
+        450.0,
+        450.0
+       ]
+      },
+      {
+       "label": "Production",
+       "unit": "Thousand Short Tons",
+       "values": [
+        58443.0,
+        62912.0,
+        65800.0,
+        65800.0
+       ]
+      },
+      {
+       "label": "Imports",
+       "unit": "Thousand Short Tons",
+       "values": [
+        806.0,
+        1015.0,
+        900.0,
+        1000.0
+       ]
+      },
+      {
+       "label": "Supply, Total",
+       "unit": "Thousand Short Tons",
+       "values": [
+        59703.0,
+        64325.0,
+        67150.0,
+        67250.0
+       ]
+      },
+      {
+       "label": "Domestic Disappearance",
+       "unit": "Thousand Short Tons",
+       "values": [
+        41232.0,
+        43375.0,
+        44000.0,
+        44100.0
+       ]
+      },
+      {
+       "label": "Exports",
+       "unit": "Thousand Short Tons",
+       "values": [
+        18073.0,
+        20500.0,
+        22700.0,
+        22700.0
+       ]
+      },
+      {
+       "label": "Use, Total",
+       "unit": "Thousand Short Tons",
+       "values": [
+        59305.0,
+        63875.0,
+        66700.0,
+        66800.0
+       ]
+      },
+      {
+       "label": "Ending Stocks",
+       "unit": "Thousand Short Tons",
+       "values": [
+        398.0,
+        450.0,
+        450.0,
+        450.0
+       ]
+      },
+      {
+       "label": "Avg. Price ($/s.t.)",
+       "unit": "Price",
+       "values": [
+        300.33,
+        325.32,
+        340.0,
+        340.0
+       ]
+      }
+     ]
+    },
+    "Soybean Oil": {
+     "columns": [
+      "2024/25",
+      "2025/26 Est.",
+      "2026/27 Proj. Sep",
+      "2026/27 Proj. Oct"
+     ],
+     "rows": [
+      {
+       "label": "Beginning Stocks",
+       "unit": "Million Pounds",
+       "values": [
+        1551.0,
+        1747.0,
+        1837.0,
+        1657.0
+       ]
+      },
+      {
+       "label": "Production",
+       "unit": "Million Pounds",
+       "values": [
+        29218.0,
+        30715.0,
+        32945.0,
+        32945.0
+       ]
+      },
+      {
+       "label": "Imports",
+       "unit": "Million Pounds",
+       "values": [
+        362.0,
+        525.0,
+        600.0,
+        700.0
+       ]
+      },
+      {
+       "label": "Supply, Total",
+       "unit": "Million Pounds",
+       "values": [
+        31131.0,
+        32987.0,
+        35382.0,
+        35302.0
+       ]
+      },
+      {
+       "label": "Domestic Disappearance",
+       "unit": "Million Pounds",
+       "values": [
+        26912.0,
+        30355.0,
+        33105.0,
+        33105.0
+       ]
+      },
+      {
+       "label": "Biofuel",
+       "unit": "Million Pounds",
+       "values": [
+        11758.0,
+        14800.0,
+        17800.0,
+        17800.0
+       ]
+      },
+      {
+       "label": "Food, Feed & other Industrial",
+       "unit": "Million Pounds",
+       "values": [
+        15154.0,
+        15555.0,
+        15305.0,
+        15305.0
+       ]
+      },
+      {
+       "label": "Exports",
+       "unit": "Million Pounds",
+       "values": [
+        2472.0,
+        975.0,
+        400.0,
+        400.0
+       ]
+      },
+      {
+       "label": "Use, Total",
+       "unit": "Million Pounds",
+       "values": [
+        29384.0,
+        31330.0,
+        33505.0,
+        33505.0
+       ]
+      },
+      {
+       "label": "Ending stocks",
+       "unit": "Million Pounds",
+       "values": [
+        1747.0,
+        1657.0,
+        1877.0,
+        1797.0
+       ]
+      },
+      {
+       "label": "Avg. Price (c/lb)",
+       "unit": "Price",
+       "values": [
+        47.59,
+        64.08,
+        70.0,
+        70.0
+       ]
+      }
+     ]
+    },
+    "Soybeans": {
+     "columns": [
+      "2024/25",
+      "2025/26 Est.",
+      "2026/27 Proj. Sep",
+      "2026/27 Proj. Oct"
+     ],
+     "rows": [
+      {
+       "label": "Area Planted",
+       "unit": "Million Acres",
+       "values": [
+        87.3,
+        81.2,
+        86.9,
+        86.9
+       ]
+      },
+      {
+       "label": "Area Harvested",
+       "unit": "Million Acres",
+       "values": [
+        86.2,
+        80.4,
+        85.9,
+        85.9
+       ]
+      },
+      {
+       "label": "Yield per Harvested Acre",
+       "unit": "Bushels",
+       "values": [
+        50.7,
+        53.0,
+        52.8,
+        53.1
+       ]
+      },
+      {
+       "label": "Beginning Stocks",
+       "unit": "Million Bushels",
+       "values": [
+        342.0,
+        325.0,
+        325.0,
+        315.0
+       ]
+      },
+      {
+       "label": "Production",
+       "unit": "Million Bushels",
+       "values": [
+        4374.0,
+        4261.0,
+        4535.0,
+        4562.0
+       ]
+      },
+      {
+       "label": "Imports",
+       "unit": "Million Bushels",
+       "values": [
+        30.0,
+        22.0,
+        25.0,
+        25.0
+       ]
+      },
+      {
+       "label": "Supply, Total",
+       "unit": "Million Bushels",
+       "values": [
+        4746.0,
+        4608.0,
+        4885.0,
+        4902.0
+       ]
+      },
+      {
+       "label": "Crushings",
+       "unit": "Million Bushels",
+       "values": [
+        2445.0,
+        2646.0,
+        2780.0,
+        2780.0
+       ]
+      },
+      {
+       "label": "Exports",
+       "unit": "Million Bushels",
+       "values": [
+        1892.0,
+        1515.0,
+        1685.0,
+        1695.0
+       ]
+      },
+      {
+       "label": "Seed",
+       "unit": "Million Bushels",
+       "values": [
+        70.0,
+        75.0,
+        73.0,
+        73.0
+       ]
+      },
+      {
+       "label": "Residual",
+       "unit": "Million Bushels",
+       "values": [
+        14.0,
+        57.0,
+        38.0,
+        39.0
+       ]
+      },
+      {
+       "label": "Use, Total",
+       "unit": "Million Bushels",
+       "values": [
+        4421.0,
+        4293.0,
+        4575.0,
+        4587.0
+       ]
+      },
+      {
+       "label": "Ending Stocks",
+       "unit": "Million Bushels",
+       "values": [
+        325.0,
+        315.0,
+        310.0,
+        315.0
+       ]
+      },
+      {
+       "label": "Avg.FarmPrice ($/bu)",
+       "unit": "Price",
+       "values": [
+        10.0,
+        10.5,
+        12.0,
+        12.0
+       ]
+      }
+     ]
+    },
+    "Wheat": {
+     "columns": [
+      "2024/25",
+      "2025/26 Est.",
+      "2026/27 Proj. Sep",
+      "2026/27 Proj. Oct"
+     ],
+     "rows": [
+      {
+       "label": "Area Planted",
+       "unit": "Million Acres",
+       "values": [
+        46.3,
+        45.5,
+        42.7,
+        42.5
+       ]
+      },
+      {
+       "label": "Area Harvested",
+       "unit": "Million Acres",
+       "values": [
+        38.6,
+        37.3,
+        32.1,
+        31.9
+       ]
+      },
+      {
+       "label": "Yield per Harvested Acre",
+       "unit": "Bushels",
+       "values": [
+        51.2,
+        53.3,
+        47.8,
+        48.1
+       ]
+      },
+      {
+       "label": "Beginning Stocks",
+       "unit": "Million Bushels",
+       "values": [
+        696.0,
+        855.0,
+        920.0,
+        920.0
+       ]
+      },
+      {
+       "label": "Production",
+       "unit": "Million Bushels",
+       "values": [
+        1979.0,
+        1989.0,
+        1531.0,
+        1534.0
+       ]
+      },
+      {
+       "label": "Imports",
+       "unit": "Million Bushels",
+       "values": [
+        150.0,
+        125.0,
+        140.0,
+        145.0
+       ]
+      },
+      {
+       "label": "Supply, Total",
+       "unit": "Million Bushels",
+       "values": [
+        2825.0,
+        2969.0,
+        2591.0,
+        2599.0
+       ]
+      },
+      {
+       "label": "Food",
+       "unit": "Million Bushels",
+       "values": [
+        969.0,
+        959.0,
+        960.0,
+        960.0
+       ]
+      },
+      {
+       "label": "Seed",
+       "unit": "Million Bushels",
+       "values": [
+        61.0,
+        58.0,
+        59.0,
+        59.0
+       ]
+      },
+      {
+       "label": "Feed and Residual",
+       "unit": "Million Bushels",
+       "values": [
+        111.0,
+        124.0,
+        80.0,
+        90.0
+       ]
+      },
+      {
+       "label": "Domestic, Total",
+       "unit": "Million Bushels",
+       "values": [
+        1141.0,
+        1141.0,
+        1099.0,
+        1109.0
+       ]
+      },
+      {
+       "label": "Exports",
+       "unit": "Million Bushels",
+       "values": [
+        829.0,
+        908.0,
+        775.0,
+        750.0
+       ]
+      },
+      {
+       "label": "Use, Total",
+       "unit": "Million Bushels",
+       "values": [
+        1970.0,
+        2049.0,
+        1874.0,
+        1859.0
+       ]
+      },
+      {
+       "label": "Ending Stocks",
+       "unit": "Million Bushels",
+       "values": [
+        855.0,
+        920.0,
+        717.0,
+        740.0
+       ]
+      },
+      {
+       "label": "Avg.FarmPrice ($/bu)",
+       "unit": "Price",
+       "values": [
+        5.52,
+        5.06,
+        6.4,
+        6.3
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "updated": "2026-10-13"
+ }
+}

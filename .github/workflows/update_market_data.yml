@@ -1,0 +1,99 @@
+# Updates index.html from official USDA and CFTC sources.
+#
+# Timed to release times (Central): 11:00 AM USDA noon-ET reports (WASDE,
+# Crop Production, Grain Stocks, Acreage, Prospective Plantings); 2:00 PM NASS
+# 3 PM-ET reports (Cattle on Feed, Hogs & Pigs, Fats & Oils); ~2:45 PM AMS
+# afternoon boxed beef; Friday 2:30 PM CFTC COT.
+# First try is ~15 min after release (past the traffic spike, before most
+# people go looking), a retry ~50 min after, and an evening catch-all.
+# GitHub cron is UTC and doesn't follow daylight saving, so each time is listed
+# for both CDT (UTC-5) and CST (UTC-6). The extra runs land on other useful
+# times (e.g. 12:15, 3:15) and commit nothing if nothing changed.
+# GitHub often starts scheduled runs 5-20 min late; times avoid :00 because
+# the top of the hour is the most delayed.
+#
+# Commits only when data actually changed. If any section fails, the page keeps
+# that section's last good data, and this workflow is marked failed so GitHub
+# emails you (Settings > Notifications > Actions > failed workflows only).
+
+name: Update market data
+
+on:
+  schedule:
+    # CDT: 11:15a 12:15p  2:15p  3:15p  4:15p   CST: 10:15a 11:15a  1:15p  2:15p  3:15p
+    - cron: '15 16,17,19,20,21 * * 1-5'
+    # CDT: 11:50a 12:50p  2:50p  3:50p         CST: 10:50a 11:50a  1:50p  2:50p
+    - cron: '50 16,17,19,20 * * 1-5'
+    # Evening catch-all. CDT: 5:05p 6:05p      CST: 4:05p 5:05p
+    - cron: '5 22,23 * * 1-5'
+  # A new or changed article rebuilds the site right away.
+  push:
+    branches: [main]
+    paths: ['publications/**.pdf']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write   # lets the job sign in to the AWS records archive (no stored keys)
+
+concurrency:
+  group: update-market-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+
+      - name: Build site from USDA sources
+        id: build
+        continue-on-error: true
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+          WIC_ARCHIVE: '1'
+        run: python scripts/build_site.py
+
+      - name: Commit if data changed
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html sitemap.xml data/ cot/ publications/covers/
+          if ! git diff --staged --quiet; then
+            git commit -m "Market data update $(date -u +'%Y-%m-%d %H:%M UTC')"
+            echo "changed=1" >> "$GITHUB_OUTPUT"
+          fi
+          git push
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      # Records archive (S3 with Object Lock; see aws/records-archive.yml).
+      # Skipped until the repo variables AWS_ARCHIVE_ROLE_ARN and
+      # AWS_ARCHIVE_BUCKET are set. Only runs from main (the AWS role allows nothing else).
+      - name: Sign in to AWS records archive
+        if: vars.AWS_ARCHIVE_ROLE_ARN != '' && github.ref == 'refs/heads/main'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ARCHIVE_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION || 'us-east-2' }}
+
+      - name: Archive site, articles and Substack posts
+        if: vars.AWS_ARCHIVE_ROLE_ARN != '' && github.ref == 'refs/heads/main'
+        env:
+          ARCHIVE_BUCKET: ${{ vars.AWS_ARCHIVE_BUCKET }}
+          SNAPSHOT: ${{ steps.commit.outputs.changed }}
+          SNAPSHOT_SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          pip install boto3
+          python scripts/archive_records.py
+
+      - name: Report failed sections
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "One or more sections failed. See the 'Build site' step log and data/diagnostics.txt."
+          exit 1

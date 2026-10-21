@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Western Illinois Commodities LLC | Introducing Broker, Sterling, Illinois</title>
+<meta name="description" content="Western Illinois Commodities LLC is an introducing broker serving agricultural producers and commercials.">
+<link rel="icon" href="assets/wic-mark.png">
+<link rel="canonical" href="https://wicllc.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Western Illinois Commodities LLC">
+<meta property="og:title" content="Western Illinois Commodities LLC | Introducing Broker, Sterling, Illinois">
+<meta property="og:description" content="Western Illinois Commodities LLC is an introducing broker serving agricultural producers and commercials.">
+<meta property="og:url" content="https://wicllc.org/">
+<meta property="og:image" content="https://wicllc.org/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WICLLC logo, Western Illinois Commodities LLC, Introducing Broker, Sterling, Illinois">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F3EF; --paper-2:#ECEAE4; --ink:#1E211E; --grey:#484848; --dim:#6B6E69;
+  --rule:#D6D4CC; --sage:#709070; --sage-d:#4E6A4E;
+  --wrap:1120px;
+  --serif:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:93px;}
+body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px;}
+
+/* ── Top bar ── */
+.top{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:10;}
+.top{box-shadow:0 1px 0 rgba(30,33,30,.04);}
+.top .wrap{display:flex;align-items:center;gap:32px;height:92px;}
+.id{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.id img{height:64px;width:auto;}
+.id span{font-family:'IBM Plex Sans',system-ui,sans-serif;font-weight:600;font-size:21px;letter-spacing:1px;line-height:1;}
+.top .id{opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;}
+.top.scrolled .id{opacity:1;visibility:visible;}
+.nav{display:flex;gap:28px;margin-left:auto;font-size:14px;}
+.nav a{text-decoration:none;color:var(--grey);}
+.nav a:hover{color:var(--ink);}
+.login{white-space:nowrap;font-size:14px;font-weight:500;text-decoration:none;color:var(--ink);border:1px solid var(--ink);padding:8px 16px;}
+.login:hover{background:var(--ink);color:var(--paper);}
+.acts{display:flex;gap:10px;}
+@media (max-width:420px){.top .id span{display:none;}}
+
+/* ── Publications ribbon ── */
+.pub .wrap{padding-top:72px;padding-bottom:72px;}
+.rib{position:relative;}
+.rib-row{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 2px 18px;scrollbar-width:none;}
+.rib-row::-webkit-scrollbar{display:none;}
+.pc{flex:0 0 300px;scroll-snap-align:start;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--rule);border-top:2px solid var(--sage);transition:transform .2s,box-shadow .2s;}
+.pc:hover,.pc:focus-visible{transform:translateY(-6px);box-shadow:0 14px 28px rgba(30,33,30,.14);outline:none;}
+.pc .cv{aspect-ratio:16/10;background:#fff;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.pc .cv img{width:100%;height:100%;object-fit:contain;display:block;}
+.pc .badge{background:var(--sage);color:#fff;font-size:10px;font-weight:600;letter-spacing:1.2px;padding:2px 7px;margin-right:8px;}
+.pc .bd{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.pc .meta{font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:var(--dim);}
+.pc h3{font-family:var(--serif);font-size:20px;font-weight:500;line-height:1.25;}
+.pc .st{font-family:var(--serif);font-style:italic;color:var(--grey);font-size:16px;line-height:1.3;}
+.pc .ex{font-size:14px;line-height:1.55;color:var(--grey);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.pc .ft{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;}
+.pc .by{color:var(--dim);}
+.pc .go{font-weight:600;color:var(--sage-d);white-space:nowrap;}
+.rib-btn{position:absolute;top:80px;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(30,33,30,.15);}
+.rib-btn:hover{background:var(--ink);color:var(--paper);}
+.rib-btn.prev{left:-22px;}
+.rib-btn.next{right:-22px;}
+.rib-btn[hidden]{display:none;}
+.pub .note{margin-top:18px;font-size:12px;color:var(--dim);max-width:62em;}
+@media (max-width:860px){
+  .pub .wrap{padding-top:48px;padding-bottom:48px;}
+  .pc{flex-basis:78%;}
+  .rib-btn{display:none;}
+}
+
+/* ── Sections ── */
+section{border-bottom:1px solid var(--rule);}
+.label{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--sage-d);}
+
+.intro .wrap{padding-top:96px;padding-bottom:88px;display:grid;grid-template-columns:7fr 4fr;gap:64px;align-items:end;}
+.brand{display:flex;align-items:center;gap:28px;}
+.brand img{height:132px;width:auto;}
+.brand span{font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:84px;font-weight:600;letter-spacing:2px;line-height:1;color:var(--ink);}
+.intro h1{font-family:var(--serif);font-size:28px;line-height:1.3;font-weight:400;letter-spacing:-.2px;color:var(--grey);margin-top:26px;max-width:22em;}
+.intro p.lede{font-size:18px;color:var(--grey);margin-top:28px;max-width:34em;}
+.facts{border-left:2px solid var(--sage);padding-left:24px;font-size:14px;color:var(--grey);}
+.facts dt{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-top:18px;}
+.facts dt:first-child,.facts .firm+dt{margin-top:0;}
+.facts dd{color:var(--ink);}
+.facts .firm{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.25;color:var(--ink);padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid var(--rule);}
+
+.block .wrap{padding-top:72px;padding-bottom:72px;display:grid;grid-template-columns:3fr 9fr;gap:48px;}
+.block h2{font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:-.3px;line-height:1.25;}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.cols h3{font-size:17px;font-weight:600;margin-bottom:10px;}
+.cols p{color:var(--grey);}
+
+
+
+.acct{border-top:1px solid var(--rule);}
+.acct-lede{font-size:17px;color:var(--grey);max-width:40em;}
+.steps{list-style:none;counter-reset:st;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:36px 0 40px;padding:0;}
+.steps:first-child{margin-top:10px;}
+.steps li{counter-increment:st;border-top:2px solid var(--sage);padding-top:16px;}
+.steps li::before{content:counter(st,decimal-leading-zero);display:block;font-size:12px;font-weight:600;letter-spacing:1.4px;color:var(--sage-d);margin-bottom:8px;}
+.steps h3{font-size:17px;font-weight:600;margin-bottom:6px;}
+.steps p{color:var(--grey);font-size:15px;}
+.steps a{color:var(--ink);}
+.cta{display:inline-block;font-size:15px;font-weight:500;text-decoration:none;background:var(--ink);color:var(--paper);border:1px solid var(--ink);padding:12px 24px;}
+.cta:hover{background:var(--sage-d);border-color:var(--sage-d);}
+.acct-note{font-size:12.5px;color:var(--dim);margin-top:14px;max-width:44em;}
+.contact dl{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.contact dt{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.contact dd{font-size:17px;}
+.contact dd a{text-decoration:none;border-bottom:1px solid var(--rule);}
+.contact dd a:hover{border-color:var(--ink);}
+.contact .who{font-size:14px;color:var(--dim);display:block;}
+
+/* ── Photo backgrounds ── */
+.photo{position:relative;background-color:var(--ink);background-size:cover;background-repeat:no-repeat;color:var(--paper);border-bottom:0;}
+.photo .label{color:var(--paper);display:flex;align-items:center;gap:12px;}
+.photo .label::before{content:"";width:28px;height:2px;background:var(--sage);}
+
+
+.serve{background-image:linear-gradient(90deg,rgba(30,33,30,.72),rgba(30,33,30,.4) 60%,rgba(30,33,30,.3)),url(assets/bg-harvest-dusk.jpg);background-position:center 72%;}
+.serve .wrap{padding-top:24px;padding-bottom:30px;grid-template-columns:1fr;gap:16px;}
+.serve .about-lead{font-size:17px;line-height:1.55;color:var(--paper);margin-bottom:16px;background:rgba(30,33,30,.38);border-top:2px solid var(--sage);padding:18px 28px;backdrop-filter:blur(2px);}
+.serve .cols{gap:16px;}
+.serve .cols>div{background:rgba(30,33,30,.38);border-top:2px solid var(--sage);padding:24px 28px;backdrop-filter:blur(2px);}
+.serve .cols p{color:var(--paper-2);}
+
+.mk .mk-band .wrap{padding-bottom:0;}
+.mk .wrap.mk-body{padding-top:0;}
+
+.contact.photo{background-image:linear-gradient(90deg,rgba(30,33,30,.85),rgba(30,33,30,.6)),url(assets/bg-auger.jpg);background-position:center 55%;}
+.contact.photo .wrap{padding-top:104px;padding-bottom:104px;}
+.contact.photo dt{color:var(--paper-2);opacity:.75;}
+.contact.photo dd a{border-bottom-color:rgba(244,243,239,.35);}
+.contact.photo dd a:hover{border-color:var(--paper);}
+
+/* ── Disclosures ── */
+.disc{background:var(--paper-2);}
+.disc .wrap{padding-top:48px;padding-bottom:56px;font-size:13px;color:var(--grey);line-height:1.65;}
+.disc h2{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink);margin-bottom:14px;}
+.disc p{margin-bottom:12px;max-width:62em;}
+.disc strong{color:var(--ink);font-weight:600;}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid var(--rule);margin-top:28px;padding-top:20px;font-size:12px;color:var(--dim);}
+
+@media (max-width:860px){
+  .wrap{padding:0 16px;}
+  .nav{display:none;}
+  .top .wrap{gap:16px;justify-content:space-between;}
+  .intro .wrap{grid-template-columns:1fr;padding-top:56px;padding-bottom:56px;gap:40px;}
+  .intro h1{font-size:21px;margin-top:20px;}
+  .brand{gap:18px;}
+  .brand img{height:76px;}
+  .brand span{font-size:46px;letter-spacing:1px;}
+  .top .wrap{height:76px;}
+  html{scroll-padding-top:77px;}
+  .id img{height:48px;}
+  .id span{font-size:16px;}
+  .acts{gap:8px;}
+  .login{font-size:13px;padding:7px 10px;}
+  .serve .wrap,.contact.photo .wrap{padding-top:64px;padding-bottom:64px;}
+  .serve .cols>div,.serve .about-lead{padding:20px;}
+  .block .wrap{grid-template-columns:1fr;gap:24px;padding-top:48px;padding-bottom:48px;}
+  .cols{grid-template-columns:1fr;gap:32px;}
+  .contact dl{grid-template-columns:1fr;gap:24px;}
+  .steps{grid-template-columns:1fr;gap:24px;margin:28px 0 32px;}
+}
+
+/* ── Offices map ── */
+.offices .wrap{padding-top:72px;padding-bottom:72px;}
+.offices .mk-head{margin-bottom:28px;}
+#office-map{height:540px;background:var(--paper);border:1px solid var(--rule);}
+#office-map .leaflet-control-attribution{background:rgba(244,243,239,.85);font-size:10px;color:var(--dim);}
+.pin{width:16px;height:16px;border-radius:50%;background:var(--sage-d);border:2px solid var(--paper);box-shadow:0 1px 4px rgba(30,33,30,.35);}
+.pin.hq{width:20px;height:20px;background:var(--ink);}
+.cluster{width:38px;height:38px;border-radius:50%;background:var(--sage);color:var(--paper);border:3px solid var(--paper);box-shadow:0 1px 6px rgba(30,33,30,.35);display:flex;align-items:center;justify-content:center;font:600 14px 'IBM Plex Sans',system-ui,sans-serif;}
+.leaflet-popup-content-wrapper{border-radius:0;background:var(--paper);color:var(--ink);box-shadow:0 4px 18px rgba(30,33,30,.18);border-top:3px solid var(--sage);}
+.leaflet-popup-tip{background:var(--paper);}
+.leaflet-popup-content{margin:16px 20px;font:14px/1.55 'IBM Plex Sans',system-ui,sans-serif;}
+.oc .nm{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2;}
+.oc .town{color:var(--sage-d);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin:4px 0 8px;}
+.off-list{display:none;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:24px;font-size:14px;}
+.off-list.on{display:grid;}
+.oc .role{font-size:13px;color:var(--grey);font-weight:500;margin-top:2px;}
+.oc .bio{font-size:13px;color:var(--grey);margin:0 0 8px;max-width:260px;}
+.oc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);}
+@media (max-width:860px){.offices .wrap{padding-top:48px;padding-bottom:48px;} #office-map{height:270px;}}
+
+/* ── Markets ── */
+.mk{border-bottom:1px solid var(--rule);}
+.mk .wrap{padding-top:72px;padding-bottom:80px;}
+.mk-head{display:grid;grid-template-columns:3fr 9fr;gap:48px;margin-bottom:36px;}
+.mk-head h2{font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:-.3px;}
+.mk-head p{color:var(--grey);max-width:44em;}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--ink);overflow-x:auto;}
+.tab{font:inherit;font-size:14px;background:none;border:0;border-bottom:3px solid transparent;padding:12px 18px 10px;color:var(--grey);cursor:pointer;white-space:nowrap;}
+.tab:first-child{padding-left:0;}
+.tab:hover{color:var(--ink);}
+.tab.on{color:var(--ink);font-weight:600;border-bottom-color:var(--sage);}
+.panel{display:none;padding-top:28px;}
+.panel.on{display:block;}
+.stamp{font-size:13px;color:var(--dim);border-left:2px solid var(--sage);padding-left:12px;margin-bottom:24px;}
+.stamp b{color:var(--ink);font-weight:600;}
+.sub{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--sage-d);margin:36px 0 12px;}
+.sub:first-of-type{margin-top:0;}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;border-top:1px solid var(--ink);margin-bottom:8px;}
+.fig{padding:14px 20px 14px 0;border-bottom:1px solid var(--rule);}
+.fig .k{font-size:12px;color:var(--dim);letter-spacing:.4px;}
+.fig .v{font-size:26px;font-weight:500;letter-spacing:-.4px;font-variant-numeric:tabular-nums;margin-top:2px;}
+.fig .d{font-size:13px;color:var(--grey);font-variant-numeric:tabular-nums;}
+.tw{overflow-x:auto;}
+.mk .tw{position:relative;}
+.mk .tw::after{content:'wicllc.org';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Sans',system-ui,sans-serif;font-style:italic;font-weight:600;font-size:clamp(28px,5vw,52px);color:rgba(127,140,141,.11);pointer-events:none;user-select:none;}
+#p-calendar .tw::after{content:none;}
+table.t{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums;}
+table.t th{font-size:12px;font-weight:600;color:var(--dim);text-align:right;padding:8px 10px;border-bottom:1px solid var(--ink);white-space:nowrap;}
+table.t td{text-align:right;padding:7px 10px;border-bottom:1px solid var(--rule);white-space:nowrap;}
+table.t th:first-child,table.t td:first-child{text-align:left;padding-left:0;}
+table.t tr.u td{color:var(--sage-d);font-size:12px;letter-spacing:.4px;border-bottom:0;padding-top:16px;}
+table.t td.hl{font-weight:600;}
+table.cal th,table.cal td{text-align:left;}
+table.cal td{white-space:normal;vertical-align:top;}
+table.cal td:first-child{min-width:14em;}
+table.cal .ag{display:block;font-size:12px;color:var(--dim);}
+table.cal td.nd{color:var(--dim);font-style:italic;}
+.up{color:#3E7A4C;} .dn{color:#9A3F3F;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.chip{font:inherit;font-size:13px;background:none;border:1px solid var(--rule);padding:5px 12px;cursor:pointer;color:var(--grey);}
+.chip.on{border-color:var(--ink);color:var(--ink);font-weight:500;}
+.chart{position:relative;height:260px;margin-top:20px;}
+.note{font-size:12.5px;color:var(--dim);margin-top:14px;max-width:62em;}
+.cot-groups{display:flex;flex-wrap:wrap;gap:8px 28px;margin-bottom:20px;}
+.cot-groups .g{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.cot-groups .chips{margin-bottom:0;}
+.cot-fig{margin:0;border:1px solid var(--rule);background:var(--paper);}
+.cot-fig img{display:block;width:100%;height:auto;}
+.na{border:1px dashed var(--rule);padding:28px;color:var(--grey);}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.two>div{min-width:0;}
+@media (max-width:860px){
+  .mk .wrap{padding-top:48px;padding-bottom:48px;}
+  .mk-head{grid-template-columns:1fr;gap:12px;}
+  .two{grid-template-columns:1fr;gap:24px;}
+  .fig .v{font-size:22px;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="id" href="#firm"><img src="assets/wic-mark.png" alt=""><span>WICLLC</span></a>
+    <nav class="nav">
+      <a href="#firm">Firm</a>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#markets">Markets</a>
+      <a href="#brokers">Brokers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="acts">
+      <a class="login" href="#open-account">Open an Account</a>
+      <a class="login" href="https://nexus.admis.com/" target="_blank" rel="noopener noreferrer">Client Login</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="intro" id="firm">
+  <div class="wrap">
+    <div>
+      <div class="brand"><img src="assets/wic-mark.png" alt="Western Illinois Commodities logo"><span>WICLLC</span></div>
+      <h1>Local roots, global perspective.</h1>
+    </div>
+    <dl class="facts">
+      <div class="firm">Western Illinois Commodities LLC</div>
+      <dt>Registration</dt><dd>Guaranteed Introducing Broker, NFA Member</dd>
+      <dt>Office</dt><dd>Sterling, Illinois</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="block serve photo" id="about">
+  <div class="wrap">
+    <h2>About us</h2>
+    <div>
+      <p class="about-lead">We work with producers and agricultural businesses across the United States and in four countries, helping them manage price risk and keep watch on the markets.</p>
+      <div class="cols">
+        <div>
+          <h3>Our team</h3>
+          <p>Our brokers bring experience in livestock, grains, softs, and across the commercial grain industry. From processors to shuttle loaders, importers and exporters, we've got you covered.</p>
+        </div>
+        <div>
+          <h3>Our process</h3>
+          <p>We offer an independent view of the markets. Perspective on what is truly driving price is something we constantly strive for. The world we live in changes every day, and we think the way we look at markets should keep up with it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pub" id="publications">
+  <div class="wrap">
+    <div class="mk-head">
+      <h2>Publications</h2>
+    </div>
+    <div class="rib">
+      <button class="rib-btn prev" type="button" aria-label="Scroll back" hidden>&#8249;</button>
+      <div class="rib-row" id="pub-row"></div>
+      <button class="rib-btn next" type="button" aria-label="Scroll forward" hidden>&#8250;</button>
+    </div>
+    <p class="note">Opinions are the author's own as of the date published and are not a recommendation to buy or sell. Futures and options trading involves substantial risk of loss and is not suitable for all investors.</p>
+  </div>
+</section>
+
+<section class="mk" id="markets">
+  <div class="mk-band">
+  <div class="wrap">
+    <div class="mk-head">
+      <h2>Market information</h2>
+      <p>Tables and charts from official USDA reports, pulled automatically from the source on each update. Every section shows the source, the report's reference date, and when the data was published. For information only; not a recommendation to buy or sell.</p>
+    </div>
+  </div>
+  </div>
+  <div class="wrap mk-body">
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-tab="grain" role="tab">Grain Stocks &amp; Acreage</button>
+      <button class="tab" data-tab="wasde" role="tab">WASDE Supply &amp; Demand</button>
+      <button class="tab" data-tab="crush" role="tab">Soybean Crush</button>
+      <button class="tab" data-tab="livestock" role="tab">Livestock &amp; Beef</button>
+      <button class="tab" data-tab="cot" role="tab">Commitments of Traders</button>
+      <button class="tab" data-tab="calendar" role="tab">Report Calendar</button>
+    </div>
+    <div class="panel on" id="p-grain"></div>
+    <div class="panel" id="p-wasde"></div>
+    <div class="panel" id="p-crush"></div>
+    <div class="panel" id="p-livestock"></div>
+    <div class="panel" id="p-cot"></div>
+    <div class="panel" id="p-calendar"></div>
+  </div>
+</section>
+
+<section class="offices" id="brokers">
+  <div class="wrap">
+    <div class="mk-head">
+      <h2>Brokers</h2>
+      <p>Find a broker near you. We're ready to help with your hedging needs.</p>
+    </div>
+    <div id="office-map" role="region" aria-label="Map of broker locations"></div>
+    <div class="off-list" id="off-list"></div>
+  </div>
+</section>
+
+<section class="block acct" id="open-account">
+  <div class="wrap">
+    <h2>Open an account</h2>
+    <div>
+      <ol class="steps">
+        <li><h3>Start the application</h3><p>Create a login and complete the application on the ADMIS secure site.</p></li>
+        <li><h3>Review and sign</h3><p>Read the account agreement and risk disclosures before you sign.</p></li>
+        <li><h3>Talk with a broker</h3><p>Questions along the way? <a href="#brokers">Find a broker</a> or <a href="#contact">contact the office</a>.</p></li>
+      </ol>
+      <a class="cta" href="https://onlineapplication.admis.com/uniqueLink?nexusbrokerlink=E17FD16B-BBFD-4583-856F-3FBA481E470E" target="_blank" rel="noopener noreferrer">Start your application</a>
+      <p class="acct-note">Opens the ADMIS online application (onlineapplication.admis.com), operated by ADM Investor Services, Inc., not by Western Illinois Commodities LLC.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block contact photo" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <dl>
+      <div>
+        <dt>Office</dt>
+        <dd>27335 Capp Road<br>Sterling, IL 61081</dd>
+      </div>
+      <div>
+        <dt>Randy Clodfelter</dt>
+        <dd><a href="tel:+18156262160">815-626-2160</a><br><a href="mailto:randy.clod@wicllc.org">randy.clod@wicllc.org</a></dd>
+      </div>
+      <div>
+        <dt>Mitch Clodfelter</dt>
+        <dd><a href="tel:+18156260883">815-626-0883</a><br><a href="mailto:mitch.clod@wicllc.org">mitch.clod@wicllc.org</a></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="disc">
+  <div class="wrap">
+    <h2>Important disclosures</h2>
+    <p><strong>Risk disclosure.</strong> Trading futures and options involves substantial risk of loss and is not suitable for all investors. You should carefully consider whether trading is appropriate for you in light of your financial condition. Past performance is not necessarily indicative of future results.</p>
+    <p><strong>Guaranteed introducing broker.</strong> Western Illinois Commodities LLC is an introducing broker guaranteed by ADM Investor Services, Inc., a futures commission merchant, which carries customer accounts. The Client Login link opens the Nexus platform and the Open an Account link opens the ADMIS online application; both are operated by our guarantor FCM and not by Western Illinois Commodities LLC.</p>
+    <p><strong>Information only.</strong> Market data on this site is taken from USDA sources for informational purposes only. It is not a solicitation or recommendation to buy or sell any futures or options contract. While sources are believed reliable, accuracy is not guaranteed and data may be delayed or revised by the issuing agency.</p>
+    <p><strong>NFA membership.</strong> Western Illinois Commodities LLC is a Member of the National Futures Association. Background information on the firm and its principals is available through <a href="https://www.nfa.futures.org/BasicNet/" target="_blank" rel="noopener noreferrer">NFA BASIC</a>.</p>
+    <div class="foot">
+      <span>&copy; <span id="yr">2026</span> Western Illinois Commodities LLC &middot; 27335 Capp Road, Sterling, IL 61081</span>
+      <span>This site has no forms and does not request personal information.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<!--WIC_DATA-->
+<script>
+(function(){
+var D=window.WIC_DATA||{};
+var MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function dISO(s){if(!s)return '—';var p=s.split('-');return MO[+p[1]-1]+' '+(+p[2])+', '+p[0];}
+function dMon(s){if(!s)return '—';var p=s.split('-');return MO[+p[1]-1]+' '+p[0];}
+function n(v,dec){if(v==null||isNaN(v))return '—';return Number(v).toLocaleString('en-US',{minimumFractionDigits:dec||0,maximumFractionDigits:dec||0});}
+function mil(v,dec){return v==null?'—':n(v/1e6,dec==null?1:dec);}
+function chg(cur,prior){if(cur==null||prior==null||!prior)return '<span>—</span>';var p=(cur-prior)/prior*100;return '<span class="'+(p>=0?'up':'dn')+'">'+(p>=0?'+':'')+p.toFixed(1)+'%</span>';}
+function stamp(parts){return '<div class="stamp">'+parts.filter(Boolean).join(' &middot; ')+'</div>';}
+function na(label){return '<div class="na">'+esc(label)+' is not yet available. It fills in automatically on the next successful update from the source.</div>';}
+function upd(key){var s=D[key];return s&&s.updated?'Site data updated '+dISO(s.updated):'';}
+var charts=[];
+var WM={id:'wm',beforeDatasetsDraw:function(c){var a=c.chartArea,x=c.ctx;if(!a)return;x.save();
+  x.font='italic 600 '+Math.round(Math.min(56,a.width/7))+"px 'IBM Plex Sans',system-ui,sans-serif";
+  x.fillStyle='rgba(127,140,141,.13)';x.textAlign='center';x.textBaseline='middle';
+  x.fillText('wicllc.org',(a.left+a.right)/2,(a.top+a.bottom)/2);x.restore();}};
+function chart(id,cfg){var el=document.getElementById(id);if(!el)return;if(!window.Chart){el.parentNode.style.display='none';return;}
+  Chart.defaults.font.family="'IBM Plex Sans',system-ui,sans-serif";Chart.defaults.color='#6B6E69';
+  cfg.options=Object.assign({responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12}}},scales:{x:{grid:{display:false}},y:{grid:{color:'#E2E0D9'}}}},cfg.options||{});
+  cfg.plugins=(cfg.plugins||[]).concat([WM]);
+  charts.push(new Chart(el,cfg));}
+var SAGE='#709070',GREY='#9A9C97',INK='#484848';
+
+/* ── Grain ── */
+function grain(){
+  var s=D.grain&&D.grain.data,el=document.getElementById('p-grain');
+  if(!s){el.innerHTML=na('Grain stocks and acreage');return;}
+  var names={CORN:'Corn',SOYBEANS:'Soybeans',WHEAT:'All wheat'},h='';
+  var st=s.stocks||{},ks=Object.keys(names).filter(function(k){return st[k];});
+  var ref=ks.length?st[ks[0]].ref:null;
+  h+=stamp(['<b>USDA NASS Grain Stocks</b>','Stocks as of '+dISO(ref),ks.length?'Published to NASS Quick Stats '+dISO(st[ks[0]].loaded):'',upd('grain')]);
+  h+='<div class="sub">Quarterly grain stocks, all positions (million bushels)</div><div class="tw"><table class="t"><thead><tr><th>Commodity</th><th>As of</th><th>Total</th><th>Year ago</th><th>Change</th><th>On-farm</th><th>Off-farm</th></tr></thead><tbody>';
+  ks.forEach(function(k){var x=st[k];h+='<tr><td>'+names[k]+'</td><td>'+dISO(x.ref)+'</td><td class="hl">'+mil(x.total,1)+'</td><td>'+mil(x.prior_total,1)+'</td><td>'+chg(x.total,x.prior_total)+'</td><td>'+mil(x.on_farm,1)+'</td><td>'+mil(x.off_farm,1)+'</td></tr>';});
+  h+='</tbody></table></div><div class="chart"><canvas id="c-stocks"></canvas></div>';
+  var ac=s.acreage||{},ak=Object.keys(names).filter(function(k){return ac[k];});
+  if(ak.length){
+    var y=ac[ak[0]].year;
+    h+='<div class="sub" style="margin-top:44px">Planted acreage (million acres)</div><div class="tw"><table class="t"><thead><tr><th>Commodity</th><th>'+(y-1)+' final</th><th>'+y+' Prospective Plantings (Mar)</th><th>'+y+' Acreage (Jun)</th><th>'+y+' latest NASS</th><th>Latest estimate</th></tr></thead><tbody>';
+    ak.forEach(function(k){var x=ac[k];var per=(x.latest_period||'').replace(/^YEAR( - )?/,'').toLowerCase();per=per?per.charAt(0).toUpperCase()+per.slice(1):'NASS estimate';
+      h+='<tr><td>'+names[k]+'</td><td>'+mil(x.prior_final,2)+'</td><td>'+mil(x.prospective,2)+'</td><td>'+mil(x.june,2)+'</td><td class="hl">'+mil(x.latest,2)+'</td><td>'+esc(per)+(x.latest_loaded?', published '+dISO(x.latest_loaded):'')+'</td></tr>';});
+    h+='</tbody></table></div>';
+  }
+  h+='<p class="note">Source: USDA National Agricultural Statistics Service, Grain Stocks, Prospective Plantings, Acreage and Crop Production reports, via the NASS Quick Stats database. Percent change is calculated from the two published figures shown.</p>';
+  el.innerHTML=h;
+  chart('c-stocks',{type:'bar',data:{labels:ks.map(function(k){return names[k];}),datasets:[
+    {label:'Year ago',data:ks.map(function(k){return st[k].prior_total==null?null:+(st[k].prior_total/1e6).toFixed(1);}),backgroundColor:GREY},
+    {label:'Current',data:ks.map(function(k){return +(st[k].total/1e6).toFixed(1);}),backgroundColor:SAGE}]},
+    options:{scales:{y:{title:{display:true,text:'Million bushels'},grid:{color:'#E2E0D9'}},x:{grid:{display:false}}}}});
+}
+
+/* ── WASDE ── */
+function wasdeTable(t){
+  var h='<div class="tw"><table class="t"><thead><tr><th>Item</th>';
+  t.columns.forEach(function(c){h+='<th>'+esc(c)+'</th>';});h+='</tr></thead><tbody>';
+  var unit=null;
+  t.rows.forEach(function(r){
+    if(r.unit&&r.unit!==unit){unit=r.unit;h+='<tr class="u"><td colspan="'+(t.columns.length+1)+'">'+esc(unit)+'</td></tr>';}
+    var dec=r.values.some(function(v){return v!=null&&v%1!==0;})?2:0;
+    var hl=/ending stocks/i.test(r.label);
+    h+='<tr><td'+(hl?' class="hl"':'')+'>'+esc(r.label)+'</td>';
+    r.values.forEach(function(v,i){h+='<td'+(hl||i===r.values.length-1?' class="hl"':'')+'>'+n(v,dec)+'</td>';});
+    h+='</tr>';});
+  return h+'</tbody></table></div>';
+}
+function wasde(){
+  var s=D.wasde&&D.wasde.data,el=document.getElementById('p-wasde');
+  if(!s){el.innerHTML=na('WASDE');return;}
+  var names=Object.keys(s.tables||{});
+  var h=stamp(['<b>USDA World Agricultural Supply and Demand Estimates'+(s.report_number?' (WASDE-'+esc(s.report_number)+')':'')+'</b>',esc(s.report_month)+' report',s.released?'Released '+dISO(s.released):'',upd('wasde')]);
+  h+='<div class="sub">U.S. supply and use</div><div class="chips">';
+  names.forEach(function(k,i){h+='<button class="chip'+(i?'':' on')+'" data-w="'+esc(k)+'">'+esc(k)+'</button>';});
+  h+='</div><div id="w-body"></div><p class="note">Source: USDA World Agricultural Outlook Board, <a href="'+esc(s.source_url)+'" target="_blank" rel="noopener noreferrer">WASDE text report</a>. Marketing-year columns as published; the last column is the current month\'s projection.</p>';
+  el.innerHTML=h;
+  function show(k){document.getElementById('w-body').innerHTML=wasdeTable(s.tables[k]);
+    el.querySelectorAll('.chip').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-w')===k);});}
+  el.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){show(b.getAttribute('data-w'));};});
+  if(names.length)show(names[0]);
+}
+
+/* ── Crush ── */
+function crush(){
+  var s=D.crush&&D.crush.data,el=document.getElementById('p-crush');
+  if(!s){el.innerHTML=na('Soybean crush');return;}
+  var BU=2000/60;
+  var h=stamp(['<b>USDA NASS Fats &amp; Oils: Oilseed Crushings</b>','Data for '+dMon(s.month),'Published to NASS Quick Stats '+dISO(s.loaded),upd('crush')]);
+  h+='<div class="figs">';
+  h+='<div class="fig"><div class="k">Soybeans crushed</div><div class="v">'+n(s.crush_tons/1e3,0)+'</div><div class="d">thousand short tons</div></div>';
+  h+='<div class="fig"><div class="k">Bushel equivalent</div><div class="v">'+n(s.crush_tons*BU/1e6,1)+'</div><div class="d">million bushels (60 lb/bu)</div></div>';
+  h+='<div class="fig"><div class="k">vs. year ago</div><div class="v">'+chg(s.crush_tons,s.crush_tons_prior_year)+'</div><div class="d">'+n(s.crush_tons_prior_year==null?null:s.crush_tons_prior_year/1e3,0)+' thousand tons</div></div>';
+  h+='<div class="fig"><div class="k">vs. prior month</div><div class="v">'+chg(s.crush_tons,s.crush_tons_prior_month)+'</div><div class="d">'+n(s.crush_tons_prior_month==null?null:s.crush_tons_prior_month/1e3,0)+' thousand tons</div></div>';
+  if(s.oil_production_lb!=null)h+='<div class="fig"><div class="k">Crude soybean oil produced</div><div class="v">'+n(s.oil_production_lb/1e6,0)+'</div><div class="d">million pounds</div></div>';
+  if(s.oil_stocks_lb!=null)h+='<div class="fig"><div class="k">Crude soybean oil stocks</div><div class="v">'+n(s.oil_stocks_lb/1e6,0)+'</div><div class="d">million pounds, end of month</div></div>';
+  h+='</div><div class="chart"><canvas id="c-crush"></canvas></div>';
+  h+='<p class="note">Source: USDA National Agricultural Statistics Service, Fats &amp; Oils: Oilseed Crushings, Production, Consumption and Stocks, via the NASS Quick Stats database. Bushel equivalent is the published tonnage converted at 60 pounds per bushel.</p>';
+  el.innerHTML=h;
+  var hist=s.history||[];
+  chart('c-crush',{type:'bar',data:{labels:hist.map(function(x){return dMon(x.month);}),datasets:[{label:'Soybeans crushed (thousand tons)',data:hist.map(function(x){return Math.round(x.crush_tons/1e3);}),backgroundColor:SAGE}]},options:{plugins:{legend:{display:false}}}});
+}
+
+/* ── Livestock ── */
+function livestock(){
+  var s=D.livestock&&D.livestock.data,el=document.getElementById('p-livestock');
+  if(!s){el.innerHTML=na('Livestock data');return;}
+  var h='';
+  var c=s.cutout;
+  h+='<div class="sub">Boxed beef cutout</div>';
+  if(c){
+    h+=stamp(['<b>USDA AMS Livestock Mandatory Reporting, LM_XB403</b>','National daily boxed beef cutout, afternoon','Report date '+dISO(c.report_date)]);
+    h+='<div class="figs"><div class="fig"><div class="k">Choice 600&ndash;900 lb</div><div class="v">$'+n(c.choice,2)+'</div><div class="d">$/cwt</div></div>';
+    h+='<div class="fig"><div class="k">Select 600&ndash;900 lb</div><div class="v">$'+n(c.select,2)+'</div><div class="d">$/cwt</div></div>';
+    h+='<div class="fig"><div class="k">Choice/Select spread</div><div class="v">$'+n(c.choice-c.select,2)+'</div><div class="d">$/cwt, Choice minus Select</div></div></div>';
+    if(c.primals&&c.primals.length){
+      h+='<div class="tw"><table class="t"><thead><tr><th>Primal</th><th>Choice</th><th>Select</th><th>Spread</th></tr></thead><tbody>';
+      c.primals.forEach(function(p){h+='<tr><td>'+esc(p.primal)+'</td><td>'+n(p.choice,2)+'</td><td>'+n(p.select,2)+'</td><td>'+(p.select==null?'—':n(p.choice-p.select,2))+'</td></tr>';});
+      h+='</tbody></table></div>';
+    }
+    if(c.history&&c.history.length>1)h+='<div class="chart"><canvas id="c-cutout"></canvas></div>';
+  } else h+=na('Boxed beef cutout');
+
+  h+='<div class="two" style="margin-top:44px"><div>';
+  var cf=s.cattle;
+  h+='<div class="sub">Cattle on feed</div>';
+  if(cf){
+    h+=stamp(['<b>USDA NASS Cattle on Feed</b>','Feedlots with 1,000+ head capacity','Published '+dISO(cf.loaded)]);
+    h+='<div class="tw"><table class="t"><thead><tr><th></th><th>Current</th><th>Year ago</th><th>Change</th></tr></thead><tbody>';
+    h+='<tr><td>On feed, '+dISO(cf.ref)+'</td><td class="hl">'+mil(cf.on_feed,3)+'</td><td>'+mil(cf.on_feed_prior_year,3)+'</td><td>'+chg(cf.on_feed,cf.on_feed_prior_year)+'</td></tr>';
+    h+='<tr><td>Placements, '+dMon(cf.flow_month)+'</td><td>'+mil(cf.placements,3)+'</td><td>'+mil(cf.placements_prior_year,3)+'</td><td>'+chg(cf.placements,cf.placements_prior_year)+'</td></tr>';
+    h+='<tr><td>Marketings, '+dMon(cf.flow_month)+'</td><td>'+mil(cf.marketings,3)+'</td><td>'+mil(cf.marketings_prior_year,3)+'</td><td>'+chg(cf.marketings,cf.marketings_prior_year)+'</td></tr>';
+    h+='</tbody></table></div><p class="note">Million head.</p>';
+  } else h+=na('Cattle on feed');
+  h+='</div><div>';
+  var hg=s.hogs;
+  h+='<div class="sub">Hogs and pigs</div>';
+  if(hg){
+    h+=stamp(['<b>USDA NASS Quarterly Hogs and Pigs</b>','Inventory as of '+dISO(hg.ref),'Published '+dISO(hg.loaded)]);
+    h+='<div class="tw"><table class="t"><thead><tr><th></th><th>Current</th><th>Year ago</th><th>Change</th></tr></thead><tbody>';
+    [['All hogs and pigs','all'],['Market hogs','market'],['Breeding herd','breeding']].forEach(function(r){
+      h+='<tr><td>'+r[0]+'</td><td'+(r[1]==='all'?' class="hl"':'')+'>'+mil(hg[r[1]],2)+'</td><td>'+mil(hg[r[1]+'_prior_year'],2)+'</td><td>'+chg(hg[r[1]],hg[r[1]+'_prior_year'])+'</td></tr>';});
+    h+='</tbody></table></div><p class="note">Million head.</p>';
+  } else h+=na('Hogs and pigs');
+  h+='</div></div>';
+  h+='<p class="note">Sources: USDA Agricultural Marketing Service, LM_XB403 National Daily Boxed Beef Cutout &amp; Boxed Beef Cuts, Negotiated Sales, Afternoon (values in $/cwt, FOB plant); USDA National Agricultural Statistics Service, Cattle on Feed and Quarterly Hogs and Pigs, via the NASS Quick Stats database.'+(D.livestock.updated?' Site data updated '+dISO(D.livestock.updated)+'.':'')+'</p>';
+  el.innerHTML=h;
+  if(c&&c.history&&c.history.length>1){var hs=c.history;
+    chart('c-cutout',{type:'line',data:{labels:hs.map(function(x){return dISO(x.date);}),datasets:[
+      {label:'Choice',data:hs.map(function(x){return x.choice;}),borderColor:SAGE,backgroundColor:SAGE,pointRadius:0,borderWidth:2},
+      {label:'Select',data:hs.map(function(x){return x.select;}),borderColor:INK,backgroundColor:INK,pointRadius:0,borderWidth:2}]},
+      options:{scales:{y:{title:{display:true,text:'$/cwt'},grid:{color:'#E2E0D9'}},x:{grid:{display:false},ticks:{maxTicksLimit:8}}}}});}
+}
+
+/* ── Commitments of Traders ── */
+function cot(){
+  var s=D.cot&&D.cot.data,el=document.getElementById('p-cot');
+  if(!s||!s.contracts||!s.contracts.length){el.innerHTML=na('Commitments of Traders charts');return;}
+  var cs=s.contracts,latest=cs.map(function(c){return c.report_date;}).sort().pop(),groups=[];
+  cs.forEach(function(c){if(groups.indexOf(c.group)<0)groups.push(c.group);});
+  var h=stamp(['<b>CFTC Commitments of Traders</b>','Disaggregated, futures only, managed money','Positions as of '+dISO(latest),upd('cot')]);
+  h+='<div class="cot-groups">';
+  groups.forEach(function(g){h+='<div><div class="g">'+esc(g)+'</div><div class="chips">';
+    cs.forEach(function(c){if(c.group===g)h+='<button class="chip" data-c="'+esc(c.slug)+'">'+esc(c.name)+'</button>';});
+    h+='</div></div>';});
+  h+='</div><figure class="cot-fig"><img id="cot-img" alt=""></figure>';
+  h+='<p class="note">Managed money net position is managed money long minus short contracts, from the CFTC Disaggregated Commitments of Traders report, futures only. Positions are as of Tuesday and released Friday afternoon; charts update automatically after each release. Shaded bands mark the 10th and 90th percentiles of the net position over the 10 years shown. Price is the weekly close of the nearby futures contract. Sources: CFTC (publicreporting.cftc.gov); price, Yahoo Finance.</p>';
+  el.innerHTML=h;
+  function show(slug){var c=cs.filter(function(x){return x.slug===slug;})[0]||cs[0],img=document.getElementById('cot-img');
+    img.src='cot/'+c.slug+'.png?v='+c.report_date;
+    img.alt=c.name+' futures: managed money net position vs weekly price, CFTC report of '+dISO(c.report_date);
+    el.querySelectorAll('.chip').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-c')===c.slug);});}
+  el.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){show(b.getAttribute('data-c'));};});
+  show(cs[0].slug);
+}
+
+/* ── Report calendar ── */
+var DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function dDay(s){var d=new Date(+s.slice(0,4),+s.slice(5,7)-1,+s.slice(8,10));return DOW[d.getDay()]+', '+dISO(s.slice(0,10));}
+function tCT(s){var h=+s.slice(11,13),m=s.slice(14,16);return (h%12||12)+':'+m+(h<12?' AM':' PM')+' CT';}
+function calendar(){
+  var s=D.calendar&&D.calendar.data,el=document.getElementById('p-calendar');
+  if(!s){el.innerHTML=na('Report calendar');return;}
+  var now=new Date().toLocaleString('sv-SE',{timeZone:'America/Chicago'}).replace(' ','T').slice(0,16);
+  var rows=s.reports.map(function(r){var up=(r.upcoming||[]).filter(function(t){return t>now;});return {r:r,next:up[0],then:up[1]};});
+  rows.sort(function(a,b){return a.next&&b.next?(a.next<b.next?-1:1):a.next?-1:b.next?1:0;});
+  var h=stamp(['<b>USDA release schedules</b>','ESMIS; WASDE dates from the World Agricultural Outlook Board','Checked '+dISO(s.checked.slice(0,10))]);
+  h+='<div class="tw"><table class="t cal"><thead><tr><th>Report</th><th>Next release</th><th>Time</th><th>After that</th><th>Market tab</th></tr></thead><tbody>';
+  rows.forEach(function(x){
+    h+='<tr><td><b>'+esc(x.r.name)+'</b><span class="ag">'+esc(x.r.agency)+'</span></td>';
+    h+=x.next?'<td class="hl">'+dDay(x.next)+'</td><td>'+tCT(x.next)+'</td>':'<td class="nd" colspan="2">Not yet posted by USDA</td>';
+    h+='<td>'+(x.then?dISO(x.then.slice(0,10)):'—')+'</td><td>'+esc(x.r.tab)+'</td></tr>';});
+  h+='<tr><td><b>Boxed Beef Cutout (LM_XB403)</b><span class="ag">USDA AMS</span></td><td colspan="3">Every business day, afternoon</td><td>Livestock &amp; Beef</td></tr>';
+  h+='<tr><td><b>Commitments of Traders</b><span class="ag">CFTC</span></td><td colspan="3">Weekly, Friday 2:30 PM CT (moves later in federal holiday weeks)</td><td>Commitments of Traders</td></tr>';
+  h+='</tbody></table></div>';
+  h+='<p class="note">Dates and times are USDA&rsquo;s posted schedule, shown in Central time, and can change. Reports USDA has not yet scheduled fill in automatically once posted. Sources: USDA Economics, Statistics and Market Information System (esmis.nal.usda.gov); WASDE release dates from the USDA World Agricultural Outlook Board WASDE page (usda.gov).</p>';
+  el.innerHTML=h;
+}
+
+function publications(){
+  var s=D.publications&&D.publications.data,row=document.getElementById('pub-row');
+  if(!row)return;
+  var items=(s&&s.items)||[];
+  if(!items.length){document.getElementById('publications').style.display='none';return;}
+  row.innerHTML=items.map(function(p,i){
+    return '<a class="pc" href="publications/'+encodeURIComponent(p.file)+'" target="_blank" rel="noopener">'+
+      '<div class="cv"><img src="publications/covers/'+encodeURIComponent(p.cover)+'" alt="" loading="lazy"></div>'+
+      '<div class="bd"><div class="meta">'+(i===0?'<span class="badge">Latest</span>':'')+esc(dISO(p.date))+' &middot; PDF, '+p.pages+' pages</div>'+
+      '<h3>'+esc(p.title)+'</h3>'+(p.subtitle?'<div class="st">'+esc(p.subtitle)+'</div>':'')+
+      '<p class="ex">'+esc(p.excerpt)+'</p><div class="ft"><span class="by">'+esc(p.author)+'</span><span class="go">Read &rarr;</span></div></div></a>';
+  }).join('');
+  var rib=row.parentNode,prev=rib.querySelector('.prev'),next=rib.querySelector('.next');
+  function step(){var c=row.querySelector('.pc');return c?(c.offsetWidth+20)*Math.max(1,Math.floor(row.clientWidth/(c.offsetWidth+20))):row.clientWidth;}
+  function arrows(){prev.hidden=row.scrollLeft<=4;next.hidden=row.scrollLeft+row.clientWidth>=row.scrollWidth-4;}
+  prev.onclick=function(){row.scrollBy({left:-step()});};
+  next.onclick=function(){row.scrollBy({left:step()});};
+  row.addEventListener('scroll',arrows,{passive:true});window.addEventListener('resize',arrows);arrows();
+}
+
+[grain,wasde,crush,livestock,cot,calendar,publications].forEach(function(f){try{f();}catch(e){console.error(e);}});
+
+function tab(name){
+  document.querySelectorAll('.tab').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-tab')===name);});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id==='p-'+name);});
+  charts.forEach(function(c){c.resize();});
+}
+document.querySelectorAll('.tab').forEach(function(b){b.onclick=function(){tab(b.getAttribute('data-tab'));};});
+})();
+</script>
+<script>
+(function(){var top=document.querySelector('.top'),b=document.querySelector('.brand');
+if(!b||!('IntersectionObserver' in window)){top.classList.add('scrolled');return;}
+new IntersectionObserver(function(e){top.classList.toggle('scrolled',!e[0].isIntersecting);}).observe(b);})();
+</script>
+<script>
+/* ── Offices map ── Pins are placed at town level, not street address. */
+(function(){
+var OFFICES=[
+  {name:'Randy Clodfelter',town:'Sterling, IL',lat:41.7887,lng:-89.6962,phones:['815-626-2160'],email:'randy.clod@wicllc.org',hq:true,role:'Principal'},
+  {name:'Mitch Clodfelter',town:'Kewanee, IL',lat:41.2456,lng:-89.9248,phones:['815-626-0883'],email:'mitch.clod@wicllc.org'},
+  {name:'Matt DeBlock',town:'Viola, IL',lat:41.2045,lng:-90.5868,phones:['309-596-2482'],email:'matt.deblock@wicllc.org'},
+  {name:'William Fisher',town:'Kirkwood, IL',lat:40.8634,lng:-90.7454,phones:['800-841-5522','309-255-1140'],email:'bill.fisher@wicllc.org'},
+  {name:'Todd Line',town:'Seaton, IL',lat:41.1009,lng:-90.8001,phones:['309-337-8633'],email:'todd.line@wicllc.org'},
+  {name:'Roy Plote',town:'Leland, IL',lat:41.6153,lng:-88.7981,phones:['815-474-1679'],email:'roy.plote@wicllc.org'},
+  {name:'Jeff McWard',town:'Taylorville, IL',lat:39.5489,lng:-89.2945,phones:['217-491-5001'],email:'jeff.mcward@wicllc.org'},
+  {name:'Terry Sponheim',town:'St. Ansgar, IA',lat:43.3797,lng:-92.9188,phones:['309-373-0065'],email:'terry.sponheim@wicllc.org'},
+  {name:'Dane Lair',town:'Paris, TX',lat:33.6609,lng:-95.5555,phones:['903-785-9335'],email:'dane.lair@wicllc.org'}
+];
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function card(o){return '<div class="oc"><div class="nm">'+esc(o.name)+'</div>'+(o.role?'<div class="role">'+o.role+'</div>':'')+'<div class="town">'+esc(o.town)+'</div>'+(o.bio?'<p class="bio">'+esc(o.bio)+'</p>':'')+
+  o.phones.map(function(p){return '<a href="tel:+1'+p.replace(/\D/g,'')+'">'+esc(p)+'</a>';}).join('<br>')+
+  '<br><a href="mailto:'+esc(o.email)+'">'+esc(o.email)+'</a></div>';}
+function fallback(){var m=document.getElementById('office-map');if(m)m.style.display='none';
+  var l=document.getElementById('off-list');l.innerHTML=OFFICES.map(card).join('');l.classList.add('on');}
+if(!window.L||!L.markerClusterGroup||!window.topojson){fallback();return;}
+var map=L.map('office-map',{zoomSnap:.25,minZoom:3,maxZoom:11,scrollWheelZoom:false,dragging:!L.Browser.mobile,tap:!L.Browser.mobile,attributionControl:true});
+map.attributionControl.setPrefix(false).addAttribution('U.S. states: U.S. Census Bureau');
+var US=[[24.4,-124.8],[49.4,-66.9]];
+map.fitBounds(US);
+map.on('focus click',function(){map.scrollWheelZoom.enable();});
+map.on('blur mouseout',function(){map.scrollWheelZoom.disable();});
+var css=getComputedStyle(document.documentElement);function v(n){return css.getPropertyValue(n).trim();}
+fetch('https://cdn.jsdelivr.net/npm/us-atlas@3.0.1/states-10m.json').then(function(r){return r.json();}).then(function(t){
+  var geo=topojson.feature(t,t.objects.states);
+  geo.features=geo.features.filter(function(f){return ['02','15','60','66','69','72','78'].indexOf(f.id)<0;});
+  L.geoJSON(geo,{interactive:false,style:function(f){return{color:v('--rule'),weight:1,fillColor:f.id==='17'?v('--paper-2'):'#FFFFFF',fillOpacity:f.id==='17'?1:.6};}}).addTo(map).bringToBack();
+}).catch(function(){});
+var group=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:40,spiderfyOnMaxZoom:true,
+  iconCreateFunction:function(c){return L.divIcon({html:'<div class="cluster">'+c.getChildCount()+'</div>',className:'',iconSize:[38,38]});}});
+OFFICES.forEach(function(o){var s=o.hq?20:16;
+  group.addLayer(L.marker([o.lat,o.lng],{title:o.name+', '+o.town,icon:L.divIcon({html:'<div class="pin'+(o.hq?' hq':'')+'"></div>',className:'',iconSize:[s,s]})}).bindPopup(card(o)));});
+map.addLayer(group);
+})();
+</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

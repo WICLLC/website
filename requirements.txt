@@ -1,0 +1,8 @@
+requests>=2.31
+tzdata
+pandas
+numpy
+matplotlib
+yfinance
+python-dateutil
+pymupdf
