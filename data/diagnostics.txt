@@ -204,9 +204,9 @@
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] Composite Primal Values  -> HTTP 200
 [AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
-[AMS] Current Cutout Values {'q': 'report_date=10/14/2016:10/14/2026'} -> HTTP 200
+[AMS] Current Cutout Values {'q': 'report_date=10/20/2016:10/20/2026'} -> HTTP 200
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
-[AMS] cutout history: 523 weeks from 2016-10-14
+[AMS] cutout history: 523 weeks from 2016-10-21
 [QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4201 rows; distinct short_desc|domain|period (1551):
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JAN THRU JUN
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JUL THRU DEC
@@ -872,18 +872,18 @@
      HOGS, BARROWS & GILTS, SLAUGHTER, COMMERCIAL, FI - SLAUGHTERED, MEASURED IN HEAD | TOTAL | APR
      HOGS, BARROWS & GILTS, SLAUGHTER, COMMERCIAL, FI - SLAUGHTERED, MEASURED IN HEAD | TOTAL | AUG
      HOGS, BARROWS & GILTS, SLAUGHTER, COMMERCIAL, FI - SLAUGHTERED, MEASURED IN HEAD | TOTAL | DEC
-[CFTC] ZC latest report 2026-10-06
-[CFTC] ZS latest report 2026-10-06
-[CFTC] ZM latest report 2026-10-06
-[CFTC] ZL latest report 2026-10-06
-[CFTC] ZW latest report 2026-10-06
-[CFTC] LE latest report 2026-10-06
-[CFTC] GF latest report 2026-10-06
-[CFTC] HE latest report 2026-10-06
-[CFTC] CT latest report 2026-10-06
-[CFTC] SB latest report 2026-10-06
-[CFTC] CL latest report 2026-10-06
-[CFTC] NG latest report 2026-10-06
+[CFTC] ZC latest report 2026-10-13
+[CFTC] ZS latest report 2026-10-13
+[CFTC] ZM latest report 2026-10-13
+[CFTC] ZL latest report 2026-10-13
+[CFTC] ZW latest report 2026-10-13
+[CFTC] LE latest report 2026-10-13
+[CFTC] GF latest report 2026-10-13
+[CFTC] HE latest report 2026-10-13
+[CFTC] CT latest report 2026-10-13
+[CFTC] SB latest report 2026-10-13
+[CFTC] CL latest report 2026-10-13
+[CFTC] NG latest report 2026-10-13
 [ESMIS] wasde -> HTTP 200
 [WAOB] WASDE page -> HTTP 200
 [WAOB] 2026 WASDE dates: 12
@@ -901,7 +901,11 @@
 [calendar] CattOnFe upcoming: ['2026-10-23T14:00', '2026-11-20T14:00', '2026-12-18T14:00']
 [ESMIS] HogsPigs -> HTTP 200
 [calendar] HogsPigs upcoming: ['2026-12-23T14:00']
+[pub] 2026-09-15-what-are-grain-prices-going-to-do.pdf not live yet at https://wicllc.org/publications/2026-09-15-what-are-grain-prices-going-to-do.pdf; archive later
 [pub] 2026-09-15-what-are-grain-prices-going-to-do.pdf: 2026-09-15 'What are grain prices going to do?'
+[pub] 2026-09-10-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-09-10-weekly-note.pdf; archive later
 [pub] 2026-09-10-weekly-note.pdf: 2026-09-10 'Weekly Note: 9.10.26'
+[pub] 2026-09-04-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-09-04-weekly-note.pdf; archive later
 [pub] 2026-09-04-weekly-note.pdf: 2026-09-04 'Weekly Note: 9.4.26'
+[pub] 2026-08-27-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-08-27-weekly-note.pdf; archive later
 [pub] 2026-08-27-weekly-note.pdf: 2026-08-27 'Weekly Note: 8.27.26'
