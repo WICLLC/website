@@ -4,8 +4,7 @@ Description: >
   Archival Policy, Article 7). S3 bucket with Object Lock in compliance mode,
   5-year retention, website-snapshots/ and substack-captures/ prefixes; a
   GitHub Actions upload role that cannot delete, overwrite retained objects or
-  change Object Lock; success/failure/missed-run emails; a read-only reviewer
-  policy for an IAM Identity Center permission set. Deploy in US East (Ohio).
+  change Object Lock; success/failure/missed-run emails. Deploy in US East (Ohio).
 
 Parameters:
   BucketName:
@@ -259,50 +258,6 @@ Resources:
       Action: lambda:InvokeFunction
       Principal: events.amazonaws.com
       SourceArn: !GetAtt DailyCheckRule.Arn
-
-  # ── People (Article 7.II.C) ───────────────────────────────────────────────
-  # People sign in through IAM Identity Center, not IAM users. This policy is
-  # the read-and-verify access for day-to-day use and the weekly review. To
-  # use it, create a custom permission set in IAM Identity Center that
-  # references the customer managed policy WIC-Archive-Reviewer by name.
-  ReviewerPolicy:
-    Type: AWS::IAM::ManagedPolicy
-    Properties:
-      ManagedPolicyName: WIC-Archive-Reviewer
-      Description: View and verify the WIC Documentation Archive. No changes, no deletes.
-      PolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Sid: ReadArchive
-            Effect: Allow
-            Action:
-              - s3:ListBucket
-              - s3:ListBucketVersions
-              - s3:GetBucketLocation
-              - s3:GetBucketObjectLockConfiguration
-              - s3:GetBucketVersioning
-              - s3:GetBucketTagging
-              - s3:GetObject
-              - s3:GetObjectVersion
-              - s3:GetObjectRetention
-              - s3:GetObjectAttributes
-              - s3:GetObjectTagging
-            Resource: [!GetAtt ArchiveBucket.Arn, !Sub '${ArchiveBucket.Arn}/*']
-          - Sid: ConsoleNavigation
-            Effect: Allow
-            Action:
-              - s3:ListAllMyBuckets
-              - s3:GetAccountPublicAccessBlock
-              - cloudformation:Describe*
-              - cloudformation:List*
-              - cloudformation:GetTemplate
-              - sns:ListTopics
-              - sns:ListSubscriptionsByTopic
-              - sns:GetTopicAttributes
-              - logs:Describe*
-              - logs:GetLogEvents
-              - logs:FilterLogEvents
-            Resource: '*'
 
 Outputs:
   BucketName:
