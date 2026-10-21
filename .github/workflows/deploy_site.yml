@@ -1,0 +1,73 @@
+# Deploys the site to GitHub Pages, then archives a snapshot of exactly what was
+# deployed to the WIC Documentation Archive (Policy Article 9.I): every
+# deployment is followed by a snapshot, and a failed snapshot is recorded and
+# emailed (Article 9.I.F).
+#
+# Nothing deploys until the repo variable PAGES_LIVE is set to true, which is
+# done only after compliance approval (Settings > Pages > Source: GitHub Actions).
+#
+# Called by update_market_data.yml after each change; can also be run by hand.
+
+name: Deploy site
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        required: true
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: vars.PAGES_LIVE == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      SITE_COMMIT: ${{ inputs.ref || github.sha }}
+      ARCHIVE_BUCKET: ${{ vars.AWS_ARCHIVE_BUCKET }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SITE_COMMIT }}
+
+      - name: Collect the public files
+        run: |
+          mkdir _site
+          cp -r index.html sitemap.xml robots.txt cot publications assets _site/
+          [ -f CNAME ] && cp CNAME _site/ || true
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install boto3 requests
+      - name: Sign in to the WIC Documentation Archive
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ARCHIVE_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION || 'us-east-2' }}
+      - name: Archive website snapshot
+        run: python scripts/website_snapshot.py _site "${{ vars.SITE_URL || steps.deploy.outputs.page_url }}"
+
+      - name: Record failure in the archive
+        if: failure()
+        run: python scripts/archive_common.py website-snapshot "Deploy or website snapshot failed for commit ${SITE_COMMIT::7}."

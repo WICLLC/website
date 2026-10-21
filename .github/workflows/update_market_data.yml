@@ -15,6 +15,9 @@
 # Commits only when data actually changed. If any section fails, the page keeps
 # that section's last good data, and this workflow is marked failed so GitHub
 # emails you (Settings > Notifications > Actions > failed workflows only).
+#
+# Every change to the site (new data, or anything pushed to main) is deployed
+# by deploy_site.yml, which also archives a snapshot (Policy Article 9.I).
 
 name: Update market data
 
@@ -26,15 +29,16 @@ on:
     - cron: '50 16,17,19,20 * * 1-5'
     # Evening catch-all. CDT: 5:05p 6:05p      CST: 4:05p 5:05p
     - cron: '5 22,23 * * 1-5'
-  # A new or changed article rebuilds the site right away.
+  # Anything pushed to main (a new article, a template edit) rebuilds and redeploys.
   push:
     branches: [main]
-    paths: ['publications/**.pdf']
+    paths-ignore: ['README.md', 'aws/**', 'scripts/substack_capture.py', '.github/workflows/substack_capture.yml']
   workflow_dispatch:
 
 permissions:
   contents: write
-  id-token: write   # lets the job sign in to the AWS records archive (no stored keys)
+  pages: write
+  id-token: write   # GitHub Pages deploy and the AWS archive sign-in (no stored keys)
 
 concurrency:
   group: update-market-data
@@ -43,6 +47,9 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -72,28 +79,18 @@ jobs:
           git push
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      # Records archive (S3 with Object Lock; see aws/records-archive.yml).
-      # Skipped until the repo variables AWS_ARCHIVE_ROLE_ARN and
-      # AWS_ARCHIVE_BUCKET are set. Only runs from main (the AWS role allows nothing else).
-      - name: Sign in to AWS records archive
-        if: vars.AWS_ARCHIVE_ROLE_ARN != '' && github.ref == 'refs/heads/main'
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ vars.AWS_ARCHIVE_ROLE_ARN }}
-          aws-region: ${{ vars.AWS_REGION || 'us-east-2' }}
-
-      - name: Archive site, articles and Substack posts
-        if: vars.AWS_ARCHIVE_ROLE_ARN != '' && github.ref == 'refs/heads/main'
-        env:
-          ARCHIVE_BUCKET: ${{ vars.AWS_ARCHIVE_BUCKET }}
-          SNAPSHOT: ${{ steps.commit.outputs.changed }}
-          SNAPSHOT_SHA: ${{ steps.commit.outputs.sha }}
-        run: |
-          pip install boto3
-          python scripts/archive_records.py
-
       - name: Report failed sections
         if: steps.build.outcome == 'failure'
         run: |
           echo "One or more sections failed. See the 'Build site' step log and data/diagnostics.txt."
           exit 1
+
+  deploy:
+    needs: update
+    # Deploy when the build committed new data, or a person pushed/ran it.
+    # Runs even if a data section failed: the page then shows last good data.
+    if: always() && needs.update.outputs.sha != '' && (needs.update.outputs.changed == '1' || github.event_name != 'schedule')
+    uses: ./.github/workflows/deploy_site.yml
+    with:
+      ref: ${{ needs.update.outputs.sha }}
+    secrets: inherit

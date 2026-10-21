@@ -20,9 +20,11 @@ Static site for Western Illinois Commodities LLC, served by GitHub Pages.
 | `sitemap.xml` | List of pages and articles for Google/Bing. **Generated** on every build. |
 | `robots.txt` | Tells search engines they may index the site and where the sitemap is. |
 | `assets/fonts/` | IBM Plex fonts for the COT charts (SIL Open Font License, `OFL.txt`). |
-| `.github/workflows/update_market_data.yml` | Runs the build weekdays around USDA/CFTC release times, then archives to S3. |
-| `scripts/archive_records.py` | Copies the site, articles and Substack posts to the locked S3 records archive. |
-| `aws/records-archive.yml` | One-time AWS setup (CloudFormation) for that archive. |
+| `.github/workflows/update_market_data.yml` | Runs the build weekdays around USDA/CFTC release times and on every push; deploys when something changed. |
+| `.github/workflows/deploy_site.yml` | Deploys to GitHub Pages, then archives a website snapshot. Off until `PAGES_LIVE` = `true`. |
+| `.github/workflows/substack_capture.yml` | Daily capture of new or changed Substack posts. |
+| `scripts/website_snapshot.py`, `scripts/substack_capture.py`, `scripts/archive_common.py` | Write to the WIC Documentation Archive (S3). |
+| `aws/wic-documentation-archive.yml` | One-time AWS setup (CloudFormation) for the archive. |
 
 ## Data sources (every number comes from these; nothing is typed in)
 
@@ -47,13 +49,13 @@ To remove an article, delete its PDF the same way; its card and cover go away on
 
 **Archive / timestamp.** Each article's upload is a dated commit in the repo history. Once the site is live, the workflow also sends each new article to the Internet Archive's Wayback Machine (an independent, third-party timestamp) and records the snapshot link in `data/market_data.json` under `publications`. An article uploaded while the site isn't reachable is archived on a later run.
 
-**Records archive (S3).** Every run also copies to the firm's S3 bucket, where Object Lock keeps each file read-only for 5 years:
+**WIC Documentation Archive (S3).** Required by the WIC Social Media Usage, Approval, Publication and Archival Policy (Articles 7 and 9). Object Lock in compliance mode keeps every file for 5 years; nothing can be changed or deleted.
 
-- `site/YYYY/MM/DD/HHMM-<commit>/` the page, its data and COT charts each time the site changes, with `SHA256SUMS.txt`
-- `publications/` each article PDF on the site
-- `substack/<date>-<slug>/` each post on mitchclod.substack.com as published (`post.html` and the RSS entry `item.xml`)
+- `website-snapshots/<time>_<commit>/` after every deployment: `site.tar.gz` (everything deployed), `live-index.html` (fetched from the live site), `manifest.json` (SHA-256 of every file)
+- `substack-captures/<post>/<time>/` daily, for each new or changed post: `post.html`, `item.xml`, `api.json`, `images/`, `manifest.json`
+- `workflow-runs/` one record per run. AWS emails each one (success and failure) to the Policy Owner and Designated Publisher, and sends an alert if no Substack capture succeeds on a given day.
 
-Approval records (stamped PDFs, approval emails) are uploaded by hand to `approvals/` in the same bucket, never through this public repo.
+Approval Records (the draft email and approval reply) are kept in the Exchange email archive, per the Policy, not here.
 
 ## Run it on your computer
 
@@ -83,8 +85,10 @@ Then open `index.html` in a browser.
 1. Repo → Settings → Secrets and variables → Actions → New repository secret: `NASS_API_KEY`.
 2. Repo → Actions → "Update market data" → Run workflow (first run).
 3. GitHub avatar → Settings → Notifications → Actions → email on failed workflows only.
-4. Records archive: AWS console → CloudFormation (US East (Ohio)) → Create stack → upload `aws/records-archive.yml`. Then in the repo, Settings → Secrets and variables → Actions → **Variables**: `AWS_ARCHIVE_ROLE_ARN` and `AWS_ARCHIVE_BUCKET` from the stack's Outputs tab.
-5. Pages: **only after compliance approval.** Settings → Pages → deploy from `main` branch root. Put the `CNAME` file back (it's kept as `../CNAME.after-approval`, contents `WICLLC.org`), then set up DNS.
+4. Archive: deploy `aws/wic-documentation-archive.yml` in AWS CloudFormation (US East (Ohio)). Then in the repo, Settings → Secrets and variables → Actions: **secret** `AWS_ARCHIVE_ROLE_ARN` and **variable** `AWS_ARCHIVE_BUCKET`, from the stack's Outputs. Run "Substack capture" once by hand.
+5. Go live, **only after ADMIS approval of the site and Policy:** put `CNAME` back (kept as `../CNAME.after-approval`, contents `WICLLC.org`); Settings → Pages → Source: **GitHub Actions**, custom domain `wicllc.org`; set variable `PAGES_LIVE` = `true` and `SITE_URL` = `https://wicllc.org/`; then DNS.
+
+Under the Policy (Article 8.VI), changes to workflow files, archive destinations, retention settings, secrets or notification recipients need written approval from the Policy Owner or Supervisory Approver.
 
 ## Before going live
 

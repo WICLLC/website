@@ -1,0 +1,345 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  WIC Documentation Archive (WIC Social Media Usage, Approval, Publication and
+  Archival Policy, Article 7). S3 bucket with Object Lock in compliance mode,
+  5-year retention, website-snapshots/ and substack-captures/ prefixes; a
+  GitHub Actions upload role that cannot delete, overwrite retained objects or
+  change Object Lock; success/failure/missed-run emails; a reviewer policy for
+  day-to-day users and an MFA-only admin role. Deploy in US East (Ohio).
+
+Parameters:
+  BucketName:
+    Type: String
+    Default: wic-documentation-archive
+    AllowedPattern: '^[a-z0-9][a-z0-9-]{2,62}$'
+    Description: S3 bucket names are global. If this one is taken, add a suffix (e.g. -0517172).
+  RetentionYears:
+    Type: Number
+    Default: 5
+    MinValue: 5
+    Description: Policy Article 7.III.B minimum.
+  ConfirmationEmail:
+    Type: String
+    Description: Policy Owner / Weekly Archive Reviewer (Randy Clodfelter). Receives success, failure and missed-run emails.
+  PublisherEmail:
+    Type: String
+    Default: mitch.clod@wicllc.org
+    Description: Designated Publisher. Receives the same emails.
+  GitHubRepo:
+    Type: String
+    Default: WICLLC/website
+  CreateGitHubOIDCProvider:
+    Type: String
+    Default: 'yes'
+    AllowedValues: ['yes', 'no']
+    Description: "'no' only if this account already has the token.actions.githubusercontent.com identity provider."
+
+Conditions:
+  MakeProvider: !Equals [!Ref CreateGitHubOIDCProvider, 'yes']
+
+Resources:
+  # ── Archive bucket (Article 7.III) ────────────────────────────────────────
+  ArchiveBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BucketName: !Ref BucketName
+      ObjectLockEnabled: true
+      ObjectLockConfiguration:
+        ObjectLockEnabled: Enabled
+        Rule:
+          DefaultRetention:
+            Mode: COMPLIANCE
+            Years: !Ref RetentionYears
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      NotificationConfiguration:
+        EventBridgeConfiguration:
+          EventBridgeEnabled: true
+      Tags:
+        - {Key: Name, Value: WIC Documentation Archive}
+        - {Key: Policy, Value: WIC Social Media Usage Approval Publication and Archival Policy}
+
+  ArchiveBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ArchiveBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: HttpsOnly
+            Effect: Deny
+            Principal: '*'
+            Action: 's3:*'
+            Resource: [!GetAtt ArchiveBucket.Arn, !Sub '${ArchiveBucket.Arn}/*']
+            Condition: {Bool: {'aws:SecureTransport': 'false'}}
+
+  # ── GitHub Actions upload credential (Article 7.IV) ───────────────────────
+  GitHubOIDCProvider:
+    Type: AWS::IAM::OIDCProvider
+    Condition: MakeProvider
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList: [sts.amazonaws.com]
+      ThumbprintList: [6938fd4d98bab03faadb97b34396831e3780aea1]
+
+  GitHubUploadRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: wic-github-archive-uploader
+      Description: WICLLC/website workflows on main only. Uploads archive objects; cannot delete, change retention or administer AWS.
+      MaxSessionDuration: 3600
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !If
+                - MakeProvider
+                - !Ref GitHubOIDCProvider
+                - !Sub 'arn:aws:iam::${AWS::AccountId}:oidc-provider/token.actions.githubusercontent.com'
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                'token.actions.githubusercontent.com:aud': sts.amazonaws.com
+                'token.actions.githubusercontent.com:sub': !Sub 'repo:${GitHubRepo}:ref:refs/heads/main'
+      Policies:
+        - PolicyName: upload-archive-objects-only
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Sid: Upload
+                Effect: Allow
+                Action: s3:PutObject
+                Resource:
+                  - !Sub '${ArchiveBucket.Arn}/website-snapshots/*'
+                  - !Sub '${ArchiveBucket.Arn}/substack-captures/*'
+                  - !Sub '${ArchiveBucket.Arn}/workflow-runs/*'
+              - Sid: ReadPriorCapturesForChangeDetection
+                Effect: Allow
+                Action: s3:GetObject
+                Resource: !Sub '${ArchiveBucket.Arn}/substack-captures/*'
+              - Sid: List
+                Effect: Allow
+                Action: s3:ListBucket
+                Resource: !GetAtt ArchiveBucket.Arn
+              - Sid: NeverDeleteOrUnlock
+                Effect: Deny
+                Action:
+                  - s3:DeleteObject
+                  - s3:DeleteObjectVersion
+                  - s3:PutObjectRetention
+                  - s3:PutObjectLegalHold
+                  - s3:BypassGovernanceRetention
+                  - s3:PutBucketObjectLockConfiguration
+                  - s3:PutBucketVersioning
+                  - s3:PutBucketPolicy
+                  - s3:DeleteBucketPolicy
+                  - s3:PutLifecycleConfiguration
+                  - s3:DeleteBucket
+                Resource: [!GetAtt ArchiveBucket.Arn, !Sub '${ArchiveBucket.Arn}/*']
+
+  # ── Confirmations and alerts (Articles 9.I.F, 9.II.G, 10.IV) ──────────────
+  NotifyTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: wic-archive-notifications
+      DisplayName: WIC Archive
+      Subscription:
+        - {Protocol: email, Endpoint: !Ref ConfirmationEmail}
+        - {Protocol: email, Endpoint: !Ref PublisherEmail}
+
+  NotifierRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - {Effect: Allow, Principal: {Service: lambda.amazonaws.com}, Action: sts:AssumeRole}
+      ManagedPolicyArns: [arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole]
+      Policies:
+        - PolicyName: read-run-records-and-notify
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - {Effect: Allow, Action: s3:GetObject, Resource: !Sub '${ArchiveBucket.Arn}/workflow-runs/*'}
+              - {Effect: Allow, Action: s3:ListBucket, Resource: !GetAtt ArchiveBucket.Arn}
+              - {Effect: Allow, Action: sns:Publish, Resource: !Ref NotifyTopic}
+
+  # Emails each run record the workflows write to workflow-runs/, and once a
+  # day checks that the daily Substack capture succeeded.
+  Notifier:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: wic-archive-notifier
+      Runtime: python3.12
+      Handler: index.handler
+      Timeout: 60
+      Role: !GetAtt NotifierRole.Arn
+      Environment:
+        Variables:
+          BUCKET: !Ref ArchiveBucket
+          TOPIC: !Ref NotifyTopic
+      Code:
+        ZipFile: |
+          import json, os
+          from datetime import datetime, timezone
+          import boto3
+          s3, sns = boto3.client('s3'), boto3.client('sns')
+          B, T = os.environ['BUCKET'], os.environ['TOPIC']
+
+          def send(subject, body):
+              sns.publish(TopicArn=T, Subject=subject[:99], Message=body)
+
+          def handler(event, context):
+              if event.get('detail-type') == 'Object Created':
+                  key = event['detail']['object']['key']
+                  rec = json.loads(s3.get_object(Bucket=B, Key=key)['Body'].read())
+                  body = rec.get('summary', '') + f"\n\nRun: {rec.get('run_url', '')}\nRecord: s3://{B}/{key}\n"
+                  send(rec.get('subject', 'WIC Archive: ' + key), body)
+                  return
+              # Daily missed-run check (Article 10.IV)
+              today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+              prefix = f'workflow-runs/substack-capture/{today}'
+              keys = [o['Key'] for o in s3.list_objects_v2(Bucket=B, Prefix=prefix).get('Contents', [])]
+              if not any('SUCCESS' in k for k in keys):
+                  send('WIC Archive ALERT: no Substack capture today',
+                       f'No successful Substack capture was recorded for {today} (UTC).\n'
+                       f'Runs found today: {len(keys)}.\n\n'
+                       'Treat as a Failure Event (Policy Article 12): check GitHub Actions '
+                       '"Substack capture" in WICLLC/website, re-enable or re-run it, and '
+                       'verify the capture in substack-captures/.')
+
+  RunRecordRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Email each workflow run record (success or failure).
+      EventPattern:
+        source: [aws.s3]
+        detail-type: [Object Created]
+        detail:
+          bucket: {name: [!Ref ArchiveBucket]}
+          object: {key: [{prefix: workflow-runs/}]}
+      Targets:
+        - {Id: notifier, Arn: !GetAtt Notifier.Arn}
+
+  DailyCheckRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Missed-run check for the daily Substack capture (3 PM Central in summer, 2 PM in winter).
+      ScheduleExpression: cron(0 20 * * ? *)
+      Targets:
+        - {Id: notifier, Arn: !GetAtt Notifier.Arn}
+
+  RunRecordPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref Notifier
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt RunRecordRule.Arn
+
+  DailyCheckPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref Notifier
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt DailyCheckRule.Arn
+
+  # ── People (Article 7.II.C) ───────────────────────────────────────────────
+  # Day-to-day users get only this policy: view and verify the Archive, and
+  # step up to the admin role (MFA required) when a change is needed.
+  ReviewerPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      ManagedPolicyName: WIC-Archive-Reviewer
+      Description: Verify the WIC Documentation Archive; switch to WIC-Archive-Admin with MFA for changes.
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: ReadArchive
+            Effect: Allow
+            Action:
+              - s3:ListBucket
+              - s3:ListBucketVersions
+              - s3:GetBucketLocation
+              - s3:GetBucketObjectLockConfiguration
+              - s3:GetBucketVersioning
+              - s3:GetBucketTagging
+              - s3:GetObject
+              - s3:GetObjectVersion
+              - s3:GetObjectRetention
+              - s3:GetObjectAttributes
+              - s3:GetObjectTagging
+            Resource: [!GetAtt ArchiveBucket.Arn, !Sub '${ArchiveBucket.Arn}/*']
+          - Sid: ConsoleNavigation
+            Effect: Allow
+            Action:
+              - s3:ListAllMyBuckets
+              - s3:GetAccountPublicAccessBlock
+              - cloudformation:Describe*
+              - cloudformation:List*
+              - cloudformation:GetTemplate
+              - sns:ListTopics
+              - sns:ListSubscriptionsByTopic
+              - sns:GetTopicAttributes
+              - logs:Describe*
+              - logs:GetLogEvents
+              - logs:FilterLogEvents
+            Resource: '*'
+          - Sid: OwnMfaAndPassword
+            Effect: Allow
+            Action:
+              - iam:GetUser
+              - iam:ChangePassword
+              - iam:ListMFADevices
+              - iam:CreateVirtualMFADevice
+              - iam:EnableMFADevice
+              - iam:ResyncMFADevice
+            Resource:
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:user/${!aws:username}'
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:mfa/*'
+          - Sid: StepUpToAdmin
+            Effect: Allow
+            Action: sts:AssumeRole
+            Resource: !GetAtt AdminRole.Arn
+
+  AdminRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: WIC-Archive-Admin
+      Description: Full administration, only after signing in with MFA. Use for stack updates and access changes.
+      MaxSessionDuration: 3600
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: {AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'}
+            Action: sts:AssumeRole
+            Condition: {Bool: {'aws:MultiFactorAuthPresent': 'true'}}
+      ManagedPolicyArns: [arn:aws:iam::aws:policy/AdministratorAccess]
+
+Outputs:
+  BucketName:
+    Description: GitHub repo variable AWS_ARCHIVE_BUCKET
+    Value: !Ref ArchiveBucket
+  UploadRoleArn:
+    Description: GitHub repo secret AWS_ARCHIVE_ROLE_ARN
+    Value: !GetAtt GitHubUploadRole.Arn
+  AdminRoleSwitchUrl:
+    Description: Console link to step up to WIC-Archive-Admin
+    Value: !Sub 'https://signin.aws.amazon.com/switchrole?roleName=WIC-Archive-Admin&account=${AWS::AccountId}&displayName=WIC-Admin'
