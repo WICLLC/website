@@ -49,7 +49,7 @@
      WHEAT, SPRING, DURUM, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
      WHEAT, SPRING, DURUM, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
      WHEAT, SPRING, DURUM, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
-[QS] {'commodity_desc': 'CORN', 'statisticcat_desc': 'AREA PLANTED', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2025'} -> 27 rows; distinct short_desc|domain|period (14):
+[QS] {'commodity_desc': 'CORN', 'statisticcat_desc': 'AREA PLANTED', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2025'} -> 26 rows; distinct short_desc|domain|period (14):
      CORN - ACRES PLANTED | TOTAL | YEAR
      CORN - ACRES PLANTED | TOTAL | YEAR - AUG FORECAST
      CORN - ACRES PLANTED | TOTAL | YEAR - JUN ACREAGE
@@ -204,7 +204,7 @@
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] Composite Primal Values  -> HTTP 200
 [AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
-[AMS] Current Cutout Values {'q': 'report_date=10/20/2016:10/20/2026'} -> HTTP 200
+[AMS] Current Cutout Values {'q': 'report_date=10/21/2016:10/21/2026'} -> HTTP 200
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] cutout history: 523 weeks from 2016-10-21
 [QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4201 rows; distinct short_desc|domain|period (1551):
