@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-10-21T19:34",
+   "checked": "2026-10-22T15:12",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -547,17 +547,12 @@
     "ref": "2026-09-01"
    },
    "cutout": {
-    "choice": 372.59,
+    "choice": 369.47,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
     ],
     "history": [
-     {
-      "choice": 179.78,
-      "date": "2016-10-21",
-      "select": 166.73
-     },
      {
       "choice": 183.11,
       "date": "2016-10-28",
@@ -3164,50 +3159,50 @@
       "select": 353.05
      },
      {
-      "choice": 372.59,
-      "date": "2026-10-21",
-      "select": 355.34
+      "choice": 369.47,
+      "date": "2026-10-22",
+      "select": 350.41
      }
     ],
     "primals": [
      {
-      "choice": 676.84,
+      "choice": 673.82,
       "primal": "Rib",
-      "select": 569.53
+      "select": 572.72
      },
      {
-      "choice": 330.65,
+      "choice": 330.57,
       "primal": "Chuck",
-      "select": 333.15
+      "select": 329.08
      },
      {
-      "choice": 292.07,
+      "choice": 288.09,
       "primal": "Round",
-      "select": 300.73
+      "select": 295.31
      },
      {
-      "choice": 458.45,
+      "choice": 450.38,
       "primal": "Loin",
-      "select": 422.61
+      "select": 410.73
      },
      {
-      "choice": 279.26,
+      "choice": 273.93,
       "primal": "Brisket",
-      "select": 276.68
+      "select": 274.53
      },
      {
-      "choice": 221.23,
+      "choice": 223.96,
       "primal": "Plate",
-      "select": 221.23
+      "select": 223.96
      },
      {
-      "choice": 158.44,
+      "choice": 156.02,
       "primal": "Flank",
-      "select": 159.92
+      "select": 147.02
      }
     ],
-    "report_date": "2026-10-21",
-    "select": 355.34
+    "report_date": "2026-10-22",
+    "select": 350.41
    },
    "hogs": {
     "all": 74301700.0,
@@ -3220,7 +3215,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-10-21"
+  "updated": "2026-10-22"
  },
  "publications": {
   "data": {

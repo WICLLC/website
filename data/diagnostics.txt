@@ -220,10 +220,10 @@ SectionError: No WASDE text file found for the last 3 months
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] Composite Primal Values  -> HTTP 200
 [AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
-[AMS] Current Cutout Values {'q': 'report_date=10/21/2016:10/21/2026'} -> HTTP 200
+[AMS] Current Cutout Values {'q': 'report_date=10/22/2016:10/22/2026'} -> HTTP 200
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
-[AMS] cutout history: 523 weeks from 2016-10-21
-[QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4201 rows; distinct short_desc|domain|period (1551):
+[AMS] cutout history: 522 weeks from 2016-10-28
+[QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4245 rows; distinct short_desc|domain|period (1551):
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JAN THRU JUN
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JUL THRU DEC
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | YEAR
@@ -767,7 +767,7 @@ SectionError: No WASDE text file found for the last 3 months
      CATTLE, STEERS & STEER CALVES, ON FEED - INVENTORY | CAPACITY | CAPACITY: (1,000 OR MORE HEAD) | POINT IN TIME | FIRST OF JAN | 2026 | 2026-02-20 15:00:00.000 | 7,015,000
      CATTLE, STEERS & STEER CALVES, ON FEED - INVENTORY | CAPACITY | CAPACITY: (1,000 OR MORE HEAD) | POINT IN TIME | FIRST OF APR | 2026 | 2026-05-22 15:00:00.000 | 7,256,000
      CATTLE, STEERS & STEER CALVES, ON FEED - INVENTORY | CAPACITY | CAPACITY: (1,000 OR MORE HEAD) | POINT IN TIME | FIRST OF JUL | 2026 | 2026-08-21 15:00:00.000 | 7,120,000
-[QS] {'commodity_desc': 'HOGS', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 2317 rows; distinct short_desc|domain|period (867):
+[QS] {'commodity_desc': 'HOGS', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 2340 rows; distinct short_desc|domain|period (867):
      HOGS - GROSS INCOME, MEASURED IN $ | TOTAL | YEAR
      HOGS - INDEX FOR PRICE RECEIVED, 2011 | TOTAL | APR
      HOGS - INDEX FOR PRICE RECEIVED, 2011 | TOTAL | AUG
