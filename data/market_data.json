@@ -1,14 +1,18 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-10-22T18:40",
+   "checked": "2026-10-22T19:31",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
      "id": "wasde",
      "name": "WASDE",
      "tab": "WASDE Supply & Demand",
-     "upcoming": []
+     "upcoming": [
+      "2026-11-10T11:00",
+      "2026-12-10T11:00",
+      "2027-01-12T11:00"
+     ]
     },
     {
      "agency": "USDA NASS",
@@ -63,7 +67,7 @@
     }
    ]
   },
-  "updated": "2026-10-22"
+  "updated": "2026-10-23"
  },
  "cot": {
   "data": {
