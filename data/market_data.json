@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-10-22T19:31",
+   "checked": "2026-10-23T14:59",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -51,7 +51,6 @@
      "name": "Cattle on Feed",
      "tab": "Livestock & Beef",
      "upcoming": [
-      "2026-10-23T14:00",
       "2026-11-20T14:00",
       "2026-12-18T14:00"
      ]
@@ -75,162 +74,162 @@
     {
      "flag": "Normal range",
      "group": "Grains & Oilseeds",
-     "mm_long": 330244,
-     "mm_net": 246425,
-     "mm_short": 83819,
+     "mm_long": 297797,
+     "mm_net": 164423,
+     "mm_short": 133374,
      "name": "Corn",
-     "percentile": 82.5,
-     "report_date": "2026-10-13",
+     "percentile": 70.5,
+     "report_date": "2026-10-20",
      "slug": "corn",
      "symbol": "ZC",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "EXTREME LONG",
      "group": "Grains & Oilseeds",
-     "mm_long": 285231,
-     "mm_net": 249807,
-     "mm_short": 35424,
+     "mm_long": 259970,
+     "mm_net": 221325,
+     "mm_short": 38645,
      "name": "Soybean",
-     "percentile": 99.4,
-     "report_date": "2026-10-13",
+     "percentile": 97.3,
+     "report_date": "2026-10-20",
      "slug": "soybeans",
      "symbol": "ZS",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "EXTREME LONG",
      "group": "Grains & Oilseeds",
-     "mm_long": 213072,
-     "mm_net": 204643,
-     "mm_short": 8429,
+     "mm_long": 213717,
+     "mm_net": 200878,
+     "mm_short": 12839,
      "name": "Soybean Meal",
-     "percentile": 99.6,
-     "report_date": "2026-10-13",
+     "percentile": 99.4,
+     "report_date": "2026-10-20",
      "slug": "soymeal",
      "symbol": "ZM",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "Normal range",
      "group": "Grains & Oilseeds",
-     "mm_long": 114489,
-     "mm_net": 87972,
-     "mm_short": 26517,
+     "mm_long": 104484,
+     "mm_net": 71518,
+     "mm_short": 32966,
      "name": "Soybean Oil",
-     "percentile": 84.5,
-     "report_date": "2026-10-13",
+     "percentile": 74.5,
+     "report_date": "2026-10-20",
      "slug": "soyoil",
      "symbol": "ZL",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "Normal range",
      "group": "Grains & Oilseeds",
-     "mm_long": 89109,
-     "mm_net": -32555,
-     "mm_short": 121664,
+     "mm_long": 88258,
+     "mm_net": -52005,
+     "mm_short": 140263,
      "name": "Chicago Wheat",
-     "percentile": 50.9,
-     "report_date": "2026-10-13",
+     "percentile": 43.5,
+     "report_date": "2026-10-20",
      "slug": "chicago_wheat",
      "symbol": "ZW",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "Normal range",
      "group": "Livestock",
-     "mm_long": 75178,
-     "mm_net": 48218,
-     "mm_short": 26960,
+     "mm_long": 74450,
+     "mm_net": 51102,
+     "mm_short": 23348,
      "name": "Live Cattle",
-     "percentile": 28.8,
-     "report_date": "2026-10-13",
+     "percentile": 31.2,
+     "report_date": "2026-10-20",
      "slug": "live_cattle",
      "symbol": "LE",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "Normal range",
      "group": "Livestock",
-     "mm_long": 18924,
-     "mm_net": 9339,
-     "mm_short": 9585,
+     "mm_long": 20055,
+     "mm_net": 10910,
+     "mm_short": 9145,
      "name": "Feeder Cattle",
-     "percentile": 67.4,
-     "report_date": "2026-10-13",
+     "percentile": 71.1,
+     "report_date": "2026-10-20",
      "slug": "feeder_cattle",
      "symbol": "GF",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "EXTREME SHORT",
      "group": "Livestock",
-     "mm_long": 68181,
-     "mm_net": -48617,
-     "mm_short": 116798,
+     "mm_long": 67168,
+     "mm_net": -46813,
+     "mm_short": 113981,
      "name": "Lean Hog",
-     "percentile": 0.4,
-     "report_date": "2026-10-13",
+     "percentile": 0.6,
+     "report_date": "2026-10-20",
      "slug": "lean_hogs",
      "symbol": "HE",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "Normal range",
      "group": "Softs & Energy",
-     "mm_long": 73985,
-     "mm_net": 58025,
-     "mm_short": 15960,
+     "mm_long": 75837,
+     "mm_net": 60598,
+     "mm_short": 15239,
      "name": "Cotton",
-     "percentile": 68.3,
-     "report_date": "2026-10-13",
+     "percentile": 70.9,
+     "report_date": "2026-10-20",
      "slug": "cotton",
      "symbol": "CT",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "EXTREME LONG",
      "group": "Softs & Energy",
-     "mm_long": 352283,
-     "mm_net": 259549,
-     "mm_short": 92734,
+     "mm_long": 355665,
+     "mm_net": 264530,
+     "mm_short": 91135,
      "name": "Sugar No. 11",
-     "percentile": 98.8,
-     "report_date": "2026-10-13",
+     "percentile": 99.6,
+     "report_date": "2026-10-20",
      "slug": "sugar",
      "symbol": "SB",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "EXTREME SHORT",
      "group": "Softs & Energy",
-     "mm_long": 171973,
-     "mm_net": 40574,
-     "mm_short": 131399,
+     "mm_long": 163413,
+     "mm_net": 36187,
+     "mm_short": 127226,
      "name": "WTI Crude Oil",
-     "percentile": 4.2,
-     "report_date": "2026-10-13",
+     "percentile": 4.0,
+     "report_date": "2026-10-20",
      "slug": "crude_oil",
      "symbol": "CL",
-     "weeks": 521
+     "weeks": 522
     },
     {
      "flag": "EXTREME SHORT",
      "group": "Softs & Energy",
-     "mm_long": 227211,
-     "mm_net": -126481,
-     "mm_short": 353692,
+     "mm_long": 202570,
+     "mm_net": -157409,
+     "mm_short": 359979,
      "name": "Natural Gas",
-     "percentile": 8.6,
-     "report_date": "2026-10-13",
+     "percentile": 5.9,
+     "report_date": "2026-10-20",
      "slug": "natural_gas",
      "symbol": "NG",
-     "weeks": 521
+     "weeks": 522
     }
    ]
   },
-  "updated": "2026-10-21"
+  "updated": "2026-10-23"
  },
  "crush": {
   "data": {
@@ -486,12 +485,8 @@
  "livestock": {
   "data": {
    "cattle": {
-    "flow_month": "2026-08",
+    "flow_month": "2026-09",
     "history": [
-     {
-      "on_feed": 11080000.0,
-      "ref": "2025-09-01"
-     },
      {
       "on_feed": 11418000.0,
       "ref": "2025-10-01"
@@ -537,21 +532,25 @@
       "ref": "2026-08-01"
      },
      {
-      "on_feed": 11163000.0,
+      "on_feed": 11168000.0,
       "ref": "2026-09-01"
+     },
+     {
+      "on_feed": 11372000.0,
+      "ref": "2026-10-01"
      }
     ],
-    "loaded": "2026-09-18",
-    "marketings": 1519000.0,
-    "marketings_prior_year": 1571000.0,
-    "on_feed": 11163000.0,
-    "on_feed_prior_year": 11080000.0,
-    "placements": 1617000.0,
-    "placements_prior_year": 1780000.0,
-    "ref": "2026-09-01"
+    "loaded": "2026-10-23",
+    "marketings": 1524000.0,
+    "marketings_prior_year": 1632000.0,
+    "on_feed": 11372000.0,
+    "on_feed_prior_year": 11418000.0,
+    "placements": 1777000.0,
+    "placements_prior_year": 2021000.0,
+    "ref": "2026-10-01"
    },
    "cutout": {
-    "choice": 369.47,
+    "choice": 365.79,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
@@ -3163,50 +3162,50 @@
       "select": 353.05
      },
      {
-      "choice": 369.47,
-      "date": "2026-10-22",
-      "select": 350.41
+      "choice": 365.79,
+      "date": "2026-10-23",
+      "select": 352.69
      }
     ],
     "primals": [
      {
-      "choice": 673.82,
+      "choice": 672.57,
       "primal": "Rib",
-      "select": 572.72
+      "select": 621.4
      },
      {
-      "choice": 330.57,
+      "choice": 325.9,
       "primal": "Chuck",
-      "select": 329.08
+      "select": 324.4
      },
      {
-      "choice": 288.09,
+      "choice": 286.95,
       "primal": "Round",
-      "select": 295.31
+      "select": 291.38
      },
      {
-      "choice": 450.38,
+      "choice": 445.29,
       "primal": "Loin",
-      "select": 410.73
+      "select": 409.18
      },
      {
-      "choice": 273.93,
+      "choice": 274.56,
       "primal": "Brisket",
-      "select": 274.53
+      "select": 276.6
      },
      {
-      "choice": 223.96,
+      "choice": 212.41,
       "primal": "Plate",
-      "select": 223.96
+      "select": 212.41
      },
      {
-      "choice": 156.02,
+      "choice": 155.21,
       "primal": "Flank",
-      "select": 147.02
+      "select": 148.07
      }
     ],
-    "report_date": "2026-10-22",
-    "select": 350.41
+    "report_date": "2026-10-23",
+    "select": 352.69
    },
    "hogs": {
     "all": 74301700.0,
@@ -3219,7 +3218,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-10-22"
+  "updated": "2026-10-23"
  },
  "publications": {
   "data": {
