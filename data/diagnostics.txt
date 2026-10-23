@@ -93,7 +93,23 @@
      WHEAT, WINTER - ACRES PLANTED | TOTAL | YEAR - DEC ACREAGE
      WHEAT, WINTER - ACRES PLANTED | TOTAL | YEAR - JUN ACREAGE
      WHEAT, WINTER - ACRES PLANTED | TOTAL | YEAR - MAR ACREAGE
-[WASDE] https://www.usda.gov/oce/commodity/wasde/wasde1026.txt -> HTTP 200, 122378 chars
+[WASDE] https://www.usda.gov/oce/commodity/wasde/wasde1026.txt -> HTTP 403, 415 chars
+[WASDE] https://www.usda.gov/oce/commodity/wasde/wasde0926.txt -> HTTP 403, 415 chars
+[WASDE] https://www.usda.gov/oce/commodity/wasde/wasde0826.txt -> HTTP 403, 415 chars
+[wasde] Traceback (most recent call last):
+  File "/home/runner/work/website/website/scripts/build_site.py", line 926, in main
+    section = fn()
+              ^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 903, in <lambda>
+    ('wasde', 'WASDE', lambda: build_wasde()),
+                               ^^^^^^^^^^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 366, in build_wasde
+    y, m, url, text = fetch_wasde_text()
+                      ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 286, in fetch_wasde_text
+    raise SectionError('No WASDE text file found for the last 3 months')
+SectionError: No WASDE text file found for the last 3 months
+
 [QS] {'commodity_desc': 'SOYBEANS', 'agg_level_desc': 'NATIONAL', 'freq_desc': 'MONTHLY', 'year__GE': '2024'} -> 245 rows; distinct short_desc|domain|period (105):
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | APR
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | AUG
@@ -897,10 +913,16 @@
 [CFTC] CL latest report 2026-10-20
 [CFTC] NG latest report 2026-10-20
 [ESMIS] wasde -> HTTP 200
-[WAOB] WASDE page -> HTTP 200
-[WAOB] 2026 WASDE dates: 12
-[WAOB] 2027 WASDE dates: 12
-[calendar] wasde upcoming: ['2026-11-10T11:00', '2026-12-10T11:00', '2027-01-12T11:00']
+[WAOB] WASDE page -> HTTP 403
+[calendar:wasde] Traceback (most recent call last):
+  File "/home/runner/work/website/website/scripts/build_site.py", line 683, in build_calendar
+    times.update(t.astimezone(CENTRAL).strftime('%Y-%m-%dT%H:%M') for t in fetch())
+                                                                           ^^^^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 651, in waob_wasde_dates
+    raise SectionError(f'WAOB WASDE page HTTP {r.status_code}')
+SectionError: WAOB WASDE page HTTP 403
+
+[calendar] wasde upcoming: []
 [ESMIS] GraiStoc -> HTTP 200
 [calendar] GraiStoc upcoming: []
 [ESMIS] ProsPlan -> HTTP 200
