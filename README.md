@@ -86,6 +86,5 @@ Then open `index.html` in a browser.
 2. Repo → Actions → "Update market data" → Run workflow (first run).
 3. GitHub avatar → Settings → Notifications → Actions → email on failed workflows only.
 4. Archive: deploy `aws/wic-documentation-archive.yml` in AWS CloudFormation (US East (Ohio)). Then in the repo, Settings → Secrets and variables → Actions: **secret** `AWS_ARCHIVE_ROLE_ARN` and **variable** `AWS_ARCHIVE_BUCKET`, from the stack's Outputs. The first deploy after go-live writes the first snapshot.
-5. Go live, **only after ADMIS approval of the site and Policy:** put `CNAME` back (kept as `../CNAME.after-approval`, contents `WICLLC.org`); Settings → Pages → Source: **GitHub Actions**, custom domain `wicllc.org`; set variable `PAGES_LIVE` = `true` and `SITE_URL` = `https://wicllc.org/`; then DNS.
 
 Under the Policy (Article 8.VI), changes to workflow files, archive destinations, retention settings, secrets or notification recipients need written approval from the Policy Owner or Supervisory Approver.
