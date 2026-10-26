@@ -114,7 +114,11 @@ Resources:
             Condition:
               StringEquals:
                 'token.actions.githubusercontent.com:aud': sts.amazonaws.com
-                'token.actions.githubusercontent.com:sub': 'repo:WICLLC@345945080/website@1428690964:ref:refs/heads/main'
+                # main-branch runs, and the deploy job (runs in the github-pages
+                # environment, which GitHub limits to main)
+                'token.actions.githubusercontent.com:sub':
+                  - 'repo:WICLLC@345945080/website@1428690964:ref:refs/heads/main'
+                  - 'repo:WICLLC@345945080/website@1428690964:environment:github-pages'
       Policies:
         - PolicyName: upload-archive-objects-only
           PolicyDocument:
