@@ -93,7 +93,8 @@
      WHEAT, WINTER - ACRES PLANTED | TOTAL | YEAR - DEC ACREAGE
      WHEAT, WINTER - ACRES PLANTED | TOTAL | YEAR - JUN ACREAGE
      WHEAT, WINTER - ACRES PLANTED | TOTAL | YEAR - MAR ACREAGE
-[WASDE] https://www.usda.gov/oce/commodity/wasde/wasde1026.txt -> HTTP 200, 122378 chars
+[ESMIS] wasde releases -> HTTP 200
+[WASDE] https://esmis.nal.usda.gov/sites/default/release-files/796099/wasde1026.txt -> HTTP 200, 122378 chars
 [QS] {'commodity_desc': 'SOYBEANS', 'agg_level_desc': 'NATIONAL', 'freq_desc': 'MONTHLY', 'year__GE': '2024'} -> 245 rows; distinct short_desc|domain|period (105):
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | APR
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | AUG
@@ -896,18 +897,7 @@
 [CFTC] SB latest report 2026-10-20
 [CFTC] CL latest report 2026-10-20
 [CFTC] NG latest report 2026-10-20
-[ESMIS] wasde -> HTTP 502
-[calendar:wasde] Traceback (most recent call last):
-  File "/home/runner/work/website/website/scripts/build_site.py", line 683, in build_calendar
-    times.update(t.astimezone(CENTRAL).strftime('%Y-%m-%dT%H:%M') for t in fetch())
-                                                                           ^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 670, in <lambda>
-    CALENDAR_SOURCES = {'wasde': [lambda: esmis_upcoming('wasde'), waob_wasde_dates]}
-                                          ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 637, in esmis_upcoming
-    raise SectionError(f'ESMIS {ident} HTTP {r.status_code}')
-SectionError: ESMIS wasde HTTP 502
-
+[ESMIS] wasde -> HTTP 200
 [WAOB] WASDE page -> HTTP 200
 [WAOB] 2026 WASDE dates: 12
 [WAOB] 2027 WASDE dates: 12
@@ -924,9 +914,7 @@ SectionError: ESMIS wasde HTTP 502
 [calendar] CattOnFe upcoming: ['2026-11-20T14:00', '2026-12-18T14:00']
 [ESMIS] HogsPigs -> HTTP 200
 [calendar] HogsPigs upcoming: ['2026-12-23T14:00']
-[pub] 2026-10-22-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-10-22-weekly-note.pdf; archive later
 [pub] 2026-10-22-weekly-note.pdf: 2026-10-22 'Weekly Note 10.22.26'
-[pub] 2026-10-20-on-re-ownership.pdf not live yet at https://wicllc.org/publications/2026-10-20-on-re-ownership.pdf; archive later
 [pub] 2026-10-20-on-re-ownership.pdf: 2026-10-20 'On Re-Ownership'
 [pub] 2026-09-15-what-are-grain-prices-going-to-do.pdf: 2026-09-15 'What are grain prices going to do?'
 [pub] 2026-09-10-weekly-note.pdf: 2026-09-10 'Weekly Note: 9.10.26'

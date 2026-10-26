@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-10-26T10:21",
+   "checked": "2026-10-26T10:39",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -3224,6 +3224,8 @@
   "data": {
    "items": [
     {
+     "archive_url": "https://web.archive.org/web/20261026153944/https://wicllc.org/publications/2026-10-22-weekly-note.pdf",
+     "archived": "2026-10-26T10:39",
      "author": "Mitch Clodfelter",
      "cover": "2026-10-22-weekly-note.jpg",
      "date": "2026-10-22",
@@ -3234,6 +3236,8 @@
      "title": "Weekly Note 10.22.26"
     },
     {
+     "archive_url": "https://web.archive.org/web/20261026154002/https://wicllc.org/publications/2026-10-20-on-re-ownership.pdf",
+     "archived": "2026-10-26T10:40",
      "author": "Mitch Clodfelter",
      "cover": "2026-10-20-on-re-ownership.jpg",
      "date": "2026-10-20",
@@ -3300,7 +3304,7 @@
    "released": "2026-10-09",
    "report_month": "October 2026",
    "report_number": "676",
-   "source_url": "https://www.usda.gov/oce/commodity/wasde/wasde1026.txt",
+   "source_url": "https://esmis.nal.usda.gov/sites/default/release-files/796099/wasde1026.txt",
    "tables": {
     "Corn": {
      "columns": [
@@ -3994,6 +3998,6 @@
     }
    }
   },
-  "updated": "2026-10-13"
+  "updated": "2026-10-26"
  }
 }
