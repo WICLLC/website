@@ -2,9 +2,9 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: >
   WIC Documentation Archive (WIC Social Media Usage, Approval, Publication and
   Archival Policy, Article 7). S3 bucket with Object Lock in compliance mode,
-  5-year retention, website-snapshots/ and substack-captures/ prefixes; a
-  GitHub Actions upload role that cannot delete, overwrite retained objects or
-  change Object Lock; success/failure/missed-run emails. Deploy in US East (Ohio).
+  5-year retention, website-snapshots/ prefix; a GitHub Actions upload role
+  that cannot delete, overwrite retained objects or change Object Lock;
+  success/failure/missed-run emails. Deploy in US East (Ohio).
 
 Parameters:
   BucketName:
@@ -114,7 +114,7 @@ Resources:
             Condition:
               StringEquals:
                 'token.actions.githubusercontent.com:aud': sts.amazonaws.com
-                'token.actions.githubusercontent.com:sub': !Sub 'repo:${GitHubRepo}:ref:refs/heads/main'
+                'token.actions.githubusercontent.com:sub': 'repo:WICLLC@345945080/website@1428690964:ref:refs/heads/main'
       Policies:
         - PolicyName: upload-archive-objects-only
           PolicyDocument:
@@ -125,16 +125,7 @@ Resources:
                 Action: s3:PutObject
                 Resource:
                   - !Sub '${ArchiveBucket.Arn}/website-snapshots/*'
-                  - !Sub '${ArchiveBucket.Arn}/substack-captures/*'
                   - !Sub '${ArchiveBucket.Arn}/workflow-runs/*'
-              - Sid: ReadPriorCapturesForChangeDetection
-                Effect: Allow
-                Action: s3:GetObject
-                Resource: !Sub '${ArchiveBucket.Arn}/substack-captures/*'
-              - Sid: List
-                Effect: Allow
-                Action: s3:ListBucket
-                Resource: !GetAtt ArchiveBucket.Arn
               - Sid: NeverDeleteOrUnlock
                 Effect: Deny
                 Action:
@@ -151,7 +142,7 @@ Resources:
                   - s3:DeleteBucket
                 Resource: [!GetAtt ArchiveBucket.Arn, !Sub '${ArchiveBucket.Arn}/*']
 
-  # ── Confirmations and alerts (Articles 9.I.F, 9.II.G, 10.IV) ──────────────
+  # ── Confirmations and alerts (Articles 9.I.F, 10.IV) ──────────────────────
   NotifyTopic:
     Type: AWS::SNS::Topic
     Properties:
@@ -178,8 +169,8 @@ Resources:
               - {Effect: Allow, Action: s3:ListBucket, Resource: !GetAtt ArchiveBucket.Arn}
               - {Effect: Allow, Action: sns:Publish, Resource: !Ref NotifyTopic}
 
-  # Emails each run record the workflows write to workflow-runs/, and once a
-  # day checks that the daily Substack capture succeeded.
+  # Emails each run record the workflows write to workflow-runs/, and each
+  # weekday evening checks that a website snapshot succeeded that day.
   Notifier:
     Type: AWS::Lambda::Function
     Properties:
@@ -195,7 +186,7 @@ Resources:
       Code:
         ZipFile: |
           import json, os
-          from datetime import datetime, timezone
+          from datetime import datetime, timedelta, timezone
           import boto3
           s3, sns = boto3.client('s3'), boto3.client('sns')
           B, T = os.environ['BUCKET'], os.environ['TOPIC']
@@ -210,17 +201,24 @@ Resources:
                   body = rec.get('summary', '') + f"\n\nRun: {rec.get('run_url', '')}\nRecord: s3://{B}/{key}\n"
                   send(rec.get('subject', 'WIC Archive: ' + key), body)
                   return
-              # Daily missed-run check (Article 10.IV)
-              today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-              prefix = f'workflow-runs/substack-capture/{today}'
-              keys = [o['Key'] for o in s3.list_objects_v2(Bucket=B, Prefix=prefix).get('Contents', [])]
-              if not any('SUCCESS' in k for k in keys):
-                  send('WIC Archive ALERT: no Substack capture today',
-                       f'No successful Substack capture was recorded for {today} (UTC).\n'
-                       f'Runs found today: {len(keys)}.\n\n'
+              # Weekday missed-run check (Article 10.IV): runs 9 PM CDT / 8 PM CST,
+              # so the last 24 hours are that Central business day. Run records
+              # are workflow-runs/website-snapshot/<YYYY-MM-DDTHHMMSSZ>_<status>.json.
+              now = datetime.now(timezone.utc)
+              since = (now - timedelta(hours=24)).strftime('%Y-%m-%dT%H%M%SZ')
+              keys = []
+              for day in sorted({since[:10], now.strftime('%Y-%m-%d')}):
+                  prefix = f'workflow-runs/website-snapshot/{day}'
+                  keys += [o['Key'] for o in s3.list_objects_v2(Bucket=B, Prefix=prefix).get('Contents', [])]
+              keys = [k for k in keys if k.rsplit('/', 1)[1] >= since]
+              if not any(k.endswith('_SUCCESS.json') for k in keys):
+                  send('WIC Archive ALERT: no website snapshot today',
+                       f'No successful website snapshot was recorded in the 24 hours to '
+                       f'{now:%Y-%m-%d %H:%M} UTC.\n'
+                       f'Snapshot runs found: {len(keys)}.\n\n'
                        'Treat as a Failure Event (Policy Article 12): check GitHub Actions '
-                       '"Substack capture" in WICLLC/website, re-enable or re-run it, and '
-                       'verify the capture in substack-captures/.')
+                       '"Update market data" and "Deploy site" in WICLLC/website, re-run the '
+                       'deploy, and verify the snapshot in website-snapshots/.')
 
   RunRecordRule:
     Type: AWS::Events::Rule
@@ -238,8 +236,11 @@ Resources:
   DailyCheckRule:
     Type: AWS::Events::Rule
     Properties:
-      Description: Missed-run check for the daily Substack capture (3 PM Central in summer, 2 PM in winter).
-      ScheduleExpression: cron(0 20 * * ? *)
+      Description: Weekday missed-run check for the website snapshot (Mon-Fri 9 PM CDT / 8 PM CST).
+      # 02:00 UTC Tue-Sat. The last market data run is 23:05 UTC and GitHub has
+      # started it as late as ~00:35 UTC; deploy plus snapshot takes ~10 min.
+      ScheduleExpression: cron(0 2 ? * TUE-SAT *)
+      State: ENABLED
       Targets:
         - {Id: notifier, Arn: !GetAtt Notifier.Arn}
 

@@ -12,9 +12,13 @@
 # GitHub often starts scheduled runs 5-20 min late; times avoid :00 because
 # the top of the hour is the most delayed.
 #
-# Commits only when data actually changed. If any section fails, the page keeps
-# that section's last good data, and this workflow is marked failed so GitHub
-# emails you (Settings > Notifications > Actions > failed workflows only).
+# Commits only when data actually changed. Scheduled runs deploy only when
+# data changed, except the last evening run, which always deploys so every
+# weekday has a website snapshot for the archive's missed-run check (Policy
+# Article 10.IV); on days that already deployed, that is a second, identical
+# snapshot. If any section fails, the page keeps that section's last good
+# data, and this workflow is marked failed so GitHub emails you (Settings >
+# Notifications > Actions > failed workflows only).
 #
 # Every change to the site (new data, or anything pushed to main) is deployed
 # by deploy_site.yml, which also archives a snapshot (Policy Article 9.I).
@@ -28,11 +32,13 @@ on:
     # CDT: 11:50a 12:50p  2:50p  3:50p         CST: 10:50a 11:50a  1:50p  2:50p
     - cron: '50 16,17,19,20 * * 1-5'
     # Evening catch-all. CDT: 5:05p 6:05p      CST: 4:05p 5:05p
-    - cron: '5 22,23 * * 1-5'
+    - cron: '5 22 * * 1-5'
+    # Last run of the day; always deploys (see the deploy job). Keep in sync.
+    - cron: '5 23 * * 1-5'
   # Anything pushed to main (a new article, a template edit) rebuilds and redeploys.
   push:
     branches: [main]
-    paths-ignore: ['README.md', 'aws/**', 'scripts/substack_capture.py', '.github/workflows/substack_capture.yml']
+    paths-ignore: ['README.md', 'aws/**']
   workflow_dispatch:
 
 permissions:
@@ -87,9 +93,10 @@ jobs:
 
   deploy:
     needs: update
-    # Deploy when the build committed new data, or a person pushed/ran it.
-    # Runs even if a data section failed: the page then shows last good data.
-    if: always() && needs.update.outputs.sha != '' && (needs.update.outputs.changed == '1' || github.event_name != 'schedule')
+    # Deploy when the build committed new data, a person pushed/ran it, or it's
+    # the last evening run (daily snapshot). Runs even if a data section
+    # failed: the page then shows last good data.
+    if: always() && needs.update.outputs.sha != '' && (needs.update.outputs.changed == '1' || github.event_name != 'schedule' || github.event.schedule == '5 23 * * 1-5')
     uses: ./.github/workflows/deploy_site.yml
     with:
       ref: ${{ needs.update.outputs.sha }}
