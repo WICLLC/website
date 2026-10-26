@@ -89,9 +89,3 @@ Then open `index.html` in a browser.
 5. Go live, **only after ADMIS approval of the site and Policy:** put `CNAME` back (kept as `../CNAME.after-approval`, contents `WICLLC.org`); Settings → Pages → Source: **GitHub Actions**, custom domain `wicllc.org`; set variable `PAGES_LIVE` = `true` and `SITE_URL` = `https://wicllc.org/`; then DNS.
 
 Under the Policy (Article 8.VI), changes to workflow files, archive destinations, retention settings, secrets or notification recipients need written approval from the Policy Owner or Supervisory Approver.
-
-## Before going live
-
-- Written principal approval of the site (NFA Rule 2-29), dated copy kept.
-- Check whether ADMIS needs to review it.
-- Add NFA ID numbers in `site/template.html` (NFA membership paragraph in the footer).
