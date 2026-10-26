@@ -5,7 +5,8 @@ Pulls official data, then renders a single self-contained index.html.
 Every number on the page comes from these sources. Nothing is typed in by hand.
 
   Grain Stocks & Acreage  USDA NASS Quick Stats API      (needs NASS_API_KEY)
-  WASDE                   USDA WAOB wasdeMMYY.txt         (no key)
+  WASDE                   USDA WAOB wasdeMMYY.txt         (no key; from ESMIS,
+                          www.usda.gov as fallback)
   Soybean Crush           USDA NASS Quick Stats API      (Fats & Oils data)
   Livestock               USDA NASS Quick Stats API + USDA AMS LMR Datamart LM_XB403
   Commitments of Traders  CFTC Disaggregated COT, Futures Only (managed money)
@@ -56,6 +57,7 @@ QS_URL = 'https://quickstats.nass.usda.gov/api/api_GET/'
 WASDE_URL = 'https://www.usda.gov/oce/commodity/wasde/wasde{mm}{yy}.txt'
 AMS_BASE = 'https://mpr.datamart.ams.usda.gov/services/v1.1/reports/2453'  # LM_XB403
 ESMIS_PUB = 'https://esmis.nal.usda.gov/api/v1/publication/findByIdentifier/{}'
+ESMIS_RELEASES = 'https://esmis.nal.usda.gov/api/v1/release/findByIdentifier/{}'
 WAOB_WASDE_PAGE = ('https://www.usda.gov/about-usda/general-information/staff-offices/'
                    'office-chief-economist/commodity-markets/wasde-report')
 CENTRAL = ZoneInfo('America/Chicago')
@@ -268,7 +270,13 @@ ROW_RE = re.compile(r'^\s*(?P<label>\S.*?\S)\s{2,}(?P<nums>(?:-?[\d,]*\.?\d+|NA|
 YEAR_RE = re.compile(r'\d{4}/\d{2}')
 
 
+def is_wasde(r):
+    return r.status_code == 200 and 'WASDE' in r.text and 'Supply and Use' in r.text
+
+
 def fetch_wasde_text():
+    """Latest WASDE text file from the last 3 months. ESMIS first: www.usda.gov
+    often answers GitHub's servers with 403. Same file, byte for byte."""
     today = date.today()
     candidates = []
     y, m = today.year, today.month
@@ -277,11 +285,26 @@ def fetch_wasde_text():
         m -= 1
         if m == 0:
             y, m = y - 1, 12
+    try:
+        r = get(ESMIS_RELEASES.format('wasde'))
+        diag(f'[ESMIS] wasde releases -> HTTP {r.status_code}')
+        rels = r.json().get('results') or [] if r.status_code == 200 else []
+        files = [f for rel in rels for f in rel.get('files') or []]
+        for (y, m) in candidates:
+            name = f'wasde{m:02d}{y % 100:02d}.txt'
+            url = next((f for f in files if f.endswith('/' + name)), None)
+            if url:
+                r = get(url)
+                diag(f'[WASDE] {url} -> HTTP {r.status_code}, {len(r.text)} chars')
+                if is_wasde(r):
+                    return y, m, url, r.text
+    except (SectionError, ValueError, AttributeError) as e:
+        diag(f'[ESMIS] WASDE via ESMIS failed: {e}')
     for (y, m) in candidates:
         url = WASDE_URL.format(mm=f'{m:02d}', yy=f'{y % 100:02d}')
         r = get(url)
         diag(f'[WASDE] {url} -> HTTP {r.status_code}, {len(r.text)} chars')
-        if r.status_code == 200 and 'WASDE' in r.text and 'Supply and Use' in r.text:
+        if is_wasde(r):
             return y, m, url, r.text
     raise SectionError('No WASDE text file found for the last 3 months')
 
