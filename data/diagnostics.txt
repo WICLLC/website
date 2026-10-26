@@ -200,21 +200,13 @@
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | JUN
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | MAR
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | SEP
-[AMS] Current Cutout Values  -> HTTP 500
-[livestock:cutout] Traceback (most recent call last):
-  File "/home/runner/work/website/website/scripts/build_site.py", line 618, in build_livestock
-    out[name] = fn()
-                ^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 615, in <lambda>
-    for name, fn in [('cutout', lambda: build_cutout(prev.get('cutout'))),
-                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 550, in build_cutout
-    res = ams_section('Current Cutout Values')
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 524, in ams_section
-    raise SectionError(f'AMS LM_XB403 "{section}" HTTP {r.status_code}')
-SectionError: AMS LM_XB403 "Current Cutout Values" HTTP 500
-
+[AMS] Current Cutout Values  -> HTTP 200
+[AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
+[AMS] Composite Primal Values  -> HTTP 200
+[AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
+[AMS] Current Cutout Values {'q': 'report_date=10/23/2016:10/23/2026'} -> HTTP 200
+[AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
+[AMS] cutout history: 522 weeks from 2016-10-28
 [QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4257 rows; distinct short_desc|domain|period (1551):
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JAN THRU JUN
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JUL THRU DEC
@@ -904,7 +896,18 @@ SectionError: AMS LM_XB403 "Current Cutout Values" HTTP 500
 [CFTC] SB latest report 2026-10-20
 [CFTC] CL latest report 2026-10-20
 [CFTC] NG latest report 2026-10-20
-[ESMIS] wasde -> HTTP 200
+[ESMIS] wasde -> HTTP 502
+[calendar:wasde] Traceback (most recent call last):
+  File "/home/runner/work/website/website/scripts/build_site.py", line 683, in build_calendar
+    times.update(t.astimezone(CENTRAL).strftime('%Y-%m-%dT%H:%M') for t in fetch())
+                                                                           ^^^^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 670, in <lambda>
+    CALENDAR_SOURCES = {'wasde': [lambda: esmis_upcoming('wasde'), waob_wasde_dates]}
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 637, in esmis_upcoming
+    raise SectionError(f'ESMIS {ident} HTTP {r.status_code}')
+SectionError: ESMIS wasde HTTP 502
+
 [WAOB] WASDE page -> HTTP 200
 [WAOB] 2026 WASDE dates: 12
 [WAOB] 2027 WASDE dates: 12
@@ -921,11 +924,11 @@ SectionError: AMS LM_XB403 "Current Cutout Values" HTTP 500
 [calendar] CattOnFe upcoming: ['2026-11-20T14:00', '2026-12-18T14:00']
 [ESMIS] HogsPigs -> HTTP 200
 [calendar] HogsPigs upcoming: ['2026-12-23T14:00']
-[pub] 2026-09-15-what-are-grain-prices-going-to-do.pdf not live yet at https://wicllc.org/publications/2026-09-15-what-are-grain-prices-going-to-do.pdf; archive later
+[pub] 2026-10-22-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-10-22-weekly-note.pdf; archive later
+[pub] 2026-10-22-weekly-note.pdf: 2026-10-22 'Weekly Note 10.22.26'
+[pub] 2026-10-20-on-re-ownership.pdf not live yet at https://wicllc.org/publications/2026-10-20-on-re-ownership.pdf; archive later
+[pub] 2026-10-20-on-re-ownership.pdf: 2026-10-20 'On Re-Ownership'
 [pub] 2026-09-15-what-are-grain-prices-going-to-do.pdf: 2026-09-15 'What are grain prices going to do?'
-[pub] 2026-09-10-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-09-10-weekly-note.pdf; archive later
 [pub] 2026-09-10-weekly-note.pdf: 2026-09-10 'Weekly Note: 9.10.26'
-[pub] 2026-09-04-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-09-04-weekly-note.pdf; archive later
 [pub] 2026-09-04-weekly-note.pdf: 2026-09-04 'Weekly Note: 9.4.26'
-[pub] 2026-08-27-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-08-27-weekly-note.pdf; archive later
 [pub] 2026-08-27-weekly-note.pdf: 2026-08-27 'Weekly Note: 8.27.26'

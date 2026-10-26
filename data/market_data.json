@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-10-26T09:33",
+   "checked": "2026-10-26T10:21",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -3225,6 +3225,28 @@
    "items": [
     {
      "author": "Mitch Clodfelter",
+     "cover": "2026-10-22-weekly-note.jpg",
+     "date": "2026-10-22",
+     "excerpt": "Happy Thursday. I promised you all a note on some more specific re- ownership strategies and here they are. I\u2019ll discuss corn and beans, with a quick touch on wheat. Anything more specific you are needing please call or email, I\u2019ll provide contact information\u2026",
+     "file": "2026-10-22-weekly-note.pdf",
+     "pages": 9,
+     "subtitle": "As it stands",
+     "title": "Weekly Note 10.22.26"
+    },
+    {
+     "author": "Mitch Clodfelter",
+     "cover": "2026-10-20-on-re-ownership.jpg",
+     "date": "2026-10-20",
+     "excerpt": "Hello! I\u2019m back. It\u2019s been a while, and I\u2019ve missed writing these. If you\u2019re reading this, thank you. I want to talk this week on re-ownership. Why, what, where and when. It is re-ownership season for the American farmer, and though the concept sounds simple\u2026",
+     "file": "2026-10-20-on-re-ownership.pdf",
+     "pages": 8,
+     "subtitle": "10.20.26",
+     "title": "On Re-Ownership"
+    },
+    {
+     "archive_url": "https://web.archive.org/web/20261026152159/https://wicllc.org/publications/2026-09-15-what-are-grain-prices-going-to-do.pdf",
+     "archived": "2026-10-26T10:22",
+     "author": "Mitch Clodfelter",
      "cover": "2026-09-15-what-are-grain-prices-going-to-do.jpg",
      "date": "2026-09-15",
      "excerpt": "\u201cIf a man can write a better book, preach a better sermon or make a better mouse trap than his neighbors, though he builds his house in the woods, the world will make a beaten path to his door\u201d - Ralph Waldo Emerson First load of Harvest 2026 This past\u2026",
@@ -3234,6 +3256,8 @@
      "title": "What are grain prices going to do?"
     },
     {
+     "archive_url": "https://web.archive.org/web/20261026152201/https://wicllc.org/publications/2026-09-10-weekly-note.pdf",
+     "archived": "2026-10-26T10:22",
      "author": "Mitch Clodfelter",
      "cover": "2026-09-10-weekly-note.jpg",
      "date": "2026-09-10",
@@ -3244,6 +3268,8 @@
      "title": "Weekly Note: 9.10.26"
     },
     {
+     "archive_url": "https://web.archive.org/web/20261026152208/https://wicllc.org/publications/2026-09-04-weekly-note.pdf",
+     "archived": "2026-10-26T10:22",
      "author": "Mitch Clodfelter",
      "cover": "2026-09-04-weekly-note.jpg",
      "date": "2026-09-04",
@@ -3254,6 +3280,8 @@
      "title": "Weekly Note: 9.4.26"
     },
     {
+     "archive_url": "https://web.archive.org/web/20261026152216/https://wicllc.org/publications/2026-08-27-weekly-note.pdf",
+     "archived": "2026-10-26T10:22",
      "author": "Mitch Clodfelter",
      "cover": "2026-08-27-weekly-note.jpg",
      "date": "2026-08-27",
@@ -3265,7 +3293,7 @@
     }
    ]
   },
-  "updated": "2026-10-15"
+  "updated": "2026-10-26"
  },
  "wasde": {
   "data": {
