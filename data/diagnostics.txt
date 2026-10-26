@@ -200,13 +200,21 @@
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | JUN
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | MAR
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | SEP
-[AMS] Current Cutout Values  -> HTTP 200
-[AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
-[AMS] Composite Primal Values  -> HTTP 200
-[AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
-[AMS] Current Cutout Values {'q': 'report_date=10/23/2016:10/23/2026'} -> HTTP 200
-[AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
-[AMS] cutout history: 522 weeks from 2016-10-28
+[AMS] Current Cutout Values  -> HTTP 500
+[livestock:cutout] Traceback (most recent call last):
+  File "/home/runner/work/website/website/scripts/build_site.py", line 618, in build_livestock
+    out[name] = fn()
+                ^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 615, in <lambda>
+    for name, fn in [('cutout', lambda: build_cutout(prev.get('cutout'))),
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 550, in build_cutout
+    res = ams_section('Current Cutout Values')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 524, in ams_section
+    raise SectionError(f'AMS LM_XB403 "{section}" HTTP {r.status_code}')
+SectionError: AMS LM_XB403 "Current Cutout Values" HTTP 500
+
 [QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4257 rows; distinct short_desc|domain|period (1551):
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JAN THRU JUN
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JUL THRU DEC
