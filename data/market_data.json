@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-10-28T08:59",
+   "checked": "2026-10-28T16:09",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -550,7 +550,7 @@
     "ref": "2026-10-01"
    },
    "cutout": {
-    "choice": 372.22,
+    "choice": 369.0,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
@@ -3167,50 +3167,50 @@
       "select": 352.69
      },
      {
-      "choice": 372.22,
-      "date": "2026-10-27",
-      "select": 358.85
+      "choice": 369.0,
+      "date": "2026-10-28",
+      "select": 355.25
      }
     ],
     "primals": [
      {
-      "choice": 675.0,
+      "choice": 676.38,
       "primal": "Rib",
-      "select": 618.76
+      "select": 623.72
      },
      {
-      "choice": 334.47,
+      "choice": 331.3,
       "primal": "Chuck",
-      "select": 329.48
+      "select": 324.54
      },
      {
-      "choice": 292.97,
+      "choice": 287.55,
       "primal": "Round",
-      "select": 296.09
+      "select": 291.91
      },
      {
-      "choice": 455.2,
+      "choice": 450.11,
       "primal": "Loin",
-      "select": 423.34
+      "select": 417.57
      },
      {
-      "choice": 267.58,
+      "choice": 267.28,
       "primal": "Brisket",
-      "select": 279.93
+      "select": 271.71
      },
      {
-      "choice": 220.47,
+      "choice": 219.26,
       "primal": "Plate",
-      "select": 220.47
+      "select": 219.26
      },
      {
-      "choice": 153.12,
+      "choice": 151.86,
       "primal": "Flank",
-      "select": 152.8
+      "select": 151.41
      }
     ],
-    "report_date": "2026-10-27",
-    "select": 358.85
+    "report_date": "2026-10-28",
+    "select": 355.25
    },
    "hogs": {
     "all": 74301700.0,
@@ -3223,12 +3223,14 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-10-27"
+  "updated": "2026-10-28"
  },
  "publications": {
   "data": {
    "items": [
     {
+     "archive_url": "https://web.archive.org/web/20261028210912/https://wicllc.org/publications/2026-10-27-weekly-note.pdf",
+     "archived": "2026-10-28T16:09",
      "author": "",
      "cover": "2026-10-27-weekly-note.jpg",
      "date": "2026-10-27",

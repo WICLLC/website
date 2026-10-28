@@ -205,7 +205,7 @@
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] Composite Primal Values  -> HTTP 200
 [AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
-[AMS] Current Cutout Values {'q': 'report_date=10/27/2016:10/27/2026'} -> HTTP 200
+[AMS] Current Cutout Values {'q': 'report_date=10/28/2016:10/28/2026'} -> HTTP 200
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] cutout history: 523 weeks from 2016-10-28
 [QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4257 rows; distinct short_desc|domain|period (1551):
@@ -914,7 +914,6 @@
 [calendar] CattOnFe upcoming: ['2026-11-20T14:00', '2026-12-18T14:00']
 [ESMIS] HogsPigs -> HTTP 200
 [calendar] HogsPigs upcoming: ['2026-12-23T14:00']
-[pub] 2026-10-27-weekly-note.pdf not live yet at https://wicllc.org/publications/2026-10-27-weekly-note.pdf; archive later
 [pub] 2026-10-27-weekly-note.pdf: 2026-10-27 'Weekly Note 10.27.26'
 [pub] 2026-10-22-weekly-note.pdf: 2026-10-22 'Weekly Note 10.22.26'
 [pub] 2026-10-20-on-re-ownership.pdf: 2026-10-20 'On Re-Ownership'
