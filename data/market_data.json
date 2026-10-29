@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-10-28T20:46",
+   "checked": "2026-10-28T21:25",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -3172,43 +3172,7 @@
       "select": 355.25
      }
     ],
-    "primals": [
-     {
-      "choice": 676.38,
-      "primal": "Rib",
-      "select": 623.72
-     },
-     {
-      "choice": 331.3,
-      "primal": "Chuck",
-      "select": 324.54
-     },
-     {
-      "choice": 287.55,
-      "primal": "Round",
-      "select": 291.91
-     },
-     {
-      "choice": 450.11,
-      "primal": "Loin",
-      "select": 417.57
-     },
-     {
-      "choice": 267.28,
-      "primal": "Brisket",
-      "select": 271.71
-     },
-     {
-      "choice": 219.26,
-      "primal": "Plate",
-      "select": 219.26
-     },
-     {
-      "choice": 151.86,
-      "primal": "Flank",
-      "select": 151.41
-     }
-    ],
+    "primals": [],
     "report_date": "2026-10-28",
     "select": 355.25
    },
@@ -3223,7 +3187,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-10-28"
+  "updated": "2026-10-29"
  },
  "publications": {
   "data": {

@@ -203,8 +203,7 @@
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | SEP
 [AMS] Current Cutout Values  -> HTTP 200
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
-[AMS] Composite Primal Values  -> HTTP 200
-[AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
+[AMS] primal values skipped: Could not reach https://mpr.datamart.ams.usda.gov/services/v1.1/reports/2453/Composite%20Primal%20Values: HTTPSConnectionPool(host='mpr.datamart.ams.usda.gov', port=443): Read timed out. (read timeout=60)
 [AMS] Current Cutout Values {'q': 'report_date=10/28/2016:10/28/2026'} -> HTTP 200
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] cutout history: 523 weeks from 2016-10-28
