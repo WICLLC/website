@@ -95,7 +95,7 @@
      WHEAT, WINTER - ACRES PLANTED | TOTAL | YEAR - MAR ACREAGE
 [ESMIS] wasde releases -> HTTP 200
 [WASDE] https://esmis.nal.usda.gov/sites/default/release-files/796099/wasde1026.txt -> HTTP 200, 122378 chars
-[QS] {'commodity_desc': 'SOYBEANS', 'agg_level_desc': 'NATIONAL', 'freq_desc': 'MONTHLY', 'year__GE': '2024'} -> 245 rows; distinct short_desc|domain|period (105):
+[QS] {'commodity_desc': 'SOYBEANS', 'agg_level_desc': 'NATIONAL', 'freq_desc': 'MONTHLY', 'year__GE': '2024'} -> 248 rows; distinct short_desc|domain|period (105):
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | APR
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | AUG
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | DEC
@@ -205,10 +205,10 @@
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] Composite Primal Values  -> HTTP 200
 [AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
-[AMS] Current Cutout Values {'q': 'report_date=10/29/2016:10/29/2026'} -> HTTP 200
+[AMS] Current Cutout Values {'q': 'report_date=10/30/2016:10/30/2026'} -> HTTP 200
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] cutout history: 522 weeks from 2016-11-04
-[QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4273 rows; distinct short_desc|domain|period (1551):
+[QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4286 rows; distinct short_desc|domain|period (1551):
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JAN THRU JUN
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JUL THRU DEC
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | YEAR
@@ -764,7 +764,7 @@
      CATTLE, STEERS & STEER CALVES, ON FEED - INVENTORY | CAPACITY | CAPACITY: (1,000 OR MORE HEAD) | POINT IN TIME | FIRST OF APR | 2026 | 2026-05-22 15:00:00.000 | 7,256,000
      CATTLE, STEERS & STEER CALVES, ON FEED - INVENTORY | CAPACITY | CAPACITY: (1,000 OR MORE HEAD) | POINT IN TIME | FIRST OF JUL | 2026 | 2026-08-21 15:00:00.000 | 7,120,000
      CATTLE, STEERS & STEER CALVES, ON FEED - INVENTORY | CAPACITY | CAPACITY: (1,000 OR MORE HEAD) | POINT IN TIME | FIRST OF OCT | 2026 | 2026-10-23 15:00:00.000 | 7,072,000
-[QS] {'commodity_desc': 'HOGS', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 2349 rows; distinct short_desc|domain|period (867):
+[QS] {'commodity_desc': 'HOGS', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 2357 rows; distinct short_desc|domain|period (867):
      HOGS - GROSS INCOME, MEASURED IN $ | TOTAL | YEAR
      HOGS - INDEX FOR PRICE RECEIVED, 2011 | TOTAL | APR
      HOGS - INDEX FOR PRICE RECEIVED, 2011 | TOTAL | AUG
@@ -885,18 +885,18 @@
      HOGS, BARROWS & GILTS, SLAUGHTER, COMMERCIAL, FI - SLAUGHTERED, MEASURED IN HEAD | TOTAL | APR
      HOGS, BARROWS & GILTS, SLAUGHTER, COMMERCIAL, FI - SLAUGHTERED, MEASURED IN HEAD | TOTAL | AUG
      HOGS, BARROWS & GILTS, SLAUGHTER, COMMERCIAL, FI - SLAUGHTERED, MEASURED IN HEAD | TOTAL | DEC
-[CFTC] ZC latest report 2026-10-20
-[CFTC] ZS latest report 2026-10-20
-[CFTC] ZM latest report 2026-10-20
-[CFTC] ZL latest report 2026-10-20
-[CFTC] ZW latest report 2026-10-20
-[CFTC] LE latest report 2026-10-20
-[CFTC] GF latest report 2026-10-20
-[CFTC] HE latest report 2026-10-20
-[CFTC] CT latest report 2026-10-20
-[CFTC] SB latest report 2026-10-20
-[CFTC] CL latest report 2026-10-20
-[CFTC] NG latest report 2026-10-20
+[CFTC] ZC latest report 2026-10-27
+[CFTC] ZS latest report 2026-10-27
+[CFTC] ZM latest report 2026-10-27
+[CFTC] ZL latest report 2026-10-27
+[CFTC] ZW latest report 2026-10-27
+[CFTC] LE latest report 2026-10-27
+[CFTC] GF latest report 2026-10-27
+[CFTC] HE latest report 2026-10-27
+[CFTC] CT latest report 2026-10-27
+[CFTC] SB latest report 2026-10-27
+[CFTC] CL latest report 2026-10-27
+[CFTC] NG latest report 2026-10-27
 [ESMIS] wasde -> HTTP 200
 [WAOB] WASDE page -> HTTP 200
 [WAOB] 2026 WASDE dates: 12
