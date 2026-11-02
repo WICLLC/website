@@ -95,7 +95,7 @@
      WHEAT, WINTER - ACRES PLANTED | TOTAL | YEAR - MAR ACREAGE
 [ESMIS] wasde releases -> HTTP 200
 [WASDE] https://esmis.nal.usda.gov/sites/default/release-files/796099/wasde1026.txt -> HTTP 200, 122378 chars
-[QS] {'commodity_desc': 'SOYBEANS', 'agg_level_desc': 'NATIONAL', 'freq_desc': 'MONTHLY', 'year__GE': '2024'} -> 248 rows; distinct short_desc|domain|period (105):
+[QS] {'commodity_desc': 'SOYBEANS', 'agg_level_desc': 'NATIONAL', 'freq_desc': 'MONTHLY', 'year__GE': '2024'} -> 249 rows; distinct short_desc|domain|period (105):
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | APR
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | AUG
      SOYBEANS - CRUSHED, MEASURED IN TONS | TOTAL | DEC
@@ -205,9 +205,9 @@
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
 [AMS] Composite Primal Values  -> HTTP 200
 [AMS] Composite Primal Values keys: ['choice_600_900', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'primal_desc', 'published_date', 'report_date', 'report_title', 'select_600_900', 'slug_id', 'slug_name', 'trend']
-[AMS] Current Cutout Values {'q': 'report_date=10/30/2016:10/30/2026'} -> HTTP 200
+[AMS] Current Cutout Values {'q': 'report_date=11/02/2016:11/02/2026'} -> HTTP 200
 [AMS] Current Cutout Values keys: ['choice_600_900_current', 'market_location_city', 'market_location_name', 'market_location_state', 'market_type', 'market_type_category', 'narrative', 'office_city', 'office_code', 'office_name', 'office_state', 'published_date', 'report_date', 'report_title', 'select_600_900_current', 'slug_id', 'slug_name', 'trend']
-[AMS] cutout history: 522 weeks from 2016-11-04
+[AMS] cutout history: 523 weeks from 2016-11-04
 [QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4286 rows; distinct short_desc|domain|period (1551):
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JAN THRU JUN
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JUL THRU DEC
@@ -909,7 +909,7 @@
 [ESMIS] Acre -> HTTP 200
 [calendar] Acre upcoming: []
 [ESMIS] FatsOils -> HTTP 200
-[calendar] FatsOils upcoming: ['2026-11-02T14:00', '2026-12-01T14:00']
+[calendar] FatsOils upcoming: ['2026-12-01T14:00']
 [ESMIS] CattOnFe -> HTTP 200
 [calendar] CattOnFe upcoming: ['2026-11-20T14:00', '2026-12-18T14:00']
 [ESMIS] HogsPigs -> HTTP 200

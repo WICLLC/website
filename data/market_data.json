@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-10-30T21:17",
+   "checked": "2026-11-02T17:35",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -41,7 +41,6 @@
      "name": "Fats and Oils: Oilseed Crushings",
      "tab": "Soybean Crush",
      "upcoming": [
-      "2026-11-02T14:00",
       "2026-12-01T14:00"
      ]
     },
@@ -66,7 +65,7 @@
     }
    ]
   },
-  "updated": "2026-10-31"
+  "updated": "2026-11-02"
  },
  "cot": {
   "data": {
@@ -233,14 +232,10 @@
  },
  "crush": {
   "data": {
-   "crush_tons": 6289327.0,
-   "crush_tons_prior_month": 6657663.0,
-   "crush_tons_prior_year": 5941050.0,
+   "crush_tons": 5964861.0,
+   "crush_tons_prior_month": 6289327.0,
+   "crush_tons_prior_year": 6148544.0,
    "history": [
-    {
-     "crush_tons": 5941050.0,
-     "month": "2025-08"
-    },
     {
      "crush_tons": 6148544.0,
      "month": "2025-09"
@@ -288,10 +283,14 @@
     {
      "crush_tons": 6289327.0,
      "month": "2026-08"
+    },
+    {
+     "crush_tons": 5964861.0,
+     "month": "2026-09"
     }
    ],
-   "loaded": "2026-10-01",
-   "month": "2026-08",
+   "loaded": "2026-11-02",
+   "month": "2026-09",
    "oil_production_lb": null,
    "oil_stocks_lb": null,
    "series_labels": {
@@ -300,7 +299,7 @@
     "oil_stocks_lb": null
    }
   },
-  "updated": "2026-10-13"
+  "updated": "2026-11-02"
  },
  "grain": {
   "data": {
@@ -550,7 +549,7 @@
     "ref": "2026-10-01"
    },
    "cutout": {
-    "choice": 364.66,
+    "choice": 365.04,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
@@ -3165,47 +3164,52 @@
       "choice": 364.66,
       "date": "2026-10-30",
       "select": 351.98
+     },
+     {
+      "choice": 365.04,
+      "date": "2026-11-02",
+      "select": 354.94
      }
     ],
     "primals": [
      {
-      "choice": 673.83,
+      "choice": 674.81,
       "primal": "Rib",
-      "select": 624.19
+      "select": 617.06
      },
      {
-      "choice": 321.1,
+      "choice": 320.45,
       "primal": "Chuck",
-      "select": 320.81
+      "select": 328.24
      },
      {
-      "choice": 289.64,
+      "choice": 290.94,
       "primal": "Round",
-      "select": 289.01
+      "select": 293.92
      },
      {
-      "choice": 444.18,
+      "choice": 443.3,
       "primal": "Loin",
       "select": 413.3
      },
      {
-      "choice": 269.92,
+      "choice": 270.29,
       "primal": "Brisket",
-      "select": 265.98
+      "select": 267.92
      },
      {
-      "choice": 214.83,
+      "choice": 219.56,
       "primal": "Plate",
-      "select": 214.83
+      "select": 219.56
      },
      {
-      "choice": 150.3,
+      "choice": 150.6,
       "primal": "Flank",
-      "select": 149.44
+      "select": 150.61
      }
     ],
-    "report_date": "2026-10-30",
-    "select": 351.98
+    "report_date": "2026-11-02",
+    "select": 354.94
    },
    "hogs": {
     "all": 74301700.0,
@@ -3218,7 +3222,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-10-30"
+  "updated": "2026-11-02"
  },
  "publications": {
   "data": {
