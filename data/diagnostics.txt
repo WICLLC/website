@@ -898,16 +898,10 @@
 [CFTC] CL latest report 2026-10-27
 [CFTC] NG latest report 2026-10-27
 [ESMIS] wasde -> HTTP 200
-[WAOB] WASDE page -> HTTP 403
-[calendar:wasde] Traceback (most recent call last):
-  File "/home/runner/work/website/website/scripts/build_site.py", line 706, in build_calendar
-    times.update(t.astimezone(CENTRAL).strftime('%Y-%m-%dT%H:%M') for t in fetch())
-                                                                           ^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 674, in waob_wasde_dates
-    raise SectionError(f'WAOB WASDE page HTTP {r.status_code}')
-SectionError: WAOB WASDE page HTTP 403
-
-[calendar] wasde upcoming: []
+[WAOB] WASDE page -> HTTP 200
+[WAOB] 2026 WASDE dates: 12
+[WAOB] 2027 WASDE dates: 12
+[calendar] wasde upcoming: ['2026-11-10T11:00', '2026-12-10T11:00', '2027-01-12T11:00']
 [ESMIS] GraiStoc -> HTTP 200
 [calendar] GraiStoc upcoming: []
 [ESMIS] ProsPlan -> HTTP 200
