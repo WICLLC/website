@@ -879,7 +879,7 @@ def render(data):
         html = f.read()
     with open(LOGO, 'rb') as f:
         logo = 'data:image/png;base64,' + base64.b64encode(f.read()).decode()
-    html = html.replace('assets/wic-mark.png', logo)
+    html = html.replace('"assets/wic-mark.png"', '"' + logo + '"')
     # Background photos, inlined so index.html stays self-contained.
     assets = os.path.dirname(LOGO)
     for name in sorted(os.listdir(assets)):
