@@ -45,7 +45,7 @@ jobs:
       - name: Collect the public files
         run: |
           mkdir _site
-          cp -r index.html sitemap.xml robots.txt BingSiteAuth.xml cot publications assets _site/
+          cp -r index.html 404.html sitemap.xml robots.txt BingSiteAuth.xml cot publications assets _site/
           [ -f CNAME ] && cp CNAME _site/ || true
 
       - uses: actions/configure-pages@v5
