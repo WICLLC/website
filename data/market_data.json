@@ -1,18 +1,14 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-04T21:28",
+   "checked": "2026-11-05T16:03",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
      "id": "wasde",
      "name": "WASDE",
      "tab": "WASDE Supply & Demand",
-     "upcoming": [
-      "2026-11-10T11:00",
-      "2026-12-10T11:00",
-      "2027-01-12T11:00"
-     ]
+     "upcoming": []
     },
     {
      "agency": "USDA NASS",
@@ -549,17 +545,12 @@
     "ref": "2026-10-01"
    },
    "cutout": {
-    "choice": 362.5,
+    "choice": 361.56,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
     ],
     "history": [
-     {
-      "choice": 188.7,
-      "date": "2016-11-04",
-      "select": 173.03
-     },
      {
       "choice": 184.62,
       "date": "2016-11-11",
@@ -3166,50 +3157,50 @@
       "select": 351.98
      },
      {
-      "choice": 362.5,
-      "date": "2026-11-04",
-      "select": 356.65
+      "choice": 361.56,
+      "date": "2026-11-05",
+      "select": 352.32
      }
     ],
     "primals": [
      {
-      "choice": 676.67,
+      "choice": 678.44,
       "primal": "Rib",
-      "select": 630.28
+      "select": 619.09
      },
      {
-      "choice": 318.55,
+      "choice": 318.19,
       "primal": "Chuck",
-      "select": 333.25
+      "select": 322.67
      },
      {
-      "choice": 289.3,
+      "choice": 287.95,
       "primal": "Round",
-      "select": 291.5
+      "select": 290.21
      },
      {
-      "choice": 436.52,
+      "choice": 432.48,
       "primal": "Loin",
-      "select": 411.5
+      "select": 408.36
      },
      {
-      "choice": 264.93,
+      "choice": 264.7,
       "primal": "Brisket",
-      "select": 262.94
+      "select": 282.0
      },
      {
-      "choice": 218.23,
+      "choice": 218.95,
       "primal": "Plate",
-      "select": 218.23
+      "select": 218.95
      },
      {
-      "choice": 149.7,
+      "choice": 152.26,
       "primal": "Flank",
-      "select": 150.33
+      "select": 151.52
      }
     ],
-    "report_date": "2026-11-04",
-    "select": 356.65
+    "report_date": "2026-11-05",
+    "select": 352.32
    },
    "hogs": {
     "all": 74301700.0,
@@ -3222,7 +3213,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-11-04"
+  "updated": "2026-11-05"
  },
  "publications": {
   "data": {
