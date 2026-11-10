@@ -785,16 +785,28 @@ def pub_cover(doc, path):
 
 def pub_meta(doc, name):
     """Title, subtitle, author, date and opening lines from page 1. Substack's
-    PDF layout: title / subtitle / AUTHOR / MON DD, YYYY / body."""
-    lines = [l.strip() for l in doc[0].get_text().splitlines() if l.strip()]
+    PDF layout: title / subtitle / AUTHOR / MON DD, YYYY / body.
+    A long title wraps onto several lines; those lines share the title's
+    font size, so every leading line at that size is part of the title."""
+    lines, sizes = [], []
+    for block in doc[0].get_text('dict')['blocks']:
+        for ln in block.get('lines', []):
+            text = ''.join(s['text'] for s in ln['spans']).strip()
+            if text:
+                lines.append(text)
+                sizes.append(max(s['size'] for s in ln['spans']))
+    n_title = 1
+    while n_title < len(lines) and abs(sizes[n_title] - sizes[0]) < 0.5:
+        n_title += 1
     m = PUB_FILE_RE.match(name)
     when = date(int(m[1]), int(m[2]), int(m[3])) if m else None
-    title, subtitle, author, body = (lines[0] if lines else name), '', '', lines[1:]
-    for i, l in enumerate(lines[:6]):
+    title = ' '.join(lines[:n_title]) if lines else name
+    subtitle, author, body = '', '', lines[n_title:]
+    for i, l in enumerate(lines[:n_title + 5]):
         d = PUB_DATE_RE.match(l)
         if d:
             when = date(int(d[3]), MONTHS[d[1]], int(d[2]))
-            head = lines[1:i]
+            head = lines[n_title:i]
             subtitle = head[0] if len(head) >= 2 else ''
             author = head[-1].title() if head else ''
             body = lines[i + 1:]
