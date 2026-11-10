@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-10T15:53",
+   "checked": "2026-11-10T15:59",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -549,7 +549,7 @@
     "ref": "2026-10-01"
    },
    "cutout": {
-    "choice": 362.74,
+    "choice": 362.98,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
@@ -3166,50 +3166,50 @@
       "select": 353.56
      },
      {
-      "choice": 362.74,
-      "date": "2026-11-09",
-      "select": 353.73
+      "choice": 362.98,
+      "date": "2026-11-10",
+      "select": 351.62
      }
     ],
     "primals": [
      {
-      "choice": 672.9,
+      "choice": 676.56,
       "primal": "Rib",
-      "select": 619.24
+      "select": 612.86
      },
      {
-      "choice": 321.63,
+      "choice": 319.63,
       "primal": "Chuck",
-      "select": 323.15
+      "select": 318.42
      },
      {
-      "choice": 288.1,
+      "choice": 288.04,
       "primal": "Round",
-      "select": 285.8
+      "select": 287.11
      },
      {
-      "choice": 434.69,
+      "choice": 433.69,
       "primal": "Loin",
-      "select": 420.32
+      "select": 423.05
      },
      {
-      "choice": 270.11,
+      "choice": 282.04,
       "primal": "Brisket",
-      "select": 274.3
+      "select": 254.27
      },
      {
-      "choice": 220.47,
+      "choice": 221.24,
       "primal": "Plate",
-      "select": 220.47
+      "select": 221.24
      },
      {
-      "choice": 149.97,
+      "choice": 149.77,
       "primal": "Flank",
-      "select": 150.27
+      "select": 152.96
      }
     ],
-    "report_date": "2026-11-09",
-    "select": 353.73
+    "report_date": "2026-11-10",
+    "select": 351.62
    },
    "hogs": {
     "all": 74301700.0,
