@@ -889,16 +889,8 @@ def build_publications(previous):
 def render(data):
     with open(TEMPLATE, encoding='utf-8') as f:
         html = f.read()
-    with open(LOGO, 'rb') as f:
-        logo = 'data:image/png;base64,' + base64.b64encode(f.read()).decode()
-    html = html.replace('"assets/wic-mark.png"', '"' + logo + '"')
-    # Background photos, inlined so index.html stays self-contained.
-    assets = os.path.dirname(LOGO)
-    for name in sorted(os.listdir(assets)):
-        if name.startswith('bg-') and name.endswith('.jpg') and f'assets/{name}' in html:
-            with open(os.path.join(assets, name), 'rb') as f:
-                uri = 'data:image/jpeg;base64,' + base64.b64encode(f.read()).decode()
-            html = html.replace(f'assets/{name}', uri)
+    # Images stay as files under assets/ (deployed alongside index.html) so
+    # browsers can cache them and search engines can index them.
     payload = json.dumps(data, separators=(',', ':')).replace('</', '<\\/')
     marker = '<!--WIC_DATA-->'
     if marker not in html:
