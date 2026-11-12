@@ -201,6 +201,7 @@
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | JUN
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | MAR
      SOYBEANS, PRIOR TO CLOSING THE DAY OF GRAIN STOCKS REPORT - PRICE RECEIVED PRIOR TO CLOSING, MEASURED IN CENTS / BU | TOTAL | SEP
+[AMS] Current Cutout Values  -> HTTP 500
 [livestock:cutout] Traceback (most recent call last):
   File "/home/runner/work/website/website/scripts/build_site.py", line 641, in build_livestock
     out[name] = fn()
@@ -211,12 +212,9 @@
   File "/home/runner/work/website/website/scripts/build_site.py", line 573, in build_cutout
     res = ams_section('Current Cutout Values')
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 544, in ams_section
-    r = get(url, params=params)
-        ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 118, in get
-    raise SectionError(f'Could not reach {url}: {msg}')
-SectionError: Could not reach https://mpr.datamart.ams.usda.gov/services/v1.1/reports/2453/Current%20Cutout%20Values: HTTPSConnectionPool(host='mpr.datamart.ams.usda.gov', port=443): Read timed out. (read timeout=60)
+  File "/home/runner/work/website/website/scripts/build_site.py", line 547, in ams_section
+    raise SectionError(f'AMS LM_XB403 "{section}" HTTP {r.status_code}')
+SectionError: AMS LM_XB403 "Current Cutout Values" HTTP 500
 
 [QS] {'commodity_desc': 'CATTLE', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2024'} -> 4302 rows; distinct short_desc|domain|period (1551):
      CATTLE - CALF CROP, MEASURED IN HEAD | TOTAL | JAN THRU JUN
