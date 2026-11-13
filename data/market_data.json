@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-12T21:22",
+   "checked": "2026-11-13T12:37",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -3223,6 +3223,16 @@
   "data": {
    "items": [
     {
+     "author": "Mitch Clodfelter",
+     "cover": "2026-11-13-sentiment-shift.jpg",
+     "date": "2026-11-13",
+     "excerpt": "\u201cI don\u2019t tick. I am not a machine. If I did tick, I should have no views on it, and you had better ask the winder.\u201d - J.R.R. Tolkien Happy Friday. I\u2019ll start off this week with a short rant before diving into market view as always. It\u2019s spreads season. We\u2019re\u2026",
+     "file": "2026-11-13-sentiment-shift.pdf",
+     "pages": 11,
+     "subtitle": "Weekly Note 11.13.26",
+     "title": "Sentiment Shift"
+    },
+    {
      "archive_url": "https://web.archive.org/web/20261110174029/https://wicllc.org/publications/2026-11-5-what-happens-when-cheap-gets-cheaper.pdf",
      "archived": "2026-11-10T11:40",
      "author": "Mitch Clodfelter",
@@ -3320,7 +3330,7 @@
     }
    ]
   },
-  "updated": "2026-11-10"
+  "updated": "2026-11-13"
  },
  "wasde": {
   "data": {
