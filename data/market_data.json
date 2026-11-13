@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-13T12:37",
+   "checked": "2026-11-13T12:40",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -3223,6 +3223,8 @@
   "data": {
    "items": [
     {
+     "archive_url": "https://web.archive.org/web/20261113184050/https://wicllc.org/publications/2026-11-13-sentiment-shift.pdf",
+     "archived": "2026-11-13T12:40",
      "author": "Mitch Clodfelter",
      "cover": "2026-11-13-sentiment-shift.jpg",
      "date": "2026-11-13",
@@ -3315,18 +3317,6 @@
      "pages": 7,
      "subtitle": "The one you got",
      "title": "Weekly Note: 9.4.26"
-    },
-    {
-     "archive_url": "https://web.archive.org/web/20261026152216/https://wicllc.org/publications/2026-08-27-weekly-note.pdf",
-     "archived": "2026-10-26T10:22",
-     "author": "Mitch Clodfelter",
-     "cover": "2026-08-27-weekly-note.jpg",
-     "date": "2026-08-27",
-     "excerpt": "To be the bridge between noise and reality for the benefit of our clients I\u2019m tossing around the idea of the above as a mission statement. It seems relevant to what I\u2019m trying to accomplish. I\u2019m always seeking reality and what is truly driving price. Moreso\u2026",
-     "file": "2026-08-27-weekly-note.pdf",
-     "pages": 7,
-     "subtitle": "Monkey Business",
-     "title": "Weekly Note: 8.27.26"
     }
    ]
   },

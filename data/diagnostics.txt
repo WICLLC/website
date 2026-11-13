@@ -915,7 +915,6 @@
 [ESMIS] HogsPigs -> HTTP 200
 [calendar] HogsPigs upcoming: ['2026-12-23T14:00']
 [pub] 2026-11-5-what-happens-when-cheap-gets-cheaper.pdf: 2026-11-06 'What Happens When Cheap Gets Cheaper'
-[pub] 2026-11-13-sentiment-shift.pdf not live yet at https://wicllc.org/publications/2026-11-13-sentiment-shift.pdf; archive later
 [pub] 2026-11-13-sentiment-shift.pdf: 2026-11-13 'Sentiment Shift'
 [pub] 2026-10-27-weekly-note.pdf: 2026-10-27 'Weekly Note 10.27.26'
 [pub] 2026-10-22-weekly-note.pdf: 2026-10-22 'Weekly Note 10.22.26'
@@ -923,4 +922,3 @@
 [pub] 2026-09-15-what-are-grain-prices-going-to-do.pdf: 2026-09-15 'What are grain prices going to do?'
 [pub] 2026-09-10-weekly-note.pdf: 2026-09-10 'Weekly Note: 9.10.26'
 [pub] 2026-09-04-weekly-note.pdf: 2026-09-04 'Weekly Note: 9.4.26'
-[pub] 2026-08-27-weekly-note.pdf: 2026-08-27 'Weekly Note: 8.27.26'
