@@ -1,14 +1,18 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-12T16:31",
+   "checked": "2026-11-12T20:34",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
      "id": "wasde",
      "name": "WASDE",
      "tab": "WASDE Supply & Demand",
-     "upcoming": []
+     "upcoming": [
+      "2026-12-10T11:00",
+      "2027-01-12T11:00",
+      "2027-02-10T11:00"
+     ]
     },
     {
      "agency": "USDA NASS",
@@ -61,7 +65,7 @@
     }
    ]
   },
-  "updated": "2026-11-12"
+  "updated": "2026-11-13"
  },
  "cot": {
   "data": {
@@ -551,11 +555,6 @@
      "select_600_900_current"
     ],
     "history": [
-     {
-      "choice": 184.62,
-      "date": "2016-11-11",
-      "select": 167.71
-     },
      {
       "choice": 182.95,
       "date": "2016-11-18",
@@ -3167,7 +3166,43 @@
       "select": 348.71
      }
     ],
-    "primals": [],
+    "primals": [
+     {
+      "choice": 676.62,
+      "primal": "Rib",
+      "select": 629.77
+     },
+     {
+      "choice": 312.15,
+      "primal": "Chuck",
+      "select": 312.18
+     },
+     {
+      "choice": 281.11,
+      "primal": "Round",
+      "select": 283.18
+     },
+     {
+      "choice": 434.44,
+      "primal": "Loin",
+      "select": 413.18
+     },
+     {
+      "choice": 257.04,
+      "primal": "Brisket",
+      "select": 263.77
+     },
+     {
+      "choice": 214.54,
+      "primal": "Plate",
+      "select": 214.54
+     },
+     {
+      "choice": 147.34,
+      "primal": "Flank",
+      "select": 152.53
+     }
+    ],
     "report_date": "2026-11-12",
     "select": 348.71
    },
@@ -3182,7 +3217,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-11-12"
+  "updated": "2026-11-13"
  },
  "publications": {
   "data": {
