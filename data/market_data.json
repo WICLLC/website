@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-18T22:07",
+   "checked": "2026-11-19T17:05",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -549,17 +549,12 @@
     "ref": "2026-10-01"
    },
    "cutout": {
-    "choice": 355.96,
+    "choice": 353.52,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
     ],
     "history": [
-     {
-      "choice": 182.95,
-      "date": "2016-11-18",
-      "select": 167.01
-     },
      {
       "choice": 187.64,
       "date": "2016-11-25",
@@ -3166,50 +3161,50 @@
       "select": 349.15
      },
      {
-      "choice": 355.96,
-      "date": "2026-11-18",
-      "select": 344.45
+      "choice": 353.52,
+      "date": "2026-11-19",
+      "select": 341.97
      }
     ],
     "primals": [
      {
-      "choice": 682.92,
+      "choice": 682.28,
       "primal": "Rib",
-      "select": 622.85
+      "select": 625.07
      },
      {
-      "choice": 307.07,
+      "choice": 301.05,
       "primal": "Chuck",
-      "select": 304.36
+      "select": 302.28
      },
      {
-      "choice": 278.26,
+      "choice": 276.25,
       "primal": "Round",
-      "select": 276.87
+      "select": 277.03
      },
      {
-      "choice": 433.42,
+      "choice": 432.56,
       "primal": "Loin",
-      "select": 417.32
+      "select": 408.49
      },
      {
-      "choice": 256.64,
+      "choice": 261.17,
       "primal": "Brisket",
-      "select": 251.88
+      "select": 251.94
      },
      {
-      "choice": 215.92,
+      "choice": 212.71,
       "primal": "Plate",
-      "select": 215.92
+      "select": 212.71
      },
      {
-      "choice": 145.14,
+      "choice": 146.64,
       "primal": "Flank",
-      "select": 148.6
+      "select": 146.95
      }
     ],
-    "report_date": "2026-11-18",
-    "select": 344.45
+    "report_date": "2026-11-19",
+    "select": 341.97
    },
    "hogs": {
     "all": 74301700.0,
@@ -3222,7 +3217,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-11-18"
+  "updated": "2026-11-19"
  },
  "publications": {
   "data": {
