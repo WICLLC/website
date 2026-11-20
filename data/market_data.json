@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-19T21:57",
+   "checked": "2026-11-20T12:53",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -3223,6 +3223,16 @@
   "data": {
    "items": [
     {
+     "author": "",
+     "cover": "2026-11-20-the-less-I-trade.jpg",
+     "date": "2026-11-20",
+     "excerpt": "Weekly Note 11.20.26 MITCH CLODFELTER JUST NOW Share Happy Friday. I\u2019m going write today about a concept that seems counter-intuitiv which is definitely sacrilege amongst my industry to put in writing. Price analysi the bottom, as always. The Less I Trade\u2026",
+     "file": "2026-11-20-the-less-I-trade.pdf",
+     "pages": 14,
+     "subtitle": "",
+     "title": "The Less I Trade"
+    },
+    {
      "archive_url": "https://web.archive.org/web/20261113184050/https://wicllc.org/publications/2026-11-13-sentiment-shift.pdf",
      "archived": "2026-11-13T12:40",
      "author": "Mitch Clodfelter",
@@ -3320,7 +3330,7 @@
     }
    ]
   },
-  "updated": "2026-11-13"
+  "updated": "2026-11-20"
  },
  "wasde": {
   "data": {
