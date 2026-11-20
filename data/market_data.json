@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-20T12:53",
+   "checked": "2026-11-20T13:05",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -3223,6 +3223,8 @@
   "data": {
    "items": [
     {
+     "archive_url": "https://web.archive.org/web/20261120190511/https://wicllc.org/publications/2026-11-20-the-less-I-trade.pdf",
+     "archived": "2026-11-20T13:05",
      "author": "",
      "cover": "2026-11-20-the-less-I-trade.jpg",
      "date": "2026-11-20",
@@ -3315,18 +3317,6 @@
      "pages": 10,
      "subtitle": "Impressive",
      "title": "Weekly Note: 9.10.26"
-    },
-    {
-     "archive_url": "https://web.archive.org/web/20261026152208/https://wicllc.org/publications/2026-09-04-weekly-note.pdf",
-     "archived": "2026-10-26T10:22",
-     "author": "Mitch Clodfelter",
-     "cover": "2026-09-04-weekly-note.jpg",
-     "date": "2026-09-04",
-     "excerpt": "\u201cLife is too short so love the one you got cause you might get runover or you might get shot\u201d -Sublime Happy Friday. Once again, it\u2019s been an exciting week to be in the grain trade. Price action has been impressive, with a few days of corn and beans getting\u2026",
-     "file": "2026-09-04-weekly-note.pdf",
-     "pages": 7,
-     "subtitle": "The one you got",
-     "title": "Weekly Note: 9.4.26"
     }
    ]
   },
