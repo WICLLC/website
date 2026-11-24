@@ -1,3 +1,69 @@
+[QS] {'commodity_desc': 'CORN', 'statisticcat_desc': 'STOCKS', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2023'} -> 45 rows; distinct short_desc|domain|period (12):
+     CORN, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     CORN, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     CORN, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     CORN, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     CORN, OFF FARM, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     CORN, OFF FARM, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     CORN, OFF FARM, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     CORN, OFF FARM, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     CORN, ON FARM, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     CORN, ON FARM, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     CORN, ON FARM, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     CORN, ON FARM, GRAIN - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+[QS] {'commodity_desc': 'SOYBEANS', 'statisticcat_desc': 'STOCKS', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2023'} -> 45 rows; distinct short_desc|domain|period (12):
+     SOYBEANS - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     SOYBEANS - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     SOYBEANS - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     SOYBEANS - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     SOYBEANS, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     SOYBEANS, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     SOYBEANS, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     SOYBEANS, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     SOYBEANS, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     SOYBEANS, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     SOYBEANS, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     SOYBEANS, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+[QS] {'commodity_desc': 'WHEAT', 'statisticcat_desc': 'STOCKS', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2023'} -> 90 rows; distinct short_desc|domain|period (24):
+     WHEAT - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     WHEAT - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     WHEAT - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     WHEAT - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     WHEAT, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     WHEAT, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     WHEAT, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     WHEAT, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     WHEAT, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     WHEAT, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     WHEAT, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     WHEAT, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     WHEAT, SPRING, DURUM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     WHEAT, SPRING, DURUM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     WHEAT, SPRING, DURUM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     WHEAT, SPRING, DURUM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     WHEAT, SPRING, DURUM, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     WHEAT, SPRING, DURUM, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     WHEAT, SPRING, DURUM, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     WHEAT, SPRING, DURUM, OFF FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+     WHEAT, SPRING, DURUM, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF DEC
+     WHEAT, SPRING, DURUM, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF JUN
+     WHEAT, SPRING, DURUM, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF MAR
+     WHEAT, SPRING, DURUM, ON FARM - STOCKS, MEASURED IN BU | TOTAL | FIRST OF SEP
+[QS] {'commodity_desc': 'CORN', 'statisticcat_desc': 'AREA PLANTED', 'agg_level_desc': 'NATIONAL', 'source_desc': 'SURVEY', 'year__GE': '2025'} -> 27 rows; distinct short_desc|domain|period (14):
+     CORN - ACRES PLANTED | TOTAL | YEAR
+     CORN - ACRES PLANTED | TOTAL | YEAR - AUG FORECAST
+     CORN - ACRES PLANTED | TOTAL | YEAR - JUN ACREAGE
+     CORN - ACRES PLANTED | TOTAL | YEAR - MAR ACREAGE
+     CORN - ACRES PLANTED | TOTAL | YEAR - OCT FORECAST
+     CORN - ACRES PLANTED | TOTAL | YEAR - SEP FORECAST
+     CORN, BIOTECH - AREA PLANTED, MEASURED IN PCT BY TYPE | TOTAL | YEAR
+     CORN, BIOTECH - AREA PLANTED, MEASURED IN PCT BY TYPE | TOTAL | YEAR - JUN ACREAGE
+     CORN, BIOTECH, BT - AREA PLANTED, MEASURED IN PCT BY TYPE | TOTAL | YEAR
+     CORN, BIOTECH, BT - AREA PLANTED, MEASURED IN PCT BY TYPE | TOTAL | YEAR - JUN ACREAGE
+     CORN, BIOTECH, HERBICIDE RESISTANT - AREA PLANTED, MEASURED IN PCT BY TYPE | TOTAL | YEAR
+     CORN, BIOTECH, HERBICIDE RESISTANT - AREA PLANTED, MEASURED IN PCT BY TYPE | TOTAL | YEAR - JUN ACREAGE
+     CORN, BIOTECH, STACKED GENE - AREA PLANTED, MEASURED IN PCT BY TYPE | TOTAL | YEAR
+     CORN, BIOTECH, STACKED GENE - AREA PLANTED, MEASURED IN PCT BY TYPE | TOTAL | YEAR - JUN ACREAGE
 [grain] Traceback (most recent call last):
   File "/home/runner/work/website/website/scripts/build_site.py", line 953, in main
     section = fn()
@@ -5,9 +71,9 @@
   File "/home/runner/work/website/website/scripts/build_site.py", line 929, in <lambda>
     ('grain', 'Grain Stocks & Acreage', lambda: build_grain()),
                                                 ^^^^^^^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 201, in build_grain
-    rows = qs(commodity_desc=c, statisticcat_desc='STOCKS', agg_level_desc='NATIONAL',
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/website/website/scripts/build_site.py", line 241, in build_grain
+    rows = qs(commodity_desc=c, statisticcat_desc='AREA PLANTED', agg_level_desc='NATIONAL',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/runner/work/website/website/scripts/build_site.py", line 140, in qs
     r = get(QS_URL, params=q)
         ^^^^^^^^^^^^^^^^^^^^^
