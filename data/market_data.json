@@ -1,14 +1,18 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-24T23:25",
+   "checked": "2026-11-25T13:57",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
      "id": "wasde",
      "name": "WASDE",
      "tab": "WASDE Supply & Demand",
-     "upcoming": []
+     "upcoming": [
+      "2026-12-10T11:00",
+      "2027-01-12T11:00",
+      "2027-02-10T11:00"
+     ]
     },
     {
      "agency": "USDA NASS",
@@ -3223,6 +3227,16 @@
   "data": {
    "items": [
     {
+     "author": "Mitch Clodfelter",
+     "cover": "2026-11-25-its-a-big-club.jpg",
+     "date": "2026-11-25",
+     "excerpt": "Happy Wednesday. An earlier note this week with Thanksgiving looming. Grains and livestock close early at 12:05 CT Friday. The holiday hours they adopt always make me laugh. I\u2019m sure there is some grand reason that though we must trade, we close an hour early\u2026",
+     "file": "2026-11-25-its-a-big-club.pdf",
+     "pages": 9,
+     "subtitle": "Weekly Note 11.25.26",
+     "title": "Its a Big Club, and You Ain\u2019t in It"
+    },
+    {
      "archive_url": "https://web.archive.org/web/20261120190511/https://wicllc.org/publications/2026-11-20-the-less-I-trade.pdf",
      "archived": "2026-11-20T13:05",
      "author": "",
@@ -3320,7 +3334,7 @@
     }
    ]
   },
-  "updated": "2026-11-20"
+  "updated": "2026-11-25"
  },
  "wasde": {
   "data": {

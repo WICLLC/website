@@ -908,16 +908,10 @@
 [CFTC] CL latest report 2026-11-17
 [CFTC] NG latest report 2026-11-17
 [ESMIS] wasde -> HTTP 200
-[WAOB] WASDE page -> HTTP 403
-[calendar:wasde] Traceback (most recent call last):
-  File "/home/runner/work/website/website/scripts/build_site.py", line 706, in build_calendar
-    times.update(t.astimezone(CENTRAL).strftime('%Y-%m-%dT%H:%M') for t in fetch())
-                                                                           ^^^^^^^
-  File "/home/runner/work/website/website/scripts/build_site.py", line 674, in waob_wasde_dates
-    raise SectionError(f'WAOB WASDE page HTTP {r.status_code}')
-SectionError: WAOB WASDE page HTTP 403
-
-[calendar] wasde upcoming: []
+[WAOB] WASDE page -> HTTP 200
+[WAOB] 2026 WASDE dates: 12
+[WAOB] 2027 WASDE dates: 12
+[calendar] wasde upcoming: ['2026-12-10T11:00', '2027-01-12T11:00', '2027-02-10T11:00']
 [ESMIS] GraiStoc -> HTTP 200
 [calendar] GraiStoc upcoming: []
 [ESMIS] ProsPlan -> HTTP 200
@@ -931,6 +925,8 @@ SectionError: WAOB WASDE page HTTP 403
 [ESMIS] HogsPigs -> HTTP 200
 [calendar] HogsPigs upcoming: ['2026-12-23T14:00']
 [pub] 2026-11-5-what-happens-when-cheap-gets-cheaper.pdf: 2026-11-06 'What Happens When Cheap Gets Cheaper'
+[pub] 2026-11-25-its-a-big-club.pdf not live yet at https://wicllc.org/publications/2026-11-25-its-a-big-club.pdf; archive later
+[pub] 2026-11-25-its-a-big-club.pdf: 2026-11-25 'Its a Big Club, and You Ain’t in It'
 [pub] 2026-11-20-the-less-I-trade.pdf: 2026-11-20 'The Less I Trade'
 [pub] 2026-11-13-sentiment-shift.pdf: 2026-11-13 'Sentiment Shift'
 [pub] 2026-10-27-weekly-note.pdf: 2026-10-27 'Weekly Note 10.27.26'
