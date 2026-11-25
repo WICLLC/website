@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-24T00:56",
+   "checked": "2026-11-24T18:48",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -64,7 +64,7 @@
     }
    ]
   },
-  "updated": "2026-11-24"
+  "updated": "2026-11-25"
  },
  "cot": {
   "data": {
@@ -548,7 +548,7 @@
     "ref": "2026-11-01"
    },
    "cutout": {
-    "choice": 355.62,
+    "choice": 359.91,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
@@ -3165,50 +3165,50 @@
       "select": 342.92
      },
      {
-      "choice": 355.62,
-      "date": "2026-11-23",
-      "select": 342.36
+      "choice": 359.91,
+      "date": "2026-11-24",
+      "select": 346.0
      }
     ],
     "primals": [
      {
-      "choice": 682.12,
+      "choice": 702.09,
       "primal": "Rib",
-      "select": 636.66
+      "select": 634.22
      },
      {
-      "choice": 312.58,
+      "choice": 306.61,
       "primal": "Chuck",
-      "select": 301.56
+      "select": 305.98
      },
      {
-      "choice": 272.4,
+      "choice": 282.71,
       "primal": "Round",
-      "select": 270.49
+      "select": 279.83
      },
      {
-      "choice": 430.51,
+      "choice": 437.23,
       "primal": "Loin",
-      "select": 409.79
+      "select": 411.59
      },
      {
-      "choice": 259.91,
+      "choice": 261.51,
       "primal": "Brisket",
-      "select": 256.95
+      "select": 263.06
      },
      {
-      "choice": 214.62,
+      "choice": 214.05,
       "primal": "Plate",
-      "select": 214.62
+      "select": 214.05
      },
      {
-      "choice": 144.59,
+      "choice": 144.91,
       "primal": "Flank",
-      "select": 149.6
+      "select": 145.73
      }
     ],
-    "report_date": "2026-11-23",
-    "select": 342.36
+    "report_date": "2026-11-24",
+    "select": 346.0
    },
    "hogs": {
     "all": 74301700.0,
@@ -3221,7 +3221,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-11-24"
+  "updated": "2026-11-25"
  },
  "publications": {
   "data": {
