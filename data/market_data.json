@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-25T13:57",
+   "checked": "2026-11-25T14:08",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -3239,13 +3239,13 @@
     {
      "archive_url": "https://web.archive.org/web/20261120190511/https://wicllc.org/publications/2026-11-20-the-less-I-trade.pdf",
      "archived": "2026-11-20T13:05",
-     "author": "",
+     "author": "Mitch Clodfelter",
      "cover": "2026-11-20-the-less-I-trade.jpg",
      "date": "2026-11-20",
-     "excerpt": "Weekly Note 11.20.26 MITCH CLODFELTER JUST NOW Share Happy Friday. I\u2019m going write today about a concept that seems counter-intuitiv which is definitely sacrilege amongst my industry to put in writing. Price analysi the bottom, as always. The Less I Trade\u2026",
+     "excerpt": "Happy Friday. I\u2019m going write today about a concept that seems counter-intuitive and which is definitely sacrilege amongst my industry to put in writing. Price analysis at the bottom, as always. The Less I Trade, The More I Make The general idea is that those\u2026",
      "file": "2026-11-20-the-less-I-trade.pdf",
-     "pages": 14,
-     "subtitle": "",
+     "pages": 12,
+     "subtitle": "Weekly Note 11.20.26",
      "title": "The Less I Trade"
     },
     {
@@ -3319,18 +3319,6 @@
      "pages": 4,
      "subtitle": "The secret no one tells you about predicting price",
      "title": "What are grain prices going to do?"
-    },
-    {
-     "archive_url": "https://web.archive.org/web/20261026152201/https://wicllc.org/publications/2026-09-10-weekly-note.pdf",
-     "archived": "2026-10-26T10:22",
-     "author": "Mitch Clodfelter",
-     "cover": "2026-09-10-weekly-note.jpg",
-     "date": "2026-09-10",
-     "excerpt": "This week is a reminder that any and all technical analysis doesn\u2019t matter until the day it does. By almost any account, grains should be backing off here. They\u2019ve been showing overbought for some time, with unproven yield data. And still they remain. Corn\u2026",
-     "file": "2026-09-10-weekly-note.pdf",
-     "pages": 10,
-     "subtitle": "Impressive",
-     "title": "Weekly Note: 9.10.26"
     }
    ]
   },

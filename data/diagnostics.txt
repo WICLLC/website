@@ -933,4 +933,3 @@
 [pub] 2026-10-22-weekly-note.pdf: 2026-10-22 'Weekly Note 10.22.26'
 [pub] 2026-10-20-on-re-ownership.pdf: 2026-10-20 'On Re-Ownership'
 [pub] 2026-09-15-what-are-grain-prices-going-to-do.pdf: 2026-09-15 'What are grain prices going to do?'
-[pub] 2026-09-10-weekly-note.pdf: 2026-09-10 'Weekly Note: 9.10.26'
