@@ -1,7 +1,7 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-25T14:08",
+   "checked": "2026-11-25T18:25",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
@@ -64,7 +64,7 @@
     }
    ]
   },
-  "updated": "2026-11-25"
+  "updated": "2026-11-26"
  },
  "cot": {
   "data": {
@@ -548,7 +548,7 @@
     "ref": "2026-11-01"
    },
    "cutout": {
-    "choice": 359.91,
+    "choice": 356.59,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
@@ -3165,50 +3165,50 @@
       "select": 342.92
      },
      {
-      "choice": 359.91,
-      "date": "2026-11-24",
-      "select": 346.0
+      "choice": 356.59,
+      "date": "2026-11-25",
+      "select": 344.71
      }
     ],
     "primals": [
      {
-      "choice": 702.09,
+      "choice": 686.89,
       "primal": "Rib",
-      "select": 634.22
+      "select": 639.81
      },
      {
-      "choice": 306.61,
+      "choice": 303.47,
       "primal": "Chuck",
-      "select": 305.98
+      "select": 302.12
      },
      {
-      "choice": 282.71,
+      "choice": 277.7,
       "primal": "Round",
-      "select": 279.83
+      "select": 274.3
      },
      {
-      "choice": 437.23,
+      "choice": 437.61,
       "primal": "Loin",
-      "select": 411.59
+      "select": 410.81
      },
      {
-      "choice": 261.51,
+      "choice": 266.33,
       "primal": "Brisket",
-      "select": 263.06
+      "select": 270.1
      },
      {
-      "choice": 214.05,
+      "choice": 214.32,
       "primal": "Plate",
-      "select": 214.05
+      "select": 214.32
      },
      {
-      "choice": 144.91,
+      "choice": 148.69,
       "primal": "Flank",
-      "select": 145.73
+      "select": 153.26
      }
     ],
-    "report_date": "2026-11-24",
-    "select": 346.0
+    "report_date": "2026-11-25",
+    "select": 344.71
    },
    "hogs": {
     "all": 74301700.0,
@@ -3221,12 +3221,14 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-11-25"
+  "updated": "2026-11-26"
  },
  "publications": {
   "data": {
    "items": [
     {
+     "archive_url": "https://web.archive.org/web/20261126002643/https://wicllc.org/publications/2026-11-25-its-a-big-club.pdf",
+     "archived": "2026-11-25T18:26",
      "author": "Mitch Clodfelter",
      "cover": "2026-11-25-its-a-big-club.jpg",
      "date": "2026-11-25",
@@ -3322,7 +3324,7 @@
     }
    ]
   },
-  "updated": "2026-11-25"
+  "updated": "2026-11-26"
  },
  "wasde": {
   "data": {
