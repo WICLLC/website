@@ -1,14 +1,18 @@
 {
  "calendar": {
   "data": {
-   "checked": "2026-11-26T22:57",
+   "checked": "2026-11-27T18:16",
    "reports": [
     {
      "agency": "USDA World Agricultural Outlook Board",
      "id": "wasde",
      "name": "WASDE",
      "tab": "WASDE Supply & Demand",
-     "upcoming": []
+     "upcoming": [
+      "2026-12-10T11:00",
+      "2027-01-12T11:00",
+      "2027-02-10T11:00"
+     ]
     },
     {
      "agency": "USDA NASS",
@@ -60,7 +64,7 @@
     }
    ]
   },
-  "updated": "2026-11-27"
+  "updated": "2026-11-28"
  },
  "cot": {
   "data": {
@@ -544,17 +548,12 @@
     "ref": "2026-11-01"
    },
    "cutout": {
-    "choice": 356.59,
+    "choice": 357.23,
     "fields": [
      "choice_600_900_current",
      "select_600_900_current"
     ],
     "history": [
-     {
-      "choice": 187.64,
-      "date": "2016-11-25",
-      "select": 171.3
-     },
      {
       "choice": 189.72,
       "date": "2016-12-02",
@@ -3161,50 +3160,50 @@
       "select": 342.92
      },
      {
-      "choice": 356.59,
-      "date": "2026-11-25",
-      "select": 344.71
+      "choice": 357.23,
+      "date": "2026-11-27",
+      "select": 347.07
      }
     ],
     "primals": [
      {
-      "choice": 686.89,
+      "choice": 689.54,
       "primal": "Rib",
-      "select": 639.81
+      "select": 642.9
      },
      {
-      "choice": 303.47,
+      "choice": 303.89,
       "primal": "Chuck",
-      "select": 302.12
+      "select": 305.04
      },
      {
-      "choice": 277.7,
+      "choice": 277.83,
       "primal": "Round",
-      "select": 274.3
+      "select": 277.2
      },
      {
-      "choice": 437.61,
+      "choice": 439.66,
       "primal": "Loin",
-      "select": 410.81
+      "select": 415.17
      },
      {
-      "choice": 266.33,
+      "choice": 266.05,
       "primal": "Brisket",
-      "select": 270.1
+      "select": 266.85
      },
      {
-      "choice": 214.32,
+      "choice": 211.04,
       "primal": "Plate",
-      "select": 214.32
+      "select": 211.04
      },
      {
-      "choice": 148.69,
+      "choice": 148.6,
       "primal": "Flank",
-      "select": 153.26
+      "select": 152.14
      }
     ],
-    "report_date": "2026-11-25",
-    "select": 344.71
+    "report_date": "2026-11-27",
+    "select": 347.07
    },
    "hogs": {
     "all": 74301700.0,
@@ -3217,7 +3216,7 @@
     "ref": "2026-09-01"
    }
   },
-  "updated": "2026-11-26"
+  "updated": "2026-11-28"
  },
  "publications": {
   "data": {
